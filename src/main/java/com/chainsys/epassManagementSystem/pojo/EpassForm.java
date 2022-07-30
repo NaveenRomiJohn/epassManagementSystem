@@ -11,101 +11,101 @@ import javax.persistence.Table;
 public class EpassForm {
 	@Id
 	@Column(name="epass_id")
-	private int epassId;
+	private int epass_id;
 	@Column(name="travel_reason")
-	private String travelReason;
+	private String travel_reason;
 	@Column(name="from_date")
-	private Date fromDate;
+	private Date from_date;
 	@Column(name="to_date")
-	private Date toDate;
+	private Date to_date;
 	@Column(name="vehicle_number")
-	private String vehicleNumber;
+	private String vehicle_number;
 	@Column(name="number_of_passengers")
-	private int numberOfPassengers;
+	private int number_of_passengers;
 	@Column(name="applied_date")
-	private Date appliedDate;
+	private Date applied_date;
 	@Column(name="approval_status")
-	private String approvalStatus;
+	private String approval_status;
 	@Column(name="approved_date")
-	private Date approvedDate;
+	private Date approved_date;
 	@Column(name = "from_address")
-	private String fromAddress;
+	private String from_address;
 	@Column(name = "destination_address")
-	private String destinationAddress;
+	private String destination_address;
 	@Column(name = "application_type")
-	private String applicationType;
+	private String application_type;
 	
-	public int getEpassId() {
-		return epassId;
+	public int getEpass_id() {
+		return epass_id;
 	}
-	public void setEpassId(int epassId) {
-		this.epassId = epassId;
+	public void setEpass_id(int epass_id) {
+		this.epass_id = epass_id;
 	}
-	public String getTravelReason() {
-		return travelReason;
+	public String getTravel_reason() {
+		return travel_reason;
 	}
-	public void setTravelReason(String travelReason) {
-		this.travelReason = travelReason;
+	public void setTravel_reason(String travel_reason) {
+		this.travel_reason = travel_reason;
 	}
-	public Date getFromDate() {
-		return fromDate;
+	public Date getFrom_date() {
+		return from_date;
 	}
-	public void setFromDate(Date fromDate) {
-		this.fromDate = fromDate;
+	public void setFrom_date(Date from_date) {
+		this.from_date = from_date;
 	}
-	public Date getToDate() {
-		return toDate;
+	public Date getTo_date() {
+		return to_date;
 	}
-	public void setToDate(Date toDate) {
-		this.toDate = toDate;
+	public void setTo_date(Date to_date) {
+		this.to_date = to_date;
 	}
-	public String getVehicleNumber() {
-		return vehicleNumber;
+	public String getVehicle_number() {
+		return vehicle_number;
 	}
-	public void setVehicleNumber(String vehicleNumber) {
-		this.vehicleNumber = vehicleNumber;
+	public void setVehicle_number(String vehicle_number) {
+		this.vehicle_number = vehicle_number;
 	}
-	public int getNumberOfPassengers() {
-		return numberOfPassengers;
+	public int getNumber_of_passengers() {
+		return number_of_passengers;
 	}
-	public void setNumberOfPassengers(int numberOfPassengers) {
-		this.numberOfPassengers = numberOfPassengers;
+	public void setNumber_of_passengers(int number_of_passengers) {
+		this.number_of_passengers = number_of_passengers;
 	}
-	public Date getAppliedDate() {
-		return appliedDate;
+	public Date getApplied_date() {
+		return applied_date;
 	}
-	public void setAppliedDate(Date appliedDate) {
-		this.appliedDate = appliedDate;
+	public void setApplied_date(Date applied_date) {
+		this.applied_date = applied_date;
 	}
-	public String getApprovalStatus() {
-		return approvalStatus;
+	public String getApproval_status() {
+		return approval_status;
 	}
-	public void setApprovalStatus(String approvalStatus) {
-		this.approvalStatus = approvalStatus;
+	public void setApproval_status(String approval_status) {
+		this.approval_status = approval_status;
 	}
-	public Date getApprovedDate() {
-		return approvedDate;
+	public Date getApproved_date() {
+		return approved_date;
 	}
-	public void setApprovedDate(Date approvedDate) {
-		this.approvedDate = approvedDate;
+	public void setApproved_date(Date approved_date) {
+		this.approved_date = approved_date;
 	}
-	public String getFromAddress() {
-		return fromAddress;
+	public String getFrom_address() {
+		return from_address;
 	}
-	public void setFromAddress(String fromAddress) {
-		this.fromAddress = fromAddress;
+	public void setFrom_address(String from_address) {
+		this.from_address = from_address;
 	}
-	public String getDestinationAddress() {
-		return destinationAddress;
+	public String getDestination_address() {
+		return destination_address;
 	}
-	public void setDestinationAddress(String destinationAddress) {
-		this.destinationAddress = destinationAddress;
+	public void setDestination_address(String destination_address) {
+		this.destination_address = destination_address;
 	}
-	public String getApplicationType() {
-		return applicationType;
+	public String getApplication_type() {
+		return application_type;
 	}
-	public void setApplicationType(String applicationType) {
-		this.applicationType = applicationType;
+	public void setApplication_type(String application_type) {
+		this.application_type = application_type;
 	}
 	
 }

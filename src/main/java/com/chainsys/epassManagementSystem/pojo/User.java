@@ -1,6 +1,5 @@
 package com.chainsys.epassManagementSystem.pojo;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -9,42 +8,33 @@ import javax.persistence.Table;
 @Table(name = "epass_user")
 public class User {
 	@Id
-	@Column(name = "user_id")
-	private int userId;
-	@Column(name = "first_name")
-	private String firstName;
-	@Column(name = "last_name")
-	private String lastName;
-	@Column(name = "gender")
+	private Integer user_id;
+	private String first_name;
+	private String last_name;
 	private String gender;
-	@Column(name = "age")
-	private int age;
-	@Column(name = "email")
+	private Integer age;
 	private String email;
-	@Column(name = "mobile_number")
-	private long mobileNumber;
-	@Column(name = "address")
+	private long mobile_number;
 	private String address;
-	@Column(name = "user_password")
-	private String userPassword;
+	private String user_password;
 	
-	public int getUserId() {
-		return userId;
+	public Integer getUser_id() {
+		return user_id;
 	}
-	public void setUserId(int userId) {
-		this.userId = userId;
+	public void setUser_id(Integer user_id) {
+		this.user_id = user_id;
 	}
-	public String getFirstName() {
-		return firstName;
+	public String getFirst_name() {
+		return first_name;
 	}
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setFirst_name(String first_name) {
+		this.first_name = first_name;
 	}
-	public String getLastName() {
-		return lastName;
+	public String getLast_name() {
+		return last_name;
 	}
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setLast_name(String last_name) {
+		this.last_name = last_name;
 	}
 	public String getGender() {
 		return gender;
@@ -52,10 +42,10 @@ public class User {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	public int getAge() {
+	public Integer getAge() {
 		return age;
 	}
-	public void setAge(int age) {
+	public void setAge(Integer age) {
 		this.age = age;
 	}
 	public String getEmail() {
@@ -64,11 +54,11 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public long getMobileNumber() {
-		return mobileNumber;
+	public long getMobile_number() {
+		return mobile_number;
 	}
-	public void setMobileNumber(long mobileNumber) {
-		this.mobileNumber = mobileNumber;
+	public void setMobile_number(long mobile_number) {
+		this.mobile_number = mobile_number;
 	}
 	public String getAddress() {
 		return address;
@@ -76,11 +66,11 @@ public class User {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public String getUserPassword() {
-		return userPassword;
+	public String getUser_password() {
+		return user_password;
 	}
-	public void setUserPassword(String userPassword) {
-		this.userPassword = userPassword;
+	public void setUser_password(String user_password) {
+		this.user_password = user_password;
 	}
 
 }

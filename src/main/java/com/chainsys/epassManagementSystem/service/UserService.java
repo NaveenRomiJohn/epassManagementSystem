@@ -8,9 +8,13 @@ import com.chainsys.epassManagementSystem.repository.UserRepository;
 @Service
 public class UserService {
 	@Autowired
-	private UserRepository repo;
+	private UserRepository userrepo;
 	
 	public User save(User user) {
-		return repo.save(user);
+		return userrepo.save(user);
 	}
+	
+//	public User findByUseridPassword(Integer user_id, String user_password) {
+//		return repo.findByIdPassword(user_id, user_password);
+//	}
 }

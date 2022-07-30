@@ -11,54 +11,64 @@ import javax.persistence.Table;
 public class Admin {
 	@Id
 	@Column(name = "admin_id")
-	private int adminId;
+	private int admin_id;
 	@Column(name = "admin_name")
-	private String adminName;
+	private String admin_name;
 	@Column(name = "admin_email")
-	private String adminEmail;
+	private String admin_email;
 	@Column(name = "admin_password")
-	private String adminPassword;
+	private String admin_password;
 	@Column(name = "date_of_joining")
-	private Date dateOfJoining;
+	private Date date_of_joining;
+	@Column(name = "admin_designation")
+	private String admin_designation;
 
-	public int getAdminId() {
-		return adminId;
+	public int getAdmin_id() {
+		return admin_id;
 	}
 
-	public void setAdminId(int adminId) {
-		this.adminId = adminId;
+	public void setAdmin_id(int admin_id) {
+		this.admin_id = admin_id;
 	}
 
-	public String getAdminName() {
-		return adminName;
+	public String getAdmin_name() {
+		return admin_name;
 	}
 
-	public void setAdminName(String adminName) {
-		this.adminName = adminName;
+	public void setAdmin_name(String admin_name) {
+		this.admin_name = admin_name;
 	}
 
-	public String getAdminEmail() {
-		return adminEmail;
+	public String getAdmin_email() {
+		return admin_email;
 	}
 
-	public void setAdminEmail(String adminEmail) {
-		this.adminEmail = adminEmail;
+	public void setAdmin_email(String admin_email) {
+		this.admin_email = admin_email;
 	}
 
-	public String getAdminPassword() {
-		return adminPassword;
+	public String getAdmin_password() {
+		return admin_password;
 	}
 
-	public void setAdminPassword(String adminPassword) {
-		this.adminPassword = adminPassword;
+	public void setAdmin_password(String admin_password) {
+		this.admin_password = admin_password;
 	}
 
-	public Date getDateOfJoining() {
-		return dateOfJoining;
+	public Date getDate_of_joining() {
+		return date_of_joining;
 	}
 
-	public void setDateOfJoining(Date dateOfJoining) {
-		this.dateOfJoining = dateOfJoining;
+	public void setDate_of_joining(Date date_of_joining) {
+		this.date_of_joining = date_of_joining;
+	}
+
+	public String getAdmin_designation() {
+		return admin_designation;
+	}
+
+	public void setAdmin_designation(String admin_designation) {
+		this.admin_designation = admin_designation;
 	}
 
 }

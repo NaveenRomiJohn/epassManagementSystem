@@ -12,15 +12,15 @@
 	String userid = request.getParameter("user_id");
 	String password = request.getParameter("password");
 	User user=new User();
-	try {
+	/* try {
  	if (user.getUserId().equals(userid) && user.getUserPassword().equals(password)) {
-  	out.println(" Welcome " + user.getFirstName() "</h2>");
+  	out.println(" Welcome " + user.getFirstName() "</h2>"); 
  	} else {
  	 out.println("Invalid password or username.");
  	}
 	} catch (Exception e) {
 	 e.printStackTrace();
-	}
+	} */
 %>
 </body>
 </html>

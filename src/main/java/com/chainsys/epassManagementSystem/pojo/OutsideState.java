@@ -3,12 +3,13 @@ package com.chainsys.epassManagementSystem.pojo;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "epass_outside_state")
 public class OutsideState {
-
+	@Id
 	@Column(name = "from_state")
 	private String fromState;
 	@Column(name = "to_state")

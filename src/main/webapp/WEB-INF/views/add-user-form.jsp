@@ -7,44 +7,60 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>E-Pass User form</title>
+<style>
+*{text-align: center;}
+</style>
 </head>
 <body>
+<h1>E-Pass Management System</h1>
 	<h3>User Registration form</h3>
-	<!-- <div id="root">
-		<div id="form"> -->
-	<form:form action="add" method="post" modelAttribute="adduser">
-					First Name:<form:input path="firstName" />
-		<br>
-					Last Name:<form:input path="lastName" />
-		<br>
-					Email:<form:input type=?email? path="email" />
-		<br>
-					Date of Birth:<form:input type=?date? path="dateOfBirth" />
-		<br>
-					Gender:
-						Male:<form:radiobutton path="gender" value="Male" />
-		<br> 
-						Female:<form:radiobutton path="gender" value="Female" />
-		<br>
-			Address:
-				<textarea cols="80" rows="5" id="address">  
-				</textarea>
-		<br>
-			Phone Number:
-				<input type="text" id="phoneNumber" name="country code" value="+91"
-			size="2" />
-		<input type="text" id="phoneNumber" name="phone" size="10" />
-		<br>
-			Password
-			<form:password path="password" id="userPassword" name="psw"
-			pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-			title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
-			required />
-		<br>
-		<input type="button" value="Submit" />
-		<input type="reset">
-	</form:form>
-	<!-- </div>
-	</div> -->
+	<div id="root">
+		<div id="form">
+			 <form:form action="adduser" method="post" modelAttribute="adduser">
+                
+                <div>
+                UserId :<form:input path="user_id" />
+                </div>
+                <br>
+                <div>
+                First Name : <form:input path="first_name" />
+                </div>
+                <br>
+                <div>
+                Last Name : <form:input path="last_name" />
+                </div>
+                <br>
+                <div>
+                Gender : <form:radiobutton path="gender" value="Male" />Male
+                         <form:radiobutton path="gender" value="Female" />Female
+                </div>
+                <br>
+                <div>
+                Age : <form:input type="text" path="age" />
+                </div>
+                <br>
+                <div>
+                Email : <form:input path="email" />
+                </div>
+                <br>
+                <div>
+                Address : <form:textarea path="address" cols="50" rows="4" />  
+                </div>
+                <br>
+                <div>
+                Mobile Number : <form:input path="mobile_number" name="phone" size="10" />
+                </div>
+                <br>
+                <div>
+                User Password : <form:password path="user_password"/>
+                </div>
+                <br>
+                <div>
+                <input type="submit" value="Submit" />
+                <input type="reset">
+                </div>
+            </form:form>
+		</div>
+	</div>
 </body>
 </html>

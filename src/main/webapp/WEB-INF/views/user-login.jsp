@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,9 +9,10 @@
 * {
 	text-align: center;
 }
+
 .center {
-  margin-left: auto;
-  margin-right: auto;
+	margin-left: auto;
+	margin-right: auto;
 }
 </style>
 </head>
@@ -18,7 +21,7 @@
 	<h2>User LogIn</h2>
 	<br>
 	<br>
-	<form action="login.jsp" method="GET">
+	<form action="userlogin" method="post">
 		<table class="center">
 			<tr>
 				<td>User Id :</td>
@@ -29,12 +32,12 @@
 				<td><input type="password" name="password" /></td>
 			</tr>
 			<tr>
-			<td><input type='submit' name='Login' value='Login'></td>
+				<td><input type='submit' name='Login' value='Login'></td>
 			</tr>
 		</table>
 	</form>
-	<br>
-	New User:
-	<a href="register.html">Register</a>
+
+	<br> New User:
+	<a href="http://localhost:8080/adduserform">Register</a>
 </body>
 </html>

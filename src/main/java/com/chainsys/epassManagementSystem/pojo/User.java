@@ -8,7 +8,7 @@ import javax.persistence.Table;
 @Table(name = "epass_user")
 public class User {
 	@Id
-	private Integer user_id;
+	private String user_id;
 	private String first_name;
 	private String last_name;
 	private String gender;
@@ -18,10 +18,10 @@ public class User {
 	private String address;
 	private String user_password;
 	
-	public Integer getUser_id() {
+	public String getUser_id() {
 		return user_id;
 	}
-	public void setUser_id(Integer user_id) {
+	public void setUser_id(String user_id) {
 		this.user_id = user_id;
 	}
 	public String getFirst_name() {

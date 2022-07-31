@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Admin Registered</title>
+<title>User details updated</title>
 <style>
 * {
 	text-align: center;
@@ -13,12 +13,7 @@
 </head>
 <body>
 	<h1>E-Pass Management System</h1>
-	<h2>Admin Registration</h2>
 	<br>
-	<p>Admin details are registered successfully</p>
-	<br>
-	<div>
-		<a href="adminlogin">Admin Login</a>
-	</div>
+	<p>User details updated successfully</p>
 </body>
 </html>

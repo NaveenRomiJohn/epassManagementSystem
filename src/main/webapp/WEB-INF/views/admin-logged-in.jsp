@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>User In</title>
+<title>Admin In</title>
 <style>
 *{
 text-align: center;
@@ -13,15 +13,18 @@ text-align: center;
 </head>
 <body>
 	<h1>E-Pass Management System</h1>
-	<h2>User Page</h2>
+	<h2>Admin Page</h2>
 	<br>
 	<br>
-	<a href="epassformtype">Epass Request</a>
+	<a href="addadminform">Add new Admin</a>
 	<br>
-	<a href="epassrequeststatus">Epass Request Status</a>
+	<a href="epassrequests">Epass Requests</a>
 	<br>
-	<a href="updateuser">Update User details</a>
+	<a href="allepassdetails">All Epass details</a>
 	<br>
-	<a href="deleteuser">Delete user</a>
+	<a href="updateadminform">Update Admin</a>
+	<br>
+	<a href="deleteadminform">Delete Admin</a>
+
 </body>
 </html>

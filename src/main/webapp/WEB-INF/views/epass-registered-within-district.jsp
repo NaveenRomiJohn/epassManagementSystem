@@ -4,21 +4,17 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Admin Registered</title>
+<title>Epass registered</title>
 <style>
-* {
-	text-align: center;
-}
+*{text-align: center;}
 </style>
 </head>
 <body>
 	<h1>E-Pass Management System</h1>
-	<h2>Admin Registration</h2>
+	<p>Your Epass registered successfully</p>
 	<br>
-	<p>Admin details are registered successfully</p>
 	<br>
-	<div>
-		<a href="adminlogin">Admin Login</a>
-	</div>
+	<a href="home">Home</a>
+	<a href="epassrequeststatus">Epass Registered Status</a>
 </body>
 </html>

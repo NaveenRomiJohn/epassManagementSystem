@@ -16,12 +16,12 @@
 	<h2>Covid-19 ePass</h2>
 	<br>
 	<br>
-	<a href="http://localhost:8080/userloginform">User LogIn</a>
+	<a href="userloginform">User LogIn</a>
 	<br>
 	<br>
-	<a href="http://localhost:8080/adduserform">New Register</a>
+	<a href="adduserform">New User Register</a>
 	<br>
 	<br>
-	<a href="http://localhost:8080/adminlogin">Admin LogIn</a>
+	<a href="adminloginform">Admin LogIn</a>
 </body>
 </html>

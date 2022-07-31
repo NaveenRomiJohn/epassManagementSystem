@@ -8,15 +8,16 @@
 <meta charset="ISO-8859-1">
 <title>E-Pass User form</title>
 <style>
-*{text-align: center;}
+h1,h2,h3{text-align: center;}
 </style>
 </head>
 <body>
 <h1>E-Pass Management System</h1>
 	<h3>Epass Registration form</h3>
+	<h2>Within District</h2>
 	<div id="root">
 		<div id="form">
-			<form:form action="addepass" method="post" modelAttribute="addepass">
+			<form:form action="registerwithindistrict" method="post" modelAttribute="epasswithindistrict">
 				
 				<div>
 				EpassId :<form:input path="epass_id" />
@@ -54,12 +55,33 @@
 				Applied Date : <form:input path="applied_date" />
 				</div>
 				<br>
-				<div>
-				Application Type : <form:radiobutton path="application_type" value="Within District" />Within District
-				<form:radiobutton path="application_type" value="Outside District" />Outside District
-				<form:radiobutton path="application_type" value="Outside State" />Outside State
+				<%-- <div>
+				Passenger Name : <form:input path="passenger_name" />
 				</div>
 				<br>
+                <div>
+                Gender : <form:radiobutton path="passenger_gender" value="Male" />Male
+                         <form:radiobutton path="passenger_gender" value="Female" />Female
+                </div>
+				<br>
+				<div>
+				Date of Birth : <form:input path="date_of_birth" />
+				</div>
+				<br>
+				<div>
+				Id Proof Type : <form:radiobutton path="id_proof_type" value="Aadhar" />Aadhar Card
+				<form:radiobutton path="id_proof_type" value="Driving License" />Driving License
+				<form:radiobutton path="id_proof_type" value="Ration Card" />Ration Card
+				</div>
+				<br>
+				<div>
+				Id Proof Number : <form:input path="id_proof_number" />
+				</div>
+				<br>
+				<div>
+				Covid Symptoms : <form:radiobutton path="covid_symptoms" value="Yes" />Yes
+				<form:radiobutton path="covid_symptoms" value="No" />No
+				</div> --%>
 				<br>
 				<div>
 				<input type="submit" value="Submit" />

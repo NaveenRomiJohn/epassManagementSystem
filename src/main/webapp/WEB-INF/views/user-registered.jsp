@@ -20,13 +20,10 @@
 	${first_name}
 	<br>
 	<div>
-		<a
-			href="/eclipse-june-workspace/epassManagementSystem/src/main/webapp/WEB-INF/views/home.jsp">Home</a>
+		<a href="home">Home</a>
 	</div>
 	<div>
-		<a
-			href="/eclipse-june-workspace/epassManagementSystem/src/main/webapp/WEB-INF/views/user-login.jsp">User
-			LogIn</a>
+		<a href="userlogin">UserLogIn</a>
 	</div>
 </body>
 </html>

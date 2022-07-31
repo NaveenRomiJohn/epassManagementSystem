@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Admin Registered</title>
+<title>Epass Form Type</title>
 <style>
 * {
 	text-align: center;
@@ -13,12 +13,12 @@
 </head>
 <body>
 	<h1>E-Pass Management System</h1>
-	<h2>Admin Registration</h2>
+	<h2>Epass Type</h2>
 	<br>
-	<p>Admin details are registered successfully</p>
+	<a href="epassformwithindistrict">Within District</a>
 	<br>
-	<div>
-		<a href="adminlogin">Admin Login</a>
-	</div>
+	<a href="epassformacrossdistrict">Across District</a>
+	<br>
+	<a href="epassFormOutsideState">Outside State</a>
 </body>
 </html>

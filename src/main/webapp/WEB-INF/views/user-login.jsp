@@ -4,12 +4,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>User LogIn</title>
+<title>User Login</title>
 <style>
 * {
 	text-align: center;
 }
-
 .center {
 	margin-left: auto;
 	margin-right: auto;
@@ -21,23 +20,26 @@
 	<h2>User LogIn</h2>
 	<br>
 	<br>
-	<form action="userlogin" method="post">
+	<form action="userlogin">
 		<table class="center">
 			<tr>
 				<td>User Id :</td>
-				<td><input type="text" name="userid" /></td>
+				<td><input type="text" name="user_id" /></td>
 			</tr>
 			<tr>
 				<td>User Password :</td>
-				<td><input type="password" name="password" /></td>
+				<td><input type="password" name="user_password" /></td>
 			</tr>
 			<tr>
-				<td><input type='submit' name='Login' value='Login'></td>
+				<td><input type='submit' value="Login"></td>
 			</tr>
 		</table>
 	</form>
-
-	<br> New User:
-	<a href="http://localhost:8080/adduserform">Register</a>
+	<br>
+	<br>
+	<h2>User Home</h2>
+	<div>
+		<a href="adduserform">Add New User</a>
+	</div>
 </body>
 </html>

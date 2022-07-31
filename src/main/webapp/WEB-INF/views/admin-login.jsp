@@ -9,6 +9,10 @@
 * {
 	text-align: center;
 }
+.center {
+	margin-left: auto;
+	margin-right: auto;
+}
 </style>
 </head>
 <body>
@@ -16,26 +20,20 @@
 	<h2>Admin LogIn</h2>
 	<br>
 	<br>
-	<form action="epassrequests" method="post">
-		<table>
+	<form action="adminlogin" method="post">
+		<table class="center">
 			<tr>
 				<td>Admin Id :</td>
-				<td><input type="text" name="adminid" /></td>
+				<td><input type="text" name="admin_id" /></td>
 			</tr>
 			<tr>
 				<td>Admin Password :</td>
-				<td><input type="password" name="password" /></td>
+				<td><input type="password" name="admin_password" /></td>
 			</tr>
 			<tr>
-				<td><input type='submit' name='Login' value='Login'></td>
+				<td><input type='submit' value='Login'></td>
 			</tr>
 		</table>
 	</form>
-	<br>
-	<br>
-	<h2>Admin Home</h2>
-	<div>
-		<a href="http://localhost:8080/addadminform">Add New Admin</a>
-	</div>
 </body>
 </html>

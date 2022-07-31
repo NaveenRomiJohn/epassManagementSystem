@@ -11,22 +11,28 @@ import com.chainsys.epassManagementSystem.pojo.EpassForm;
 import com.chainsys.epassManagementSystem.service.EpassFormService;
 
 @Controller
-//@RequestMapping("/epassform")
 public class EpassFormController {
 
 	@Autowired
 	public EpassFormService epassFormService;
-	
-	@GetMapping("/addepassform")
-	public String addEpassForm(Model model) {
+//	form type
+	@RequestMapping("/epassformtype")
+	public String addEpassFormType(Model model) {
 		EpassForm epass = new EpassForm();
-		model.addAttribute("addepass", epass);
-		return "add-epass-form";
+		model.addAttribute("epasstype", epass);
+		return "epass-form-type";
+	}
+//	register
+	@GetMapping("/epassformwithindistrict")
+	public String epassFormWithinDistrict(Model model) {
+		EpassForm epass = new EpassForm();
+		model.addAttribute("epasswithindistrict", epass);
+		return "epass-form-within-district";
 	}
 
-	@PostMapping("/addepass")
-	public String addEpass(@ModelAttribute("addepass") EpassForm epass) {
+	@PostMapping("/registerwithindistrict")
+	public String addEpass(@ModelAttribute("epasswithindistrict") EpassForm epass) {
 		epassFormService.save(epass);
-		return "epass-registered";
+		return "epass-registered-within-district";
 	}
 }

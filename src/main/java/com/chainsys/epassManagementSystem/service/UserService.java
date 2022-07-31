@@ -14,7 +14,15 @@ public class UserService {
 		return userrepo.save(user);
 	}
 	
+	public User findById(int user_id) {
+		return userrepo.findById(user_id);
+	}
+	
+	public void deleteById(int id) {
+		userrepo.deleteById(id);
+	}
+	
 //	public User findByUseridPassword(Integer user_id, String user_password) {
-//		return repo.findByIdPassword(user_id, user_password);
+//		return userrepo.findByIdPassword(user_id, user_password);
 //	}
 }

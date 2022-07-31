@@ -12,64 +12,64 @@ import javax.persistence.Table;
 public class Passengers {
 	@Id
 	@Column(name = "passenger_name")
-	private String passengerName;
+	private String passenger_name;
 	@Column(name = "date_of_birth")
-	private Date dateOfBirth;
+	private Date date_of_birth;
 	@Column(name = "passenger_gender")
-	private String passengerGender;
+	private String passenger_gender;
 	@Column(name = "covid_symptoms")
-	private String covidSymptoms;
+	private String covid_symptoms;
 	@Column(name = "id_proof_type")
-	private String idProofType;
+	private String id_proof_type;
 	@Column(name = "id_proof_number")
-	private int idProofNumber;
+	private int id_proof_number;
 
-	public String getPassengerName() {
-		return passengerName;
+	public String getPassenger_name() {
+		return passenger_name;
 	}
 
-	public void setPassengerName(String passengerName) {
-		this.passengerName = passengerName;
+	public void setPassenger_name(String passenger_name) {
+		this.passenger_name = passenger_name;
 	}
 
-	public Date getDateOfBirth() {
-		return dateOfBirth;
+	public Date getDate_of_birth() {
+		return date_of_birth;
 	}
 
-	public void setDateOfBirth(Date dateOfBirth) {
-		this.dateOfBirth = dateOfBirth;
+	public void setDate_of_birth(Date date_of_birth) {
+		this.date_of_birth = date_of_birth;
 	}
 
-	public String getPassengerGender() {
-		return passengerGender;
+	public String getPassenger_gender() {
+		return passenger_gender;
 	}
 
-	public void setPassengerGender(String passengerGender) {
-		this.passengerGender = passengerGender;
+	public void setPassenger_gender(String passenger_gender) {
+		this.passenger_gender = passenger_gender;
 	}
 
-	public String getCovidSymptoms() {
-		return covidSymptoms;
+	public String getCovid_symptoms() {
+		return covid_symptoms;
 	}
 
-	public void setCovidSymptoms(String covidSymptoms) {
-		this.covidSymptoms = covidSymptoms;
+	public void setCovid_symptoms(String covid_symptoms) {
+		this.covid_symptoms = covid_symptoms;
 	}
 
-	public String getIdProofType() {
-		return idProofType;
+	public String getId_proof_type() {
+		return id_proof_type;
 	}
 
-	public void setIdProofType(String idProofType) {
-		this.idProofType = idProofType;
+	public void setId_proof_type(String id_proof_type) {
+		this.id_proof_type = id_proof_type;
 	}
 
-	public int getIdProofNumber() {
-		return idProofNumber;
+	public int getId_proof_number() {
+		return id_proof_number;
 	}
 
-	public void setIdProofNumber(int idProofNumber) {
-		this.idProofNumber = idProofNumber;
+	public void setId_proof_number(int id_proof_number) {
+		this.id_proof_number = id_proof_number;
 	}
 
 }

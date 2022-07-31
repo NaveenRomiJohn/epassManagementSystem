@@ -1,6 +1,6 @@
 package com.chainsys.epassManagementSystem.pojo;
 
-import java.util.Date;
+import java.sql.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -11,7 +11,7 @@ import javax.persistence.Table;
 public class EpassForm {
 	@Id
 	@Column(name="epass_id")
-	private int epass_id;
+	private String epass_id;
 	@Column(name="travel_reason")
 	private String travel_reason;
 	@Column(name="from_date")
@@ -35,10 +35,10 @@ public class EpassForm {
 	@Column(name = "application_type")
 	private String application_type;
 	
-	public int getEpass_id() {
+	public String getEpass_id() {
 		return epass_id;
 	}
-	public void setEpass_id(int epass_id) {
+	public void setEpass_id(String epass_id) {
 		this.epass_id = epass_id;
 	}
 	public String getTravel_reason() {

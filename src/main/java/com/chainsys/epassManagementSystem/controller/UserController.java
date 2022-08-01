@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-import com.chainsys.epassManagementSystem.pojo.User;
+
+import com.chainsys.epassManagementSystem.model.User;
 import com.chainsys.epassManagementSystem.service.UserService;
 
 @Controller
@@ -28,26 +29,26 @@ public class UserController {
 	@GetMapping("/adduserform")
 	public String showRegisterForm(Model model) {
 		User user = new User();
-		model.addAttribute("adduser", user);
+		model.addAttribute("addUser", user);
 		return "add-user-form";
 	}
 
-	@PostMapping("/adduser")
-	public String addUser(@ModelAttribute("adduser") User user1) {
-		userService.save(user1);
+	@PostMapping("/addUser")
+	public String addUser(@ModelAttribute("addUser") User user) {
+		userService.save(user);
 		return "user-registered";
 	}
 
 //	user update
-	@GetMapping("/updateuserform")
-	public String showUpdateForm(@RequestParam("userid") Integer id, Model model) {
-		User user = userService.findById(id);
-		model.addAttribute("updateuser", user);
+	@GetMapping("/updateUserForm")
+	public String showUpdateForm(Model model) {
+		User user = new User();
+		model.addAttribute("updateUser", user);
 		return "update-user-form";
 	}
 
-	@PostMapping("/updateuser")
-	public String updateUser(@ModelAttribute("updateuser") User user) {
+	@PostMapping("/updateUser")
+	public String updateUser(@ModelAttribute("updateUser") User user) {
 		userService.save(user);
 		return "user-updated";
 	}
@@ -66,8 +67,8 @@ public class UserController {
 		return "user-login";
 	}
 
-	@RequestMapping("/userlogin")
-	public String userLogin(@RequestParam("user_id") String id, @RequestParam("user_password") String password,
+	@GetMapping("/userLogin")
+	public String userLogin(@RequestParam("userId") String id, @RequestParam("userPassword") String password,
 			Model model) {
 
 		if (id.equals("user100") && password.equals("arav100")) {
@@ -76,7 +77,6 @@ public class UserController {
 			return "user-login";
 		}
 	}
-
 
 //	@GetMapping(value = "/logout")
 //	public String logout_user(HttpSession session) {

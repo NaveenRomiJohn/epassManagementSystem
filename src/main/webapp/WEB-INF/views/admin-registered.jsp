@@ -18,7 +18,7 @@
 	<p>Admin details are registered successfully</p>
 	<br>
 	<div>
-		<a href="adminlogin">Admin Login</a>
+		<a href="adminLogin">Admin Login</a>
 	</div>
 </body>
 </html>

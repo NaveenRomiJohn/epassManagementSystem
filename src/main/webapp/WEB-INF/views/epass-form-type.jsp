@@ -15,9 +15,9 @@
 	<h1>E-Pass Management System</h1>
 	<h2>Epass Type</h2>
 	<br>
-	<a href="epassformwithindistrict">Within District</a>
+	<a href="epassFormWithinDistrict">Within District</a>
 	<br>
-	<a href="epassformacrossdistrict">Across District</a>
+	<a href="epassFormAcrossDistrict">Across District</a>
 	<br>
 	<a href="epassFormOutsideState">Outside State</a>
 </body>

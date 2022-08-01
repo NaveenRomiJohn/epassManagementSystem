@@ -16,12 +16,12 @@ text-align: center;
 	<h2>User Page</h2>
 	<br>
 	<br>
-	<a href="epassformtype">Epass Request</a>
+	<a href="epassFormType">Epass Request</a>
 	<br>
-	<a href="epassrequeststatus">Epass Request Status</a>
+	<a href="epassRequestStatus">Epass Request Status</a>
 	<br>
-	<a href="updateuser">Update User details</a>
+	<a href="updateUser">Update User details</a>
 	<br>
-	<a href="deleteuser">Delete user</a>
+	<a href="deleteUser">Delete user</a>
 </body>
 </html>

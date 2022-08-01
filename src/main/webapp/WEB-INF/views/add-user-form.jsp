@@ -16,18 +16,18 @@
 	<h3>User Registration form</h3>
 	<div id="root">
 		<div id="form">
-			 <form:form action="adduser" method="post" modelAttribute="adduser">
+			 <form:form action="addUser" method="post" modelAttribute="addUser">
                 
                 <div>
-                UserId :<form:input path="user_id" />
+                UserId :<form:input path="userId" />
                 </div>
                 <br>
                 <div>
-                First Name : <form:input path="first_name" />
+                First Name : <form:input path="firstName" />
                 </div>
                 <br>
                 <div>
-                Last Name : <form:input path="last_name" />
+                Last Name : <form:input path="lastName" />
                 </div>
                 <br>
                 <div>
@@ -48,11 +48,11 @@
                 </div>
                 <br>
                 <div>
-                Mobile Number : <form:input path="mobile_number" name="phone" size="10" />
+                Mobile Number : <form:input path="mobileNumber" name="phone" size="10" />
                 </div>
                 <br>
                 <div>
-                User Password : <form:password path="user_password"/>
+                User Password : <form:password path="userPassword"/>
                 </div>
                 <br>
                 <div>

@@ -20,15 +20,15 @@
 	<h2>User LogIn</h2>
 	<br>
 	<br>
-	<form action="userlogin">
+	<form action="userLogin">
 		<table class="center">
 			<tr>
 				<td>User Id :</td>
-				<td><input type="text" name="user_id" /></td>
+				<td><input type="text" name="userId" /></td>
 			</tr>
 			<tr>
 				<td>User Password :</td>
-				<td><input type="password" name="user_password" /></td>
+				<td><input type="password" name="userPassword" /></td>
 			</tr>
 			<tr>
 				<td><input type='submit' value="Login"></td>
@@ -39,7 +39,7 @@
 	<br>
 	<h2>User Home</h2>
 	<div>
-		<a href="adduserform">Add New User</a>
+		<a href="addUserForm">Add New User</a>
 	</div>
 </body>
 </html>

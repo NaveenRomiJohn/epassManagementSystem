@@ -16,12 +16,12 @@
 	<h2>Covid-19 ePass</h2>
 	<br>
 	<br>
-	<a href="userloginform">User LogIn</a>
+	<a href="userLoginForm">User LogIn</a>
 	<br>
 	<br>
-	<a href="adduserform">New User Register</a>
+	<a href="addUserForm">New User Register</a>
 	<br>
 	<br>
-	<a href="adminloginform">Admin LogIn</a>
+	<a href="adminLoginForm">Admin LogIn</a>
 </body>
 </html>

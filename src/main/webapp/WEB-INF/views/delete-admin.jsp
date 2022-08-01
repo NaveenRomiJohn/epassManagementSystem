@@ -15,9 +15,9 @@
 <body>
 	<h1>E-Pass Management System</h1>
 	<h3>Delete Admin Details</h3>
-			<form action="deleteadmin" >
+			<form action="deleteAdmin" >
 				<div>
-					AdminId : <input type="text" name="admin_id" />
+					AdminId : <input type="text" name="adminId" />
 				</div>
 				<br>
 				<input type="submit" value="Delete" />

@@ -20,15 +20,15 @@
 	<h2>Admin LogIn</h2>
 	<br>
 	<br>
-	<form action="adminlogin" method="post">
+	<form action="adminLogin" method="post">
 		<table class="center">
 			<tr>
 				<td>Admin Id :</td>
-				<td><input type="text" name="admin_id" /></td>
+				<td><input type="text" name="adminId" /></td>
 			</tr>
 			<tr>
 				<td>Admin Password :</td>
-				<td><input type="password" name="admin_password" /></td>
+				<td><input type="password" name="adminPassword" /></td>
 			</tr>
 			<tr>
 				<td><input type='submit' value='Login'></td>

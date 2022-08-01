@@ -16,19 +16,18 @@
 	<h3>Update user details</h3>
 	<div id="root">
 		<div id="form">
-			 <form:form action="updateuser" method="post" modelAttribute="updateuser">
+			 <form:form action="updateUser" method="post" modelAttribute="updateUser">
                 
                 <div>
-                UserId :<input type="hidden" id="user_id" name="user_id" >
-                <%-- UserId :<form:input path="user_id" /> --%>
+                UserId :<form:input path="userId" />
                 </div>
                 <br>
                 <div>
-                First Name : <form:input path="first_name" />
+                First Name : <form:input path="firstName" />
                 </div>
                 <br>
                 <div>
-                Last Name : <form:input path="last_name" />
+                Last Name : <form:input path="lastName" />
                 </div>
                 <br>
                 <div>
@@ -49,11 +48,11 @@
                 </div>
                 <br>
                 <div>
-                Mobile Number : <form:input path="mobile_number" name="phone" size="10" />
+                Mobile Number : <form:input path="mobileNumber" name="phone" size="10" />
                 </div>
                 <br>
                 <div>
-                User Password : <form:password path="user_password"/>
+                User Password : <form:password path="userPassword"/>
                 </div>
                 <br>
                 <div>

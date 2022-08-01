@@ -1,4 +1,4 @@
-package com.chainsys.epassManagementSystem.pojo;
+package com.chainsys.epassManagementSystem.model;
 
 import java.sql.Date;
 import javax.persistence.Column;
@@ -26,6 +26,8 @@ public class OutsideState {
 	private int pcrResultCertificateNumber;
 	@Column(name = "pcr_certificate_issued_by")
 	private String pcrCertificateIssuedBy;
+	@Column(name = "epass_id")
+	private String epassId;
 
 	public String getFromState() {
 		return fromState;
@@ -89,6 +91,14 @@ public class OutsideState {
 
 	public void setPcrCertificateIssuedBy(String pcrCertificateIssuedBy) {
 		this.pcrCertificateIssuedBy = pcrCertificateIssuedBy;
+	}
+
+	public String getEpassId() {
+		return epassId;
+	}
+
+	public void setEpassId(String epassId) {
+		this.epassId = epassId;
 	}
 
 }

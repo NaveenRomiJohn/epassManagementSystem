@@ -15,6 +15,6 @@
 	<br>
 	<br>
 	<a href="home">Home</a>
-	<a href="epassrequeststatus">Epass Registered Status</a>
+	<a href="epassRequestStatus">Epass Registered Status</a>
 </body>
 </html>

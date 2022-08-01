@@ -23,7 +23,7 @@
 		<a href="home">Home</a>
 	</div>
 	<div>
-		<a href="userlogin">UserLogIn</a>
+		<a href="userLogin">UserLogIn</a>
 	</div>
 </body>
 </html>

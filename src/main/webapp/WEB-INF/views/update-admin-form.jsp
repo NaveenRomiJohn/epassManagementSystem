@@ -15,30 +15,30 @@
 	<h3>Update Admin Details</h3>
 	<div id="root">
 		<div id="form">
-			<form:form action="updateadmin" method="post" modelAttribute="updateadmin">
+			<form:form action="updateAdmin" method="post" modelAttribute="updateAdmin">
 				
 				<div>
-				AdminId :<form:input path="admin_id" />
+				AdminId :<form:input path="adminId" />
 				</div>
 				<br>
 				<div>
-				Name : <form:input path="admin_name" />
+				Name : <form:input path="adminName" />
 				</div>
 				<br>
 				<div>
-				Email : <form:input path="admin_email" />
+				Email : <form:input path="adminEmail" />
 				</div>
 				<br>
 				<div>
-				Password : <form:password path="admin_password"/>
+				Password : <form:password path="adminPassword"/>
 				</div>
 				<br>
 				<div>
-				Date Of Joining : <form:input path="date_of_joining"/>
+				Date Of Joining : <form:input path="dateOfJoining"/>
 				</div>
 				<br>
 				<div>
-				Designation : <form:input path="admin_designation"/>
+				Designation : <form:input path="adminDesignation"/>
 				</div>
 				<br>
 				<div>

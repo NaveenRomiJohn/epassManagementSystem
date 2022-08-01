@@ -23,33 +23,31 @@ h1,h3{
 	<h3>Admin Registration form</h3>
 	<div id="root">
 		<div id="form">
-			<form:form action="addadmin" method="post" modelAttribute="addadmin">
+			<form:form action="addAdmin" method="post" modelAttribute="addAdmin">
 				<table>
 					<tr>
-						<td><form:label path="admin_id">AdminId: </form:label></td>
-						<td><form:input path="admin_id" /> <form:errors path="admin_id"
-								cssStyle="color:red" /></td>
+						<td><form:label path="adminId">AdminId: </form:label></td>
+						<td><form:input path="adminId" /></td>
 					</tr>
 					<tr>
-						<td><form:label path="admin_name">Name: </form:label></td>
-						<td><form:input path="admin_name" />
+						<td><form:label path="adminName">Name: </form:label></td>
+						<td><form:input path="adminName" />
 					</tr>
 					<tr>
-						<td><form:label path="admin_email">Email: </form:label></td>
-						<td><form:input type="email" path="admin_email" /></td>
+						<td><form:label path="adminEmail">Email: </form:label></td>
+						<td><form:input type="email" path="adminEmail" /></td>
 					</tr>
 					<tr>
-						<td><form:label path="admin_password">Password: </form:label></td>
-						<td><form:password path="admin_password" /> <form:errors
-								path="admin_password" cssStyle="color:red" /></td>
+						<td><form:label path="adminPassword">Password: </form:label></td>
+						<td><form:password path="adminPassword" /></td>
 					</tr>
 					<tr>
-						<td><form:label path="date_of_joining">Date of Joining: </form:label></td>
-						<td><form:input type="date" path="date_of_joining" />
+						<td><form:label path="dateOfJoining">Date of Joining: </form:label></td>
+						<td><form:input type="date" path="dateOfJoining" />
 					</tr>
 					<tr>
-						<td><form:label path="admin_designation">Designation: </form:label></td>
-						<td><form:input path="admin_designation" />
+						<td><form:label path="adminDesignation">Designation: </form:label></td>
+						<td><form:input path="adminDesignation" />
 					</tr>
 					<tr>
 					<td><input type="submit" value="Add Admin" />

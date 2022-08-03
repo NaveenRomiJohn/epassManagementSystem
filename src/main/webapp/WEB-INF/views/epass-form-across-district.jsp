@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>E-Pass User form</title>
+<title>Across District</title>
 <style>
 h1, h2, h3 {
 	text-align: center;
@@ -15,11 +15,11 @@ h1, h2, h3 {
 <body>
 	<h1>E-Pass Management System</h1>
 	<h3>Epass Registration form</h3>
-	<h2>Within District</h2>
+	<h2>Across District</h2>
 	<div id="root">
 		<div id="epassform">
-			<form:form action="registerwithindistrict" method="post"
-				modelAttribute="addepass">
+			<form:form action="registerwithindistrict" method="post">
+				<%-- modelAttribute="addepass" --%>
 				<div>
 					EpassId :
 					<form:input path="epassId" />
@@ -63,6 +63,23 @@ h1, h2, h3 {
 				<div>
 					Applied Date :
 					<form:input path="appliedDate" />
+				</div>
+			</form:form>
+		</div>
+		<div id="acrossdistrictform">
+			<form:form method="post" modelAttribute="adddistrict">
+				<div>
+					From District :
+					<form:input path="fromDistrict" />
+				</div>
+				<br>
+				<div>
+					To District :
+					<form:input path="toDistrict" />
+				</div>
+				<br>
+				<div>
+					<input type="submit" value="Submit" /> <input type="reset">
 				</div>
 			</form:form>
 		</div>
@@ -114,6 +131,7 @@ h1, h2, h3 {
 				</div>
 			</form:form>
 		</div>
+
 	</div>
 </body>
 </html>

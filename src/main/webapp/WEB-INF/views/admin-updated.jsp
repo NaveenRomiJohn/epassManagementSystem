@@ -17,8 +17,8 @@
 	<p>Admin details updated successfully</p>
 	<br>
 	<br>
-	<a href="epassRequests">Epass Requests</a>
+	<a href="epassrequests">Epass Requests</a>
 	<br>
-	<a href="allEpassDetails">All Epass details</a>
+	<a href="allepassdetails">All Epass details</a>
 </body>
 </html>

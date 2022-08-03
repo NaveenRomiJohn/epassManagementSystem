@@ -3,7 +3,10 @@ package com.chainsys.epassManagementSystem.model;
 import java.sql.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -22,8 +25,27 @@ public class Passengers {
 	private String idProofType;
 	@Column(name = "id_proof_number")
 	private long idProofNumber;
-	@Column(name = "user_id")
-	private String userId;
+	@Column(name = "epass_id")
+	private int epassId;
+
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="epass_id", insertable=false, updatable=false, nullable=false)
+	private EpassForm epassform;
+	
+	public EpassForm getEpassForm() {
+		return epassform;
+	}
+	public void setEpassForm(EpassForm epassform) {
+		this.epassform = epassform;
+	}
+	
+	public int getEpassId() {
+		return epassId;
+	}
+
+	public void setEpassId(int epassId) {
+		this.epassId = epassId;
+	}
 
 	public String getPassengerName() {
 		return passengerName;
@@ -71,14 +93,6 @@ public class Passengers {
 
 	public void setIdProofNumber(long idProofNumber) {
 		this.idProofNumber = idProofNumber;
-	}
-
-	public String getUserId() {
-		return userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
 	}
 
 }

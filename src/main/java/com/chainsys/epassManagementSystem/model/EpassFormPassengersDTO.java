@@ -1,24 +1,25 @@
 package com.chainsys.epassManagementSystem.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class EpassFormPassengersDTO {
 
-	private EpassForm epassForm;
-	private Passengers passengers;
-
-	public EpassForm getEpassForm() {
-		return epassForm;
+	private List<EpassForm> epassFormList=new ArrayList<EpassForm>();
+	private List<Passengers> passengersList=new ArrayList<Passengers>();
+	
+	public List<EpassForm> getEpassFormList() {
+		return epassFormList;
 	}
-
-	public void setEpassForm(EpassForm epassForm) {
-		this.epassForm = epassForm;
+	public void setEpassFormList(EpassForm epassForm) {
+		epassFormList.add(epassForm);
 	}
-
-	public Passengers getPassengers() {
-		return passengers;
+	public List<Passengers> getPassengers() {
+		return passengersList;
 	}
-
 	public void setPassengers(Passengers passengers) {
-		this.passengers = passengers;
+		passengersList.add(passengers);
 	}
+
 
 }

@@ -20,7 +20,7 @@
 	<h2>Admin LogIn</h2>
 	<br>
 	<br>
-	<form action="adminLogin" method="post">
+	<form action="adminlogin" method="post">
 		<table class="center">
 			<tr>
 				<td>Admin Id :</td>

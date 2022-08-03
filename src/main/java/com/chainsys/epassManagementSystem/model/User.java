@@ -4,13 +4,14 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Pattern;
 
 @Entity
 @Table(name = "epass_user")
 public class User {
 	@Id
 	@Column(name = "user_id")
-	private String userId;
+	private int userId;
 	@Column(name = "first_name")
 	private String firstName;
 	@Column(name = "last_name")
@@ -26,13 +27,14 @@ public class User {
 	@Column(name = "address")
 	private String address;
 	@Column(name = "user_password")
+	@Pattern(regexp="^[a-zA-Z0-9]{6}",message="length must be 6")  
 	private String userPassword;
 
-	public String getUserId() {
+	public int getUserId() {
 		return userId;
 	}
 
-	public void setUserId(String userId) {
+	public void setUserId(int userId) {
 		this.userId = userId;
 	}
 

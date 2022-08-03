@@ -27,7 +27,7 @@ public class OutsideState {
 	@Column(name = "pcr_certificate_issued_by")
 	private String pcrCertificateIssuedBy;
 	@Column(name = "epass_id")
-	private String epassId;
+	private int epassId;
 
 	public String getFromState() {
 		return fromState;
@@ -93,11 +93,11 @@ public class OutsideState {
 		this.pcrCertificateIssuedBy = pcrCertificateIssuedBy;
 	}
 
-	public String getEpassId() {
+	public int getEpassId() {
 		return epassId;
 	}
 
-	public void setEpassId(String epassId) {
+	public void setEpassId(int epassId) {
 		this.epassId = epassId;
 	}
 

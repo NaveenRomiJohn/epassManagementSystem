@@ -23,7 +23,7 @@ h1,h3{
 	<h3>Admin Registration form</h3>
 	<div id="root">
 		<div id="form">
-			<form:form action="addAdmin" method="post" modelAttribute="addAdmin">
+			<form:form action="addadmin" method="post" modelAttribute="addAdmin">
 				<table>
 					<tr>
 						<td><form:label path="adminId">AdminId: </form:label></td>

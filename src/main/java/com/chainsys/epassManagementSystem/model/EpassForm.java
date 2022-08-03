@@ -1,9 +1,12 @@
 package com.chainsys.epassManagementSystem.model;
 
 import java.sql.Date;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -11,7 +14,7 @@ import javax.persistence.Table;
 public class EpassForm {
 	@Id
 	@Column(name = "epass_id")
-	private String epassId;
+	private int epassId;
 	@Column(name = "travel_reason")
 	private String travelReason;
 	@Column(name = "from_date")
@@ -35,15 +38,26 @@ public class EpassForm {
 	@Column(name = "application_type")
 	private String applicationType;
 	@Column(name = "user_id")
-	private String userId;
+	private int userId;
 	@Column(name = "admin_id")
-	private String adminId;
+	private int adminId;
+	
+	@OneToMany(mappedBy="epassform" ,fetch=FetchType.LAZY)
+	private List<Passengers> listPass ;
+	
+	public List<Passengers> getListPass() {
+		return listPass;
+	}
 
-	public String getEpassId() {
+	public void setListPass(List<Passengers> listPass) {
+		this.listPass = listPass;
+	}
+
+	public int getEpassId() {
 		return epassId;
 	}
 
-	public void setEpassId(String epassId) {
+	public void setEpassId(int epassId) {
 		this.epassId = epassId;
 	}
 
@@ -135,19 +149,19 @@ public class EpassForm {
 		this.applicationType = applicationType;
 	}
 
-	public String getUserId() {
+	public int getUserId() {
 		return userId;
 	}
 
-	public void setUserId(String userId) {
+	public void setUserId(int userId) {
 		this.userId = userId;
 	}
 
-	public String getAdminId() {
+	public int getAdminId() {
 		return adminId;
 	}
 
-	public void setAdminId(String adminId) {
+	public void setAdminId(int adminId) {
 		this.adminId = adminId;
 	}
 

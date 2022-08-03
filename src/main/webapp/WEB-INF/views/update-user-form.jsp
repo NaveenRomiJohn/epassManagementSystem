@@ -16,7 +16,7 @@
 	<h3>Update user details</h3>
 	<div id="root">
 		<div id="form">
-			 <form:form action="updateUser" method="post" modelAttribute="updateUser">
+			 <form:form action="updateuser" method="post" modelAttribute="updateUser">
                 
                 <div>
                 UserId :<form:input path="userId" />

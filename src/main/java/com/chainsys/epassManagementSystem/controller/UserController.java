@@ -1,15 +1,16 @@
 package com.chainsys.epassManagementSystem.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
-
 import com.chainsys.epassManagementSystem.model.User;
 import com.chainsys.epassManagementSystem.service.UserService;
 
@@ -33,21 +34,26 @@ public class UserController {
 		return "add-user-form";
 	}
 
-	@PostMapping("/addUser")
-	public String addUser(@ModelAttribute("addUser") User user) {
-		userService.save(user);
-		return "user-registered";
+	@PostMapping("/adduser")
+	public String addUser(@Valid @ModelAttribute("addUser") User user, BindingResult br) {
+		if (br.hasErrors()) {
+			return "add-user-form";
+		} else {
+			userService.save(user);
+			return "user-registered";
+		}
+
 	}
 
 //	user update
-	@GetMapping("/updateUserForm")
+	@GetMapping("/updateuserform")
 	public String showUpdateForm(Model model) {
 		User user = new User();
 		model.addAttribute("updateUser", user);
 		return "update-user-form";
 	}
 
-	@PostMapping("/updateUser")
+	@PostMapping("/updateuser")
 	public String updateUser(@ModelAttribute("updateUser") User user) {
 		userService.save(user);
 		return "user-updated";
@@ -67,7 +73,7 @@ public class UserController {
 		return "user-login";
 	}
 
-	@GetMapping("/userLogin")
+	@GetMapping("/userlogin")
 	public String userLogin(@RequestParam("userId") String id, @RequestParam("userPassword") String password,
 			Model model) {
 

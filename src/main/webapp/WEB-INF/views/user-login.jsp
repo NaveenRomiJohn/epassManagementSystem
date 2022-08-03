@@ -20,7 +20,7 @@
 	<h2>User LogIn</h2>
 	<br>
 	<br>
-	<form action="userLogin">
+	<form action="userlogin">
 		<table class="center">
 			<tr>
 				<td>User Id :</td>
@@ -39,7 +39,7 @@
 	<br>
 	<h2>User Home</h2>
 	<div>
-		<a href="addUserForm">Add New User</a>
+		<a href="adduserform">Add New User</a>
 	</div>
 </body>
 </html>

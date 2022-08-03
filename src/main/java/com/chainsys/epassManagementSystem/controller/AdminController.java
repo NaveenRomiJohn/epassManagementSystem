@@ -17,12 +17,12 @@ public class AdminController {
 	public AdminService adminService;
 
 //	login
-	@RequestMapping("/adminLoginForm")
+	@RequestMapping("/adminloginform")
 	public String adminLoginForm() {
 		return "admin-login";
 	}
 
-	@RequestMapping("/adminLogin")
+	@RequestMapping("/adminlogin")
 	public String adminLogin(@RequestParam("adminId") String id, @RequestParam("adminPassword") String password,
 			Model model) {
 
@@ -34,7 +34,7 @@ public class AdminController {
 	}
 
 //	add admin
-	@GetMapping("/addAdminForm")
+	@GetMapping("/addadminform")
 	public String adminRegisterForm(Model model) {
 		Admin admin = new Admin();
 		model.addAttribute("addAdmin", admin);
@@ -52,38 +52,45 @@ public class AdminController {
 //        }
 //    }
 
-	@PostMapping("/addAdmin")
+	@PostMapping("/addadmin")
 	public String addAdmin(@ModelAttribute("addAdmin") Admin admin) {
 		adminService.save(admin);
 		return "admin-registered";
 	}
 
 //	update admin
-	@GetMapping("/updateAdminForm")
+	@GetMapping("/updateadminform")
 	public String showUpdateForm(Model model) {
 		Admin admin = new Admin();
 		model.addAttribute("updateAdmin", admin);
 		return "update-admin-form";
 	}
 
-	@PostMapping("/updateAdmin")
+	@PostMapping("/updateadmin")
 	public String updateAdmin(@ModelAttribute("updateAdmin") Admin admin) {
 		adminService.save(admin);
 		return "admin-updated";
 	}
 
 //	delete admin
-	@RequestMapping("/deleteAdminForm")
+	@RequestMapping("/deleteadminform")
 	public String deleteAdminForm() {
 		return "delete-admin";
 	}
 
-	@RequestMapping("/deleteAdmin")
+	@RequestMapping("/deleteadmin")
 	public String deleteAdmin(@RequestParam("adminId") int id) {
 		adminService.deleteById(id);
 		return "redirect:/adminLogin";
 	}
 
 //	epass requests
+	@GetMapping("/getepassrequestwithindistrict")
+	public String getAppointments(@RequestParam("id") int id, Model model) {
+		EpassFormPassengersDTO dto = adminService.getDoctorAndAppointments(id);
+		model.addAttribute("getdoc", dto.getDoctor());
+		model.addAttribute("applist", dto.getAppointments());
+		return "list-doctor-appointments";
+	}
 
 }

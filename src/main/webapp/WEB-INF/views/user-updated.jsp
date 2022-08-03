@@ -15,5 +15,9 @@
 	<h1>E-Pass Management System</h1>
 	<br>
 	<p>User details updated successfully</p>
+	<br>
+	<a href="epassformtype">Epass Request</a>
+	<br>
+	<a href="epassrequeststatus">Epass Request Status</a>
 </body>
 </html>

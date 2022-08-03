@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>E-Pass User form</title>
+<title>Outside State</title>
 <style>
 h1, h2, h3 {
 	text-align: center;
@@ -15,10 +15,10 @@ h1, h2, h3 {
 <body>
 	<h1>E-Pass Management System</h1>
 	<h3>Epass Registration form</h3>
-	<h2>Within District</h2>
+	<h2>Outside State</h2>
 	<div id="root">
 		<div id="epassform">
-			<form:form action="registerwithindistrict" method="post"
+			<form:form action="registeroutsidestate" method="post"
 				modelAttribute="addepass">
 				<div>
 					EpassId :
@@ -64,6 +64,60 @@ h1, h2, h3 {
 					Applied Date :
 					<form:input path="appliedDate" />
 				</div>
+			</form:form>
+		</div>
+		<div id="outsidedistrictform">
+			<form:form method="post" modelAttribute="outsidedistrict">
+				<div>
+					From State :
+					<form:input path="fromState" />
+				</div>
+				<br>
+				<div>
+					To State :
+					<form:input path="toState" />
+				</div>
+				<br>
+				<div>
+					Quarantine From date :
+					<form:input path="quarantineFromDate" />
+				</div>
+				<br>
+				<div>
+					Quarantine To date :
+					<form:input path="quarantineToDate" />
+				</div>
+				<br>
+				<div>
+					Quarantine Location :
+					<form:input path="quarantineLocation" />
+				</div>
+				<br>
+				<div>
+					Quarantine Locatione :
+					<form:input path="quarantineLocation" />
+				</div>
+				<br>
+				<div>
+					PCR Result Certificate Date :
+					<form:input path="pcrResultCertificateDate" />
+				</div>
+				<br>
+				<div>
+					PCR Result Certificate Number :
+					<form:input path="pcrResultCertificateNumber" />
+				</div>
+				<br>
+				<div>
+					PCR Certificate Issued by:
+					<form:select path="pcrCertificateIssuedBy">
+						<form:option value="Ghaziabad" label="Ghaziabad" />
+						<form:option value="Modinagar" label="Modinagar" />
+						<form:option value="Meerut" label="Meerut" />
+						<form:option value="Amristar" label="Amristar" />
+					</form:select>
+				</div>
+				<br>
 			</form:form>
 		</div>
 		<div id="passengerform">

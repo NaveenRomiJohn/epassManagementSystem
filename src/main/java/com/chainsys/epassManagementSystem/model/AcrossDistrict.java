@@ -10,17 +10,17 @@ import javax.persistence.Table;
 public class AcrossDistrict {
 	@Id
 	@Column(name = "user_id")
-	private String userId;
+	private int userId;
 	@Column(name = "from_district")
 	private String fromDistrict;
 	@Column(name = "to_district")
 	private String toDistrict;
 
-	public String getUserId() {
+	public int getUserId() {
 		return userId;
 	}
 
-	public void setUserId(String userId) {
+	public void setUserId(int userId) {
 		this.userId = userId;
 	}
 

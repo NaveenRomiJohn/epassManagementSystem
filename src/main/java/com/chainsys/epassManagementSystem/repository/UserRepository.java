@@ -1,13 +1,11 @@
 package com.chainsys.epassManagementSystem.repository;
 
-import java.util.List;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
-
+import org.springframework.stereotype.Repository;
 import com.chainsys.epassManagementSystem.model.User;
 
-public interface UserRepository extends CrudRepository<User, Integer>,JpaRepository<User, Integer>{
+@Repository
+public interface UserRepository extends CrudRepository<User, Integer>{
 	User save(User user);
 	User findById(int userId);
 	void deleteById(int userId);

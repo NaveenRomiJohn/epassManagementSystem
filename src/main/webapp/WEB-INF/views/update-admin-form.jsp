@@ -15,7 +15,7 @@
 	<h3>Update Admin Details</h3>
 	<div id="root">
 		<div id="form">
-			<form:form action="updateAdmin" method="post" modelAttribute="updateAdmin">
+			<form:form action="updateadmin" method="post" modelAttribute="updateAdmin">
 				
 				<div>
 				AdminId :<form:input path="adminId" />

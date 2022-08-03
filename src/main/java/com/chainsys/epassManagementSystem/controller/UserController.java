@@ -1,16 +1,17 @@
 package com.chainsys.epassManagementSystem.controller;
 
-import javax.validation.Valid;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.chainsys.epassManagementSystem.model.Passengers;
 import com.chainsys.epassManagementSystem.model.User;
 import com.chainsys.epassManagementSystem.service.UserService;
 
@@ -34,15 +35,20 @@ public class UserController {
 		return "add-user-form";
 	}
 
+//	@PostMapping("/adduser")
+//	public String addUser(@Valid @ModelAttribute("addUser") User user, BindingResult br) {
+//		if (br.hasErrors()) {
+//			return "add-user-form";
+//		} else {
+//			userService.save(user);
+//			return "user-registered";
+//		}
+//
+//	}
 	@PostMapping("/adduser")
-	public String addUser(@Valid @ModelAttribute("addUser") User user, BindingResult br) {
-		if (br.hasErrors()) {
-			return "add-user-form";
-		} else {
-			userService.save(user);
-			return "user-registered";
-		}
-
+	public String addUser(@ModelAttribute("addUser") User user) {
+		userService.save(user);
+		return "user-registered";
 	}
 
 //	user update
@@ -83,11 +89,11 @@ public class UserController {
 			return "user-login";
 		}
 	}
-
-//	@GetMapping(value = "/logout")
-//	public String logout_user(HttpSession session) {
-//		session.removeAttribute("userid");
-//		session.invalidate();
-//		return "redirect:/login";
-//	}
+//	all users	
+	@GetMapping("/getallusers")
+	public String getAllUsers(Model model) {
+		List<User> usersList = userService.getUsers();
+		model.addAttribute("allusers", usersList);
+		return "list-all-users";
+	}
 }

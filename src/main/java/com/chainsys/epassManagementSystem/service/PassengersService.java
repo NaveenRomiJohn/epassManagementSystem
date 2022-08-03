@@ -11,25 +11,27 @@ import com.chainsys.epassManagementSystem.repository.PassengersRepository;
 
 @Service
 public class PassengersService {
-	
+
 	@Autowired
 	private PassengersRepository passengersRepository;
-	
+
 	public Passengers save(Passengers passengers) {
 		return passengersRepository.save(passengers);
 	}
-	
-	public List<Passengers> getPassengers(){
-		List<Passengers> listPassengers=passengersRepository.findAll();
+
+	public List<Passengers> getPassengers() {
+		List<Passengers> listPassengers = passengersRepository.findAll();
 		return listPassengers;
 	}
-	
+
 	public Passengers findById(int id) {
 
 		return passengersRepository.findById(id);
 	}
+
 	@Transactional
 	public void deleteById(int id) {
 		passengersRepository.deleteById(id);
 	}
+
 }

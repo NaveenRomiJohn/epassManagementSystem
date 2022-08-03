@@ -10,11 +10,9 @@ import com.chainsys.epassManagementSystem.model.Passengers;
 public interface PassengersRepository extends CrudRepository<Passengers, Integer> {
 	
 	Passengers findById(int id);
-	@SuppressWarnings("unchecked")
 	Passengers save(Passengers passengers);
 	void deleteById(int id);
 	List<Passengers>findAll();
-//	List<Passengers> findByEpassId(int id);
-//	List<Passengers> findByUserId(int id);
-
+	List<Passengers> findByEpassformEpassId(int id);
+  
 }

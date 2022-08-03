@@ -1,10 +1,12 @@
 package com.chainsys.epassManagementSystem.model;
 
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.Pattern;
 
 @Entity
 @Table(name = "epass_user")
@@ -19,7 +21,7 @@ public class User {
 	@Column(name = "gender")
 	private String gender;
 	@Column(name = "age")
-	private Integer age;
+	private int age;
 	@Column(name = "email")
 	private String email;
 	@Column(name = "mobile_number")
@@ -27,8 +29,11 @@ public class User {
 	@Column(name = "address")
 	private String address;
 	@Column(name = "user_password")
-	@Pattern(regexp="^[a-zA-Z0-9]{6}",message="length must be 6")  
+//	@Pattern(regexp="^[a-zA-Z0-9]{6}",message="length must be 6")  
 	private String userPassword;
+
+	@OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+	List<EpassForm> ePassFrom;
 
 	public int getUserId() {
 		return userId;
@@ -62,11 +67,11 @@ public class User {
 		this.gender = gender;
 	}
 
-	public Integer getAge() {
+	public int getAge() {
 		return age;
 	}
 
-	public void setAge(Integer age) {
+	public void setAge(int age) {
 		this.age = age;
 	}
 
@@ -101,5 +106,4 @@ public class User {
 	public void setUserPassword(String userPassword) {
 		this.userPassword = userPassword;
 	}
-
 }

@@ -20,7 +20,7 @@ text-align: center;
 	<br>
 	<a href="epassrequests">Epass Requests</a>
 	<br>
-	<a href="allepassdetails">All Epass details</a>
+	<a href="getallepassform">All Epass details</a>
 	<br>
 	<a href="updateadminform">Update Admin</a>
 	<br>

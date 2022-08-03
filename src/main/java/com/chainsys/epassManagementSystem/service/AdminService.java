@@ -4,8 +4,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.chainsys.epassManagementSystem.model.Admin;
-import com.chainsys.epassManagementSystem.model.EpassForm;
-import com.chainsys.epassManagementSystem.model.EpassFormPassengersDTO;
 import com.chainsys.epassManagementSystem.repository.AdminRepository;
 
 @Service
@@ -30,10 +28,9 @@ public class AdminService {
 		adminRepository.deleteById(admin_id);
 	}
 	
-	public EpassFormPassengersDTO getEpassAndPassengersWithinDistrict() {
-		EpassForm epassForm=findAll();
-		
-		return null;
-		
-	}
+//	public EpassFormPassengersDTO getEpassAndPassengersWithinDistrict() {
+//		EpassForm epassForm=findAll();
+//		
+//		return null;
+//	}
 }

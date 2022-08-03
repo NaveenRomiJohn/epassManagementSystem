@@ -25,7 +25,6 @@ public class AdminController {
 	@RequestMapping("/adminlogin")
 	public String adminLogin(@RequestParam("adminId") String id, @RequestParam("adminPassword") String password,
 			Model model) {
-
 		if (id.equals("nave3121") && password.equals("chainsys3121")) {
 			return "admin-logged-in";
 		} else {
@@ -85,12 +84,12 @@ public class AdminController {
 	}
 
 //	epass requests
-	@GetMapping("/getepassrequestwithindistrict")
-	public String getAppointments(@RequestParam("id") int id, Model model) {
-		EpassFormPassengersDTO dto = adminService.getDoctorAndAppointments(id);
-		model.addAttribute("getdoc", dto.getDoctor());
-		model.addAttribute("applist", dto.getAppointments());
-		return "list-doctor-appointments";
-	}
+//	@GetMapping("/getepassrequestwithindistrict")
+//	public String getAppointments(@RequestParam("id") int id, Model model) {
+//		EpassFormPassengersDTO dto = adminService.getDoctorAndAppointments(id);
+//		model.addAttribute("getdoc", dto.getDoctor());
+//		model.addAttribute("applist", dto.getAppointments());
+//		return "list-doctor-appointments";
+//	}
 
 }

@@ -6,6 +6,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -33,25 +35,21 @@ public class EpassForm {
 	private Date approvedDate;
 	@Column(name = "from_address")
 	private String fromAddress;
-	@Column(name = "destinationAddress")
-	private String destination_address;
+	@Column(name = "destination_address")
+	private String destinationAddress;
 	@Column(name = "application_type")
 	private String applicationType;
 	@Column(name = "user_id")
 	private int userId;
 	@Column(name = "admin_id")
 	private int adminId;
-	
-	@OneToMany(mappedBy="epassform" ,fetch=FetchType.LAZY)
-	private List<Passengers> listPass ;
-	
-	public List<Passengers> getListPass() {
-		return listPass;
-	}
 
-	public void setListPass(List<Passengers> listPass) {
-		this.listPass = listPass;
-	}
+	@OneToMany(mappedBy = "epassform", fetch = FetchType.LAZY)
+	private List<Passengers> listPass;
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "user_id", insertable = false, updatable = false, nullable = false)
+	private User user;
 
 	public int getEpassId() {
 		return epassId;
@@ -133,12 +131,12 @@ public class EpassForm {
 		this.fromAddress = fromAddress;
 	}
 
-	public String getDestination_address() {
-		return destination_address;
+	public String getDestinationAddress() {
+		return destinationAddress;
 	}
 
-	public void setDestination_address(String destination_address) {
-		this.destination_address = destination_address;
+	public void setDestinationAddress(String destinationAddress) {
+		this.destinationAddress = destinationAddress;
 	}
 
 	public String getApplicationType() {
@@ -165,4 +163,19 @@ public class EpassForm {
 		this.adminId = adminId;
 	}
 
+	public List<Passengers> getListPass() {
+		return listPass;
+	}
+
+	public void setListPass(List<Passengers> listPass) {
+		this.listPass = listPass;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
 }

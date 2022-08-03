@@ -13,6 +13,10 @@ import javax.persistence.Table;
 @Table(name = "epass_passengers")
 public class Passengers {
 	@Id
+	@Column(name = "id_proof_number")
+	private long idProofNumber;
+	@Column(name = "epass_id")
+	private int epassId;
 	@Column(name = "passenger_name")
 	private String passengerName;
 	@Column(name = "date_of_birth")
@@ -23,22 +27,11 @@ public class Passengers {
 	private String covidSymptoms;
 	@Column(name = "id_proof_type")
 	private String idProofType;
-	@Column(name = "id_proof_number")
-	private long idProofNumber;
-	@Column(name = "epass_id")
-	private int epassId;
-
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="epass_id", insertable=false, updatable=false, nullable=false)
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "epass_id", insertable = false, updatable = false, nullable = false)
 	private EpassForm epassform;
-	
-	public EpassForm getEpassForm() {
-		return epassform;
-	}
-	public void setEpassForm(EpassForm epassform) {
-		this.epassform = epassform;
-	}
-	
+
 	public int getEpassId() {
 		return epassId;
 	}
@@ -95,4 +88,11 @@ public class Passengers {
 		this.idProofNumber = idProofNumber;
 	}
 
+	public EpassForm getEpassform() {
+		return epassform;
+	}
+
+	public void setEpassform(EpassForm epassform) {
+		this.epassform = epassform;
+	}
 }

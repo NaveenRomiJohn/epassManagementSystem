@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,9 +11,10 @@
 h1, h2, h3 {
 	text-align: center;
 }
+
 table, th, td {
-  border: 2px solid black;
-  border-collapse: collapse;
+	border: 2px solid black;
+	border-collapse: collapse;
 }
 </style>
 </head>
@@ -22,8 +24,7 @@ table, th, td {
 	<h2>Within District</h2>
 	<div id="root">
 		<div id="epassform">
-			<form:form action="registerwithindistrict" method="post"
-				modelAttribute="addepass">
+			<form:form action="" method="post" modelAttribute="getepass">
 				<div>
 					EpassId :
 					<form:input path="epassId" />
@@ -70,6 +71,33 @@ table, th, td {
 				</div>
 			</form:form>
 		</div>
-		
+	</div>
+	<div id="passengers">
+		<table>
+			<thead>
+				<tr>
+					<th>Passenger Name</th>
+					<th>Gender</th>
+					<th>Date Of Birth</th>
+					<th>Covid Symptoms</th>
+					<th>Id Proof Type</th>
+					<th>Id proof Number</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach var="passengers" items="${getpassengers}">
+					<!-- var-variables,items-collection -->
+					<tr>
+						<td>${passengers.passengerName}</td>
+						<td>${passengers.passengerGender}</td>
+						<td>${passengers.dateOfBirth}</td>
+						<td>${passengers.covidSymptoms}</td>
+						<td>${passengers.idProofType}</td>
+						<td>${passengers.idProofNumber}</td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+	</div>
 </body>
 </html>

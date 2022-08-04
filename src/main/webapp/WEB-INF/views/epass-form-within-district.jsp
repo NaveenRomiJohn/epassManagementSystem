@@ -10,20 +10,21 @@
 h1, h2, h3 {
 	text-align: center;
 }
+
 table, th, td {
-  border: 2px solid black;
-  border-collapse: collapse;
+	border: 2px solid black;
+	border-collapse: collapse;
 }
 </style>
 </head>
 <body>
 	<h1>E-Pass Management System</h1>
-	<h3>Epass Registration form</h3>
-	<h2>Within District</h2>
+	<h2>Epass Registration form</h2>
+	<h3>Within District</h3>
 	<div id="root">
 		<div id="epassform">
 			<form:form action="registerwithindistrict" method="post"
-				modelAttribute="addepass">
+				modelAttribute="epasswithindistrict">
 				<div>
 					EpassId :
 					<form:input path="epassId" />
@@ -68,8 +69,56 @@ table, th, td {
 					Applied Date :
 					<form:input path="appliedDate" />
 				</div>
+			<%-- </form:form>
+		</div>
+		<div id="passengerform">
+			<form:form method="post" modelAttribute="addpassengers"> --%>
+				<%-- <div>
+					Passenger Name :
+					<form:input path="passengerName" />
+				</div>
+				<br>
+				<div>
+					Gender :
+					<form:radiobutton path="passengerGender" value="Male" />
+					Male
+					<form:radiobutton path="passengerGender" value="Female" />
+					Female
+				</div>
+				<br>
+				<div>
+					Date of Birth :
+					<form:input path="dateOfBirth" />
+				</div>
+				<br>
+				<div>
+					Id Proof Type :
+					<form:radiobutton path="idProofType" value="Aadhar Card" />
+					Aadhar Card
+					<form:radiobutton path="idProofType" value="Driving License" />
+					Driving License
+					<form:radiobutton path="idProofType" value="Ration Card" />
+					Ration Card
+				</div>
+				<br>
+				<div>
+					Id Proof Number :
+					<form:input path="idProofNumber" />
+				</div>
+				<br>
+				<div>
+					Covid Symptoms :
+					<form:radiobutton path="covidSymptoms" value="Yes" />
+					Yes
+					<form:radiobutton path="covidSymptoms" value="No" />
+					No
+				</div> --%>
+				<br>
+				<div>
+					<input type="submit" value="Submit" /> <input type="reset">
+				</div>
 			</form:form>
 		</div>
-		
+	</div>
 </body>
 </html>

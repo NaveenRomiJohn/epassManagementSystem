@@ -12,7 +12,7 @@ public interface PassengersRepository extends CrudRepository<Passengers, Integer
 	Passengers findById(int id);
 	Passengers save(Passengers passengers);
 	void deleteById(int id);
-	List<Passengers>findAll();
+	List<Passengers> findAll();
 	List<Passengers> findByEpassformEpassId(int id);
   
 }

@@ -9,9 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
-import com.chainsys.epassManagementSystem.model.Passengers;
 import com.chainsys.epassManagementSystem.model.User;
 import com.chainsys.epassManagementSystem.service.UserService;
 
@@ -66,7 +63,6 @@ public class UserController {
 	}
 
 //	delete user
-
 //	@GetMapping("/deleteuser")
 //	public String deleteUser(@RequestParam("userid") int id) {
 //		userService.deleteById(id);
@@ -74,21 +70,22 @@ public class UserController {
 //	}
 
 //	user login
-	@RequestMapping("/userloginform")
-	public String getLogin() {
+	@GetMapping("/userloginform")
+	public String uerLoginForm(Model model) {
+		User user = new User();
+		model.addAttribute("userlogin", user);
 		return "user-login";
 	}
 
-	@GetMapping("/userlogin")
-	public String userLogin(@RequestParam("userId") String id, @RequestParam("userPassword") String password,
-			Model model) {
+//	@GetMapping("/userlogin")
+//	public String userLogin(@ModelAttribute("userlogin") User user) {
+//		User user1 = userService.getUserByIdAndPassword(user.getUserId(), user.getUserPassword());
+//		if (user1 != null)
+//			return "user-logged-in";
+//		else
+//			return "redirect:/userloginform";
+//	}
 
-		if (id.equals("user100") && password.equals("arav100")) {
-			return "user-logged-in";
-		} else {
-			return "user-login";
-		}
-	}
 //	all users	
 	@GetMapping("/getallusers")
 	public String getAllUsers(Model model) {

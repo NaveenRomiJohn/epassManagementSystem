@@ -20,7 +20,7 @@ s<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	<h2>User LogIn</h2>
 	<br>
 	<br>
-	<form action="userlogin">
+	<form action="userlogin" modelAttribute="userlogin">
 		<table class="center">
 			<tr>
 				<td>User Id :</td>

@@ -11,6 +11,7 @@
 h1, h2, h3 {
 	text-align: center;
 }
+
 table, th, td {
 	border: 2px solid black;
 	border-collapse: collapse;
@@ -23,7 +24,7 @@ table, th, td {
 <body>
 	<h1>E-Pass Management System</h1>
 	<h2>Epass Form</h2>
-	<h3>Within District</h3>
+	<h3>Across District</h3>
 
 	<div id="Table root">
 		<table>
@@ -53,35 +54,28 @@ table, th, td {
 					<td>${epass.destinationAddress}</td>
 				</tr>
 			</tbody>
+
 		</table>
 	</div>
 
-	<div id="passengers">
+	<div id="Across District table">
 		<table>
 			<thead>
 				<tr>
-					<th>Passenger Name</th>
-					<th>Gender</th>
-					<th>Date Of Birth</th>
-					<th>Covid Symptoms</th>
-					<th>Id Proof Type</th>
-					<th>Id proof Number</th>
+					<th>From District</th>
+					<th>To District</th>
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="passengers" items="${getpassengers}">
-					<!-- var-variables,items-collection -->
+				<c:forEach var="across" items="${acrossdistrict}">
 					<tr>
-						<td>${passengers.passengerName}</td>
-						<td>${passengers.passengerGender}</td>
-						<td>${passengers.dateOfBirth}</td>
-						<td>${passengers.covidSymptoms}</td>
-						<td>${passengers.idProofType}</td>
-						<td>${passengers.idProofNumber}</td>
+						<td>${across.fromDistrict}</td>
+						<td>${across.toDistrict}</td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
 	</div>
+
 </body>
 </html>

@@ -1,12 +1,16 @@
-package com.chainsys.epassManagementSystem.model;
+package com.chainsys.epassManagementSystem.dto;
 
 import java.util.List;
+
+import com.chainsys.epassManagementSystem.model.EpassForm;
+import com.chainsys.epassManagementSystem.model.Passengers;
 
 public class EpassFormPassengersDTO {
 
 	private EpassForm epassForm;
 	private List<Passengers> passengers;
-
+	private List<EpassForm> epassList;
+	
 	public EpassForm getEpassForm() {
 		return epassForm;
 	}
@@ -21,6 +25,14 @@ public class EpassFormPassengersDTO {
 
 	public void setPassengers(List<Passengers> passengers) {
 		this.passengers = passengers;
+	}
+
+	public List<EpassForm> getEpassList() {
+		return epassList;
+	}
+
+	public void setEpassList(List<EpassForm> epassList) {
+		this.epassList = epassList;
 	}
 	
 }

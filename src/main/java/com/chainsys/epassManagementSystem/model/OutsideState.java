@@ -3,7 +3,10 @@ package com.chainsys.epassManagementSystem.model;
 import java.sql.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -29,6 +32,10 @@ public class OutsideState {
 	@Column(name = "epass_id")
 	private int epassId;
 
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "epass_id", insertable = false, updatable = false, nullable = false)
+	private EpassForm epassForm;
+	
 	public String getFromState() {
 		return fromState;
 	}
@@ -99,6 +106,14 @@ public class OutsideState {
 
 	public void setEpassId(int epassId) {
 		this.epassId = epassId;
+	}
+
+	public EpassForm getEpassForm() {
+		return epassForm;
+	}
+
+	public void setEpassForm(EpassForm epassForm) {
+		this.epassForm = epassForm;
 	}
 
 }

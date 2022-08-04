@@ -3,6 +3,7 @@ package com.chainsys.epassManagementSystem.service;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import com.chainsys.epassManagementSystem.model.Admin;
 import com.chainsys.epassManagementSystem.repository.AdminRepository;
 
@@ -11,6 +12,7 @@ public class AdminService {
 	@Autowired
 	private AdminRepository adminRepository;
 
+	@Transactional
 	public Admin save(Admin admin) {
 		return adminRepository.save(admin);
 	}
@@ -24,13 +26,9 @@ public class AdminService {
 		return adminRepository.findById(admin_id);
 	}
 
+	@Transactional
 	public void deleteById(int admin_id) {
 		adminRepository.deleteById(admin_id);
 	}
 	
-//	public EpassFormPassengersDTO getEpassAndPassengersWithinDistrict() {
-//		EpassForm epassForm=findAll();
-//		
-//		return null;
-//	}
 }

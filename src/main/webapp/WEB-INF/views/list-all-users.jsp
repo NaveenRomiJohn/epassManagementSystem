@@ -9,16 +9,21 @@
 <title>Users List</title>
 <style>
 table, th, td {
-  border: 2px solid black;
-  border-collapse: collapse;
+	border: 2px solid black;
+	border-collapse: collapse;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
 }
 </style>
 </head>
 <body>
+	<h1>E-Pass Management System</h1>
+	<h2>Users List</h2>
 	<div id="Table root"></div>
-	<table>
+	<table style="width: 1000px" style="text-align:center">
 		<thead>
-			<tr>
+			<tr style="text-align: center">
 				<th>User Id</th>
 				<th>First Name</th>
 				<th>Last Name</th>

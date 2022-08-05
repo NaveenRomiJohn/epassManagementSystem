@@ -1,5 +1,7 @@
 package com.chainsys.epassManagementSystem.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,12 +11,24 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.chainsys.epassManagementSystem.model.Admin;
+import com.chainsys.epassManagementSystem.model.EpassForm;
+import com.chainsys.epassManagementSystem.model.Passengers;
+import com.chainsys.epassManagementSystem.model.User;
 import com.chainsys.epassManagementSystem.service.AdminService;
+import com.chainsys.epassManagementSystem.service.EpassFormService;
+import com.chainsys.epassManagementSystem.service.PassengersService;
+import com.chainsys.epassManagementSystem.service.UserService;
 
 @Controller
 public class AdminController {
 	@Autowired
 	public AdminService adminService;
+	@Autowired
+	public EpassFormService epassFormService;
+	@Autowired
+	public PassengersService passengersService;
+	@Autowired
+	public UserService userService;
 
 //	login
 	@RequestMapping("/adminloginform")
@@ -91,5 +105,21 @@ public class AdminController {
 //		model.addAttribute("applist", dto.getAppointments());
 //		return "list-doctor-appointments";
 //	}
+
+	@GetMapping("/allepasswithpassengers")
+	public String getAllPassengers(Model model) {
+		List<EpassForm> epassFormList = epassFormService.getAllEpassForm();
+		List<Passengers> passengers = passengersService.getPassengers();
+		model.addAttribute("allepassform", epassFormList);
+		model.addAttribute("allpassengers", passengers);
+		return "list-all-epassform";
+	}
+	
+	@GetMapping("/allusers")
+	public String getAllUsers(Model model) {
+		List<User> user = userService.getUsers();
+		model.addAttribute("allusers", user);
+		return "list-all-users";
+	}
 
 }

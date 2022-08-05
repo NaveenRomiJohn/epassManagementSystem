@@ -14,9 +14,9 @@ import javax.persistence.Table;
 public class Passengers {
 	@Id
 	@Column(name = "id_proof_number")
-	private long idProofNumber;
+	private Integer idProofNumber;
 	@Column(name = "epass_id")
-	private int epassId;
+	private Integer epassId;
 	@Column(name = "passenger_name")
 	private String passengerName;
 	@Column(name = "date_of_birth")
@@ -32,11 +32,11 @@ public class Passengers {
 	@JoinColumn(name = "epass_id", insertable = false, updatable = false, nullable = false)
 	private EpassForm epassform;
 
-	public int getEpassId() {
+	public Integer getEpassId() {
 		return epassId;
 	}
 
-	public void setEpassId(int epassId) {
+	public void setEpassId(Integer epassId) {
 		this.epassId = epassId;
 	}
 
@@ -80,11 +80,11 @@ public class Passengers {
 		this.idProofType = idProofType;
 	}
 
-	public long getIdProofNumber() {
+	public Integer getIdProofNumber() {
 		return idProofNumber;
 	}
 
-	public void setIdProofNumber(long idProofNumber) {
+	public void setIdProofNumber(Integer idProofNumber) {
 		this.idProofNumber = idProofNumber;
 	}
 

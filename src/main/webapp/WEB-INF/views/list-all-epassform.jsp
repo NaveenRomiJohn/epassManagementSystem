@@ -8,18 +8,22 @@
 <meta charset="ISO-8859-1">
 <title>All EPass Form</title>
 <style>
+h1, h2, h3 {
+	text-align: center;
+}
+
 table, th, td {
 	border: 2px solid black;
 	border-collapse: collapse;
-}
-* {
+	margin-left: auto;
+	margin-right: auto;
 	text-align: center;
 }
 </style>
 </head>
 <body>
 <h1>E-Pass Management System</h1>
-	<h3>Epass List</h3>
+	<h2>All Epass List</h2>
 	<div id="Table root">
 		<table>
 			<thead>
@@ -48,6 +52,36 @@ table, th, td {
 						<td>${epass.appliedDate}</td>
 						<td>${epass.fromAddress}</td>
 						<td>${epass.destinationAddress}</td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+	</div>
+	<br>
+	<div id="Table root">
+		<table>
+			<thead>
+				<tr>
+					<th>Epass Id</th>
+					<th>Passenger Name</th>
+					<th>Gender</th>
+					<th>Date Of Birth</th>
+					<th>Covid Symptoms</th>
+					<th>Id Proof Type</th>
+					<th>Id proof Number</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach var="passengers" items="${allpassengers}">
+					<!-- var-variables,items-collection -->
+					<tr>
+						<td>${passengers.epassId}</td>
+						<td>${passengers.passengerName}</td>
+						<td>${passengers.passengerGender}</td>
+						<td>${passengers.dateOfBirth}</td>
+						<td>${passengers.covidSymptoms}</td>
+						<td>${passengers.idProofType}</td>
+						<td>${passengers.idProofNumber}</td>
 					</tr>
 				</c:forEach>
 			</tbody>

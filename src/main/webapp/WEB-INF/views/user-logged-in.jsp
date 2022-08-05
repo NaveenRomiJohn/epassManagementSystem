@@ -21,7 +21,5 @@ text-align: center;
 	<a href="epassrequeststatus">Epass Request Status</a>
 	<br>
 	<a href="updateuserform">Update User details</a>
-	<br>
-	<a href="deleteuser">Delete user</a>
 </body>
 </html>

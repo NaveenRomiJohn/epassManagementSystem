@@ -16,9 +16,9 @@ import javax.persistence.Table;
 public class AcrossDistrict {
 	@Id
 	@Column(name = "district_id")
-	private int districtId;
+	private Integer districtId;
 	@Column(name = "epass_id")
-	private int epassId;
+	private Integer epassId;
 	@Column(name = "from_district")
 	private String fromDistrict;
 	@Column(name = "to_district")
@@ -31,19 +31,19 @@ public class AcrossDistrict {
 	@JoinColumn(name = "epass_id", insertable = false, updatable = false, nullable = false)
 	private EpassForm epassForm;
 	
-	public int getDistrictId() {
+	public Integer getDistrictId() {
 		return districtId;
 	}
 
-	public void setDistrictId(int districtId) {
+	public void setDistrictId(Integer districtId) {
 		this.districtId = districtId;
 	}
 
-	public int getEpassId() {
+	public Integer getEpassId() {
 		return epassId;
 	}
 
-	public void setEpassId(int epassId) {
+	public void setEpassId(Integer epassId) {
 		this.epassId = epassId;
 	}
 

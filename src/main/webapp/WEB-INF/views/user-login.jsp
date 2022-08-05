@@ -1,4 +1,4 @@
-s<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
@@ -20,7 +20,7 @@ s<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	<h2>User LogIn</h2>
 	<br>
 	<br>
-	<form action="userlogin" modelAttribute="userlogin">
+	<form action="userlogin" method="get" modelAttribute="userlogin">
 		<table class="center">
 			<tr>
 				<td>User Id :</td>

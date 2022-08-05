@@ -18,9 +18,9 @@ text-align: center;
 	<br>
 	<a href="addadminform">Add new Admin</a>
 	<br>
-	<a href="epassrequests">Epass Requests</a>
+	<a href="allusers">All User Deatils</a>
 	<br>
-	<a href="getallepassform">All Epass details</a>
+	<a href="allepasswithpassengers">All Epass details</a>
 	<br>
 	<a href="updateadminform">Update Admin</a>
 	<br>

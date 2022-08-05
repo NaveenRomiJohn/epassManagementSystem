@@ -26,11 +26,11 @@ public class OutsideState {
 	@Column(name = "pcr_result_certificate_date")
 	private Date pcrResultCertificateDate;
 	@Column(name = "pcr_result_certificate_number")
-	private int pcrResultCertificateNumber;
+	private Integer pcrResultCertificateNumber;
 	@Column(name = "pcr_certificate_issued_by")
 	private String pcrCertificateIssuedBy;
 	@Column(name = "epass_id")
-	private int epassId;
+	private Integer epassId;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "epass_id", insertable = false, updatable = false, nullable = false)
@@ -84,11 +84,11 @@ public class OutsideState {
 		this.pcrResultCertificateDate = pcrResultCertificateDate;
 	}
 
-	public int getPcrResultCertificateNumber() {
+	public Integer getPcrResultCertificateNumber() {
 		return pcrResultCertificateNumber;
 	}
 
-	public void setPcrResultCertificateNumber(int pcrResultCertificateNumber) {
+	public void setPcrResultCertificateNumber(Integer pcrResultCertificateNumber) {
 		this.pcrResultCertificateNumber = pcrResultCertificateNumber;
 	}
 
@@ -100,11 +100,11 @@ public class OutsideState {
 		this.pcrCertificateIssuedBy = pcrCertificateIssuedBy;
 	}
 
-	public int getEpassId() {
+	public Integer getEpassId() {
 		return epassId;
 	}
 
-	public void setEpassId(int epassId) {
+	public void setEpassId(Integer epassId) {
 		this.epassId = epassId;
 	}
 

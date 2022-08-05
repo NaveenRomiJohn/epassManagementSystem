@@ -16,7 +16,7 @@ import javax.persistence.Table;
 public class EpassForm {
 	@Id
 	@Column(name = "epass_id")
-	private int epassId;
+	private Integer epassId;
 	@Column(name = "travel_reason")
 	private String travelReason;
 	@Column(name = "from_date")
@@ -26,7 +26,7 @@ public class EpassForm {
 	@Column(name = "vehicle_number")
 	private String vehicleNumber;
 	@Column(name = "number_of_passengers")
-	private int numberOfPassengers;
+	private Integer numberOfPassengers;
 	@Column(name = "applied_date")
 	private Date appliedDate;
 	@Column(name = "approval_status")
@@ -40,11 +40,11 @@ public class EpassForm {
 	@Column(name = "application_type")
 	private String applicationType;
 	@Column(name = "user_id")
-	private int userId;
+	private Integer userId;
 	@Column(name = "admin_id")
-	private int adminId;
+	private Integer adminId;
 	@Column(name = "district_id")
-	private int districtId;
+	private Integer districtId;
 
 	@OneToMany(mappedBy = "epassform", fetch = FetchType.LAZY)
 	private List<Passengers> listPass;
@@ -59,11 +59,11 @@ public class EpassForm {
 	@OneToMany(mappedBy = "epassForm", fetch = FetchType.LAZY)
 	private List<OutsideState> outsideState;
 	
-	public int getEpassId() {
+	public Integer getEpassId() {
 		return epassId;
 	}
 
-	public void setEpassId(int epassId) {
+	public void setEpassId(Integer epassId) {
 		this.epassId = epassId;
 	}
 
@@ -99,11 +99,11 @@ public class EpassForm {
 		this.vehicleNumber = vehicleNumber;
 	}
 
-	public int getNumberOfPassengers() {
+	public Integer getNumberOfPassengers() {
 		return numberOfPassengers;
 	}
 
-	public void setNumberOfPassengers(int numberOfPassengers) {
+	public void setNumberOfPassengers(Integer numberOfPassengers) {
 		this.numberOfPassengers = numberOfPassengers;
 	}
 
@@ -155,19 +155,19 @@ public class EpassForm {
 		this.applicationType = applicationType;
 	}
 
-	public int getUserId() {
+	public Integer getUserId() {
 		return userId;
 	}
 
-	public void setUserId(int userId) {
+	public void setUserId(Integer userId) {
 		this.userId = userId;
 	}
 
-	public int getAdminId() {
+	public Integer getAdminId() {
 		return adminId;
 	}
 
-	public void setAdminId(int adminId) {
+	public void setAdminId(Integer adminId) {
 		this.adminId = adminId;
 	}
 
@@ -187,11 +187,11 @@ public class EpassForm {
 		this.user = user;
 	}
 
-	public int getDistrictId() {
+	public Integer getDistrictId() {
 		return districtId;
 	}
 
-	public void setDistrictId(int districtId) {
+	public void setDistrictId(Integer districtId) {
 		this.districtId = districtId;
 	}
 

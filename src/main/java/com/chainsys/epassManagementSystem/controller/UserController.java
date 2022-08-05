@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import com.chainsys.epassManagementSystem.model.User;
 import com.chainsys.epassManagementSystem.service.UserService;
 
@@ -77,20 +79,13 @@ public class UserController {
 		return "user-login";
 	}
 
-//	@GetMapping("/userlogin")
-//	public String userLogin(@ModelAttribute("userlogin") User user) {
-//		User user1 = userService.getUserByIdAndPassword(user.getUserId(), user.getUserPassword());
-//		if (user1 != null)
-//			return "user-logged-in";
-//		else
-//			return "redirect:/userloginform";
-//	}
-
-//	all users	
-	@GetMapping("/getallusers")
-	public String getAllUsers(Model model) {
-		List<User> usersList = userService.getUsers();
-		model.addAttribute("allusers", usersList);
-		return "list-all-users";
+	@GetMapping("/userlogin")
+	public String userLogin(@RequestParam("userId") String id,@RequestParam("userPassword") String pass) {
+		if (id.equals("100") && pass.equals("user100")) {
+			return "user-logged-in";
+		} else {
+			return "userloginform";
+		}
 	}
+
 }

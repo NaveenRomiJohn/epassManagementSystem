@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ page import="java.io.*,java.util.*, javax.servlet.*,java.sql.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +15,13 @@ h1, h2, h3 {
 table, th, td {
 	border: 2px solid black;
 	border-collapse: collapse;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+* {
+	text-align: center;
 }
 </style>
 </head>
@@ -23,11 +31,17 @@ table, th, td {
 	<h3>Within District</h3>
 	<div id="root">
 		<div id="epassform">
-			<form:form action="registerwithindistrict" method="post"
+			<form:form action="passengerswithindistrict" method="get"
 				modelAttribute="epasswithindistrict">
+				
+				<div>
+				User Id:
+					<form:input path="userId"  />
+				</div>
+				<br>
 				<div>
 					EpassId :
-					<form:input path="epassId" />
+					<form:input path="epassId" name="epassId" />
 				</div>
 				<br>
 				<div>
@@ -37,12 +51,12 @@ table, th, td {
 				<br>
 				<div>
 					From Date :
-					<form:input path="fromDate" />
+					<form:input path="fromDate" type="date" />
 				</div>
 				<br>
 				<div>
 					To Date :
-					<form:input path="toDate" />
+					<form:input path="toDate" type="date" />
 				</div>
 				<br>
 				<div>
@@ -65,54 +79,27 @@ table, th, td {
 					<form:input path="numberOfPassengers" />
 				</div>
 				<br>
+
 				<div>
 					Applied Date :
-					<form:input path="appliedDate" />
+					<form:input path="appliedDate" type="date" />
 				</div>
-			<%-- </form:form>
-		</div>
-		<div id="passengerform">
-			<form:form method="post" modelAttribute="addpassengers"> --%>
+				<br>
+				<div>
+					<form:hidden path="approvalStatus" value="processing" />
+				</div>
 				<%-- <div>
-					Passenger Name :
-					<form:input path="passengerName" />
-				</div>
-				<br>
-				<div>
-					Gender :
-					<form:radiobutton path="passengerGender" value="Male" />
-					Male
-					<form:radiobutton path="passengerGender" value="Female" />
-					Female
-				</div>
-				<br>
-				<div>
-					Date of Birth :
-					<form:input path="dateOfBirth" />
-				</div>
-				<br>
-				<div>
-					Id Proof Type :
-					<form:radiobutton path="idProofType" value="Aadhar Card" />
-					Aadhar Card
-					<form:radiobutton path="idProofType" value="Driving License" />
-					Driving License
-					<form:radiobutton path="idProofType" value="Ration Card" />
-					Ration Card
-				</div>
-				<br>
-				<div>
-					Id Proof Number :
-					<form:input path="idProofNumber" />
-				</div>
-				<br>
-				<div>
-					Covid Symptoms :
-					<form:radiobutton path="covidSymptoms" value="Yes" />
-					Yes
-					<form:radiobutton path="covidSymptoms" value="No" />
-					No
+					<form:hidden path="approvedDate" value= />
 				</div> --%>
+				<div>
+					<form:hidden path="districtId" value="" />
+				</div>
+				<div>
+					<form:hidden path="adminId" value="200" />
+				</div>
+				<div>
+					<form:hidden path="applicationType" value="Within District" />
+				</div>
 				<br>
 				<div>
 					<input type="submit" value="Submit" /> <input type="reset">

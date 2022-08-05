@@ -13,7 +13,7 @@ import javax.persistence.Table;
 public class User {
 	@Id
 	@Column(name = "user_id")
-	private int userId;
+	private Integer userId;
 	@Column(name = "first_name")
 	private String firstName;
 	@Column(name = "last_name")
@@ -21,11 +21,11 @@ public class User {
 	@Column(name = "gender")
 	private String gender;
 	@Column(name = "age")
-	private int age;
+	private Integer age;
 	@Column(name = "email")
 	private String email;
 	@Column(name = "mobile_number")
-	private long mobileNumber;
+	private Long mobileNumber;
 	@Column(name = "address")
 	private String address;
 	@Column(name = "user_password")
@@ -35,11 +35,11 @@ public class User {
 	@OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
 	List<EpassForm> ePassFrom;
 
-	public int getUserId() {
+	public Integer getUserId() {
 		return userId;
 	}
 
-	public void setUserId(int userId) {
+	public void setUserId(Integer userId) {
 		this.userId = userId;
 	}
 
@@ -67,11 +67,11 @@ public class User {
 		this.gender = gender;
 	}
 
-	public int getAge() {
+	public Integer getAge() {
 		return age;
 	}
 
-	public void setAge(int age) {
+	public void setAge(Integer age) {
 		this.age = age;
 	}
 
@@ -83,11 +83,11 @@ public class User {
 		this.email = email;
 	}
 
-	public long getMobileNumber() {
+	public Long getMobileNumber() {
 		return mobileNumber;
 	}
 
-	public void setMobileNumber(long mobileNumber) {
+	public void setMobileNumber(Long mobileNumber) {
 		this.mobileNumber = mobileNumber;
 	}
 

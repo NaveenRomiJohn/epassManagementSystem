@@ -23,10 +23,10 @@ public class EpassFormService {
 
 	@Autowired
 	private PassengersRepository passengersRepositry;
-	
+
 	@Autowired
 	private AcrossDistrictRepository acrossDistrictRepository;
-	
+
 	@Autowired
 	private OutsideStateRepository outsideStateRepository;
 
@@ -57,7 +57,7 @@ public class EpassFormService {
 		dto.setPassengers(pass);
 		return dto;
 	}
-	
+
 	public EpassAcrossDistrictDTO getAcrossDistrictEpass(int id) {
 		EpassForm epassForm = epassFormRepository.findById(id);
 		EpassAcrossDistrictDTO dto = new EpassAcrossDistrictDTO();
@@ -66,7 +66,7 @@ public class EpassFormService {
 		dto.setAcrossDistrict(pass);
 		return dto;
 	}
-	
+
 	public EpassFormOutsideStateDTO getOutsideStateEpass(int id) {
 		EpassForm epassForm = epassFormRepository.findById(id);
 		EpassFormOutsideStateDTO dto = new EpassFormOutsideStateDTO();
@@ -74,5 +74,16 @@ public class EpassFormService {
 		List<OutsideState> pass = outsideStateRepository.findOutsideStateByEpassId(id);
 		dto.setOutsideState(pass);
 		return dto;
+	}
+
+	@Transactional
+	public void addEpassAndPassengersWithinDistrict(EpassFormPassengersDTO dto) {
+		EpassForm epassForm = dto.getEpassForm();
+		save(epassForm);
+		List<Passengers> passengersList = dto.getPassengers();
+		int count = passengersList.size();
+		for (int i = 0; i < count; i++) {
+			passengersRepositry.save(passengersList.get(i));
+		}
 	}
 }

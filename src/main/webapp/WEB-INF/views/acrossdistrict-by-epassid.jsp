@@ -57,7 +57,7 @@ table, th, td {
 
 		</table>
 	</div>
-
+	<br>
 	<div id="Across District table">
 		<table>
 			<thead>

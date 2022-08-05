@@ -11,7 +11,7 @@ import javax.persistence.Table;
 public class Admin {
 	@Id
 	@Column(name = "admin_id")
-	private int adminId;
+	private Integer adminId;
 	@Column(name = "admin_name")
 	private String adminName;
 	@Column(name = "admin_email")
@@ -23,11 +23,11 @@ public class Admin {
 	@Column(name = "admin_designation")
 	private String adminDesignation;
 
-	public int getAdminId() {
+	public Integer getAdminId() {
 		return adminId;
 	}
 
-	public void setAdminId(int adminId) {
+	public void setAdminId(Integer adminId) {
 		this.adminId = adminId;
 	}
 

@@ -8,6 +8,7 @@ public class EpassFormOutsideStateDTO {
 
 	private EpassForm epassForm;
 	private List<OutsideState> outsideState;
+	
 	public EpassForm getEpassForm() {
 		return epassForm;
 	}

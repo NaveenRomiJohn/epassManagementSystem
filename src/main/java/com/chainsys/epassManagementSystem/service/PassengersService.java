@@ -25,13 +25,16 @@ public class PassengersService {
 	}
 
 	public Passengers findById(int id) {
-
 		return passengersRepository.findById(id);
 	}
 
 	@Transactional
 	public void deleteById(int id) {
 		passengersRepository.deleteById(id);
+	}
+
+	public int getNextPassenger() {
+		return 0;
 	}
 
 }

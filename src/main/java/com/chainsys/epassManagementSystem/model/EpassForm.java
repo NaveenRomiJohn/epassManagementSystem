@@ -25,6 +25,18 @@ public class EpassForm {
 	private Date toDate;
 	@Column(name = "vehicle_number")
 	private String vehicleNumber;
+
+	@Column(name = "application_type")
+	private String applicationType;
+	@Column(name = "from_district")
+	private String fromDistrict;
+	@Column(name = "to_district")
+	private String toDistrict;
+	@Column(name = "from_address")
+	private String fromAddress;
+	@Column(name = "destination_address")
+	private String destinationAddress;
+
 	@Column(name = "number_of_passengers")
 	private Integer numberOfPassengers;
 	@Column(name = "applied_date")
@@ -33,32 +45,27 @@ public class EpassForm {
 	private String approvalStatus;
 	@Column(name = "approved_date")
 	private Date approvedDate;
-	@Column(name = "from_address")
-	private String fromAddress;
-	@Column(name = "destination_address")
-	private String destinationAddress;
-	@Column(name = "application_type")
-	private String applicationType;
+
 	@Column(name = "user_id")
 	private Integer userId;
 	@Column(name = "admin_id")
 	private Integer adminId;
-	@Column(name = "district_id")
-	private Integer districtId;
+//	@Column(name = "district_id")
+//	private Integer districtId;
 
 	@OneToMany(mappedBy = "epassform", fetch = FetchType.LAZY)
 	private List<Passengers> listPass;
-	
+
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "user_id", insertable = false, updatable = false, nullable = false)
 	private User user;
 
 	@OneToMany(mappedBy = "epassForm", fetch = FetchType.LAZY)
 	private List<AcrossDistrict> acrossDistrict;
-	
+
 	@OneToMany(mappedBy = "epassForm", fetch = FetchType.LAZY)
 	private List<OutsideState> outsideState;
-	
+
 	public Integer getEpassId() {
 		return epassId;
 	}
@@ -187,12 +194,20 @@ public class EpassForm {
 		this.user = user;
 	}
 
-	public Integer getDistrictId() {
-		return districtId;
+	public String getFromDistrict() {
+		return fromDistrict;
 	}
 
-	public void setDistrictId(Integer districtId) {
-		this.districtId = districtId;
+	public void setFromDistrict(String fromDistrict) {
+		this.fromDistrict = fromDistrict;
+	}
+
+	public String getToDistrict() {
+		return toDistrict;
+	}
+
+	public void setToDistrict(String toDistrict) {
+		this.toDistrict = toDistrict;
 	}
 
 	public List<AcrossDistrict> getAcrossDistrict() {

@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Across Districts</title>
 <style>
 h1, h2, h3 {
 	text-align: center;
@@ -27,10 +27,10 @@ table, th, td {
 <body>
 	<h1>E-Pass Management System</h1>
 	<h2>Epass Registration form</h2>
-	<h3>Within District</h3>
+	<h3>Across District</h3>
 	<div id="epassform">
-		<form:form action="registerwithindistrict" method="get"
-			modelAttribute="epasswithindistrict">
+		<form:form action="registeracrossdistrict" method="get"
+			modelAttribute="epassacrossdistrict">
 			<div>
 				User Id:
 				<form:input path="userId" />
@@ -47,7 +47,8 @@ table, th, td {
 					<form:option value="Medical Emergency" label="Medical Emergency" />
 					<form:option value="Marriage" label="Marriage" />
 					<form:option value="Death" label="Death" />
-					<form:option value="On Going Government Work" label="On Going Government Work" />
+					<form:option value="On Going Government Work"
+						label="On Going Government Work" />
 					<form:option value="Hospital staff" label="Hospital staff" />
 				</form:select>
 			</div>
@@ -63,22 +64,27 @@ table, th, td {
 			</div>
 			<br>
 			<div>
-				<form:hidden path="applicationType" value="Within District" />
+				<form:hidden path="applicationType" value="Across District" />
 			</div>
 			<br>
 			<div>
-				District :
+				From District :
 				<form:input path="fromDistrict" />
 			</div>
 			<br>
 			<div>
+				To District :
+				<form:input path="toDistrict" />
+			</div>
+			<br>
+			<div>
 				From Address :
-				<form:textarea path="fromAddress" cols="30" rows="3" />
+				<form:textarea path="fromAddress" cols="20" rows="2" />
 			</div>
 			<br>
 			<div>
 				Destination Address :
-				<form:textarea path="destinationAddress" cols="30" rows="3" />
+				<form:textarea path="destinationAddress" cols="20" rows="2" />
 			</div>
 			<br>
 			<div>
@@ -106,7 +112,7 @@ table, th, td {
 			<br>
 
 			<div id="passengerform">
-				<form:form modelAttribute="passwithindistrict">
+				<form:form modelAttribute="passengersacrossdistrict">
 					<div>
 						Passenger Name :
 						<form:input path="passengerName" />

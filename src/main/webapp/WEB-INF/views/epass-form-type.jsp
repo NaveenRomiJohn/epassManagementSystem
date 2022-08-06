@@ -15,10 +15,10 @@
 	<h1>E-Pass Management System</h1>
 	<h2>Epass Type</h2>
 	<br>
-	<a href="epassformwithindistrict">Within District</a>
+	<a href="epasspassengerswithindistrict">Within District</a>
 	<br>
-	<a href="epassformacrossdistrict">Across District</a>
+	<a href="epasspassengersacrossdistricts">Across District</a>
 	<br>
-	<a href="epassformoutsidestate">Outside State</a>
+	<a href="epasspassengersoutsidestate">Outside State</a>
 </body>
 </html>

@@ -24,7 +24,7 @@ table, th, td {
 <body>
 <h1>E-Pass Management System</h1>
 	<h2>All Epass List</h2>
-	<div id="Table root">
+	<div id="Epass table">
 		<table>
 			<thead>
 				<tr>
@@ -37,6 +37,7 @@ table, th, td {
 					<th>Applied Date</th>
 					<th>From Address</th>
 					<th>Destination Address</th>
+					<th>Approval Status</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -52,13 +53,48 @@ table, th, td {
 						<td>${epass.appliedDate}</td>
 						<td>${epass.fromAddress}</td>
 						<td>${epass.destinationAddress}</td>
+						<td>${epass.approvalStatus}</td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
 	</div>
 	<br>
-	<div id="Table root">
+	<div id="Outside state table">
+		<table>
+			<thead>
+				<tr>
+					<th>Epass Id</th>
+					<th>From State</th>
+					<th>To State</th>
+					<th>Quarantine From Date</th>
+					<th>Quarantine To Date</th>
+					<th>Quarantine Location</th>
+					<th>PCR Result Certificate Date</th>
+					<th>PCR Result Certificate Number</th>
+					<th>PCR Certificate Issued by</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach var="outsidestate" items="${alloutsidestate}">
+					<!-- var-variables,items-collection -->
+					<tr>
+						<td>${outsidestate.epassId}</td>
+						<td>${outsidestate.fromState}</td>
+						<td>${outsidestate.toState}</td>
+						<td>${outsidestate.quarantineFromDate}</td>
+						<td>${outsidestate.quarantineToDate}</td>
+						<td>${outsidestate.quarantineLocation}</td>
+						<td>${outsidestate.pcrResultCertificateDate}</td>
+						<td>${outsidestate.pcrResultCertificateNumber}</td>
+						<td>${outsidestate.pcrCertificateIssuedBy}</td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+	</div>
+	<br>
+	<div id="Passengers Table">
 		<table>
 			<thead>
 				<tr>

@@ -25,6 +25,7 @@
 		var address = document.reg_form.addres.values;
 		var phone = document.reg_form.phone.value;
 		var firstpassword = document.reg_form.firstpassword.value;
+		var secondpassword=document.reg_form.secondpassword.value;  
 		if (firstname==null || firstname=="") {
 			alert("First Name can't be blank");
 			return false;

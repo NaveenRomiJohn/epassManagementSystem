@@ -26,7 +26,7 @@ public class UserController {
 		return "home";
 	}
 
-//	user add
+//	user add form
 	@GetMapping("/adduserform")
 	public String showRegisterForm(Model model) {
 		User user = new User();
@@ -64,12 +64,6 @@ public class UserController {
 		return "user-updated";
 	}
 
-//	delete user
-//	@GetMapping("/deleteuser")
-//	public String deleteUser(@RequestParam("userid") int id) {
-//		userService.deleteById(id);
-//		return "user-deleted";
-//	}
 
 //	user login
 	@GetMapping("/userloginform")

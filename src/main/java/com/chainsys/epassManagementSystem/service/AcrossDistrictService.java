@@ -5,8 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import com.chainsys.epassManagementSystem.dto.EpassAcrossDistrictDTO;
 import com.chainsys.epassManagementSystem.dto.EpassFormPassengersDTO;
 import com.chainsys.epassManagementSystem.model.AcrossDistrict;
 import com.chainsys.epassManagementSystem.model.EpassForm;

@@ -9,6 +9,7 @@
 * {
 	text-align: center;
 }
+
 .center {
 	margin-left: auto;
 	margin-right: auto;
@@ -16,11 +17,26 @@
 </style>
 </head>
 <body>
+<script >
+	function validateform() {
+		var adminId = document.reg_form.adminId.value;
+		var adminPassword = document.reg_form.adminPassword.value;
+		if (adminId == null || adminId == "") {
+			alert("Name can't be blank");
+			return false;
+		} else if (adminPassword.length < 6) {
+			alert("Password must be at least 6 characters long.");
+			return false;
+		}
+	}
+</script>
+<body>
 	<h1>Covid-19 ePass</h1>
 	<h2>Admin LogIn</h2>
 	<br>
 	<br>
-	<form action="adminlogin" method="post">
+	<form name="reg_form" action="adminlogin" method="post" 
+		onsubmit="return validateform()">
 		<table class="center">
 			<tr>
 				<td>Admin Id :</td>
@@ -31,7 +47,7 @@
 				<td><input type="password" name="adminPassword" /></td>
 			</tr>
 			<tr>
-				<td><input type='submit' value='Login'></td>
+				<td><input type="submit" value="Login"></td>
 			</tr>
 		</table>
 	</form>

@@ -4,14 +4,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import com.chainsys.epassManagementSystem.dto.EpassAcrossDistrictDTO;
 import com.chainsys.epassManagementSystem.dto.EpassFormOutsideStateDTO;
 import com.chainsys.epassManagementSystem.dto.EpassFormPassengersDTO;
-import com.chainsys.epassManagementSystem.model.AcrossDistrict;
 import com.chainsys.epassManagementSystem.model.EpassForm;
 import com.chainsys.epassManagementSystem.model.OutsideState;
 import com.chainsys.epassManagementSystem.model.Passengers;
-import com.chainsys.epassManagementSystem.repository.AcrossDistrictRepository;
 import com.chainsys.epassManagementSystem.repository.EpassFormRepository;
 import com.chainsys.epassManagementSystem.repository.OutsideStateRepository;
 import com.chainsys.epassManagementSystem.repository.PassengersRepository;
@@ -23,9 +20,6 @@ public class EpassFormService {
 
 	@Autowired
 	private PassengersRepository passengersRepositry;
-
-	@Autowired
-	private AcrossDistrictRepository acrossDistrictRepository;
 
 	@Autowired
 	private OutsideStateRepository outsideStateRepository;
@@ -58,28 +52,35 @@ public class EpassFormService {
 		return dto;
 	}
 
-	public EpassAcrossDistrictDTO getAcrossDistrictEpass(int id) {
-		EpassForm epassForm = epassFormRepository.findById(id);
-		EpassAcrossDistrictDTO dto = new EpassAcrossDistrictDTO();
-		dto.setEpassForm(epassForm);
-		List<AcrossDistrict> pass = acrossDistrictRepository.findAcrossDistrictByEpassId(id);
-		dto.setAcrossDistrict(pass);
-		return dto;
-	}
 
-	public EpassFormOutsideStateDTO getOutsideStateEpass(int id) {
-		EpassForm epassForm = epassFormRepository.findById(id);
-		EpassFormOutsideStateDTO dto = new EpassFormOutsideStateDTO();
-		dto.setEpassForm(epassForm);
-		List<OutsideState> pass = outsideStateRepository.findOutsideStateByEpassId(id);
-		dto.setOutsideState(pass);
-		return dto;
-	}
-
+//	public EpassFormOutsideStateDTO getOutsideStateEpass(int id) {
+//		EpassForm epassForm = epassFormRepository.findById(id);
+//		EpassFormOutsideStateDTO dto = new EpassFormOutsideStateDTO();
+//		dto.setEpassForm(epassForm);
+//		OutsideState pass = outsideStateRepository.findOutsideStateByEpassId(id);
+//		dto.setOutsideState(pass);
+//		return dto;
+//	}
+	
+// within and across district
 	@Transactional
 	public void addEpassAndPassengersWithinDistrict(EpassFormPassengersDTO dto) {
 		EpassForm epassForm = dto.getEpassForm();
 		save(epassForm);
+		List<Passengers> passengersList = dto.getPassengers();
+		int count = passengersList.size();
+		for (int i = 0; i < count; i++) {
+			passengersRepositry.save(passengersList.get(i));
+		}
+	}
+	
+//	outside state	
+	@Transactional
+	public void addEpassOutsideState(EpassFormOutsideStateDTO dto) {
+		EpassForm epassForm = dto.getEpassForm();
+		save(epassForm);
+		OutsideState outsideState=dto.getOutsideState();
+		outsideStateRepository.save(outsideState);
 		List<Passengers> passengersList = dto.getPassengers();
 		int count = passengersList.size();
 		for (int i = 0; i < count; i++) {

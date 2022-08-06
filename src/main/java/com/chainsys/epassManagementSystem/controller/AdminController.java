@@ -12,10 +12,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.chainsys.epassManagementSystem.model.Admin;
 import com.chainsys.epassManagementSystem.model.EpassForm;
+import com.chainsys.epassManagementSystem.model.OutsideState;
 import com.chainsys.epassManagementSystem.model.Passengers;
 import com.chainsys.epassManagementSystem.model.User;
 import com.chainsys.epassManagementSystem.service.AdminService;
 import com.chainsys.epassManagementSystem.service.EpassFormService;
+import com.chainsys.epassManagementSystem.service.OutsideStateService;
 import com.chainsys.epassManagementSystem.service.PassengersService;
 import com.chainsys.epassManagementSystem.service.UserService;
 
@@ -29,6 +31,8 @@ public class AdminController {
 	public PassengersService passengersService;
 	@Autowired
 	public UserService userService;
+	@Autowired
+	public OutsideStateService outsideStateService;
 
 //	login
 	@RequestMapping("/adminloginform")
@@ -39,7 +43,7 @@ public class AdminController {
 	@RequestMapping("/adminlogin")
 	public String adminLogin(@RequestParam("adminId") String id, @RequestParam("adminPassword") String password,
 			Model model) {
-		if (id.equals("nave3121") && password.equals("chainsys3121")) {
+		if (id.equals("200") && password.equals("admin200")) {
 			return "admin-logged-in";
 		} else {
 			return "admin-login";
@@ -105,15 +109,6 @@ public class AdminController {
 //		model.addAttribute("applist", dto.getAppointments());
 //		return "list-doctor-appointments";
 //	}
-
-	@GetMapping("/allepasswithpassengers")
-	public String getAllPassengers(Model model) {
-		List<EpassForm> epassFormList = epassFormService.getAllEpassForm();
-		List<Passengers> passengers = passengersService.getPassengers();
-		model.addAttribute("allepassform", epassFormList);
-		model.addAttribute("allpassengers", passengers);
-		return "list-all-epassform";
-	}
 	
 	@GetMapping("/allusers")
 	public String getAllUsers(Model model) {
@@ -121,5 +116,17 @@ public class AdminController {
 		model.addAttribute("allusers", user);
 		return "list-all-users";
 	}
-
+	
+//all epass requests	
+	@GetMapping("/epassrequests")
+	public String getAllEpassRequests(Model model) {
+		List<EpassForm> epassFormList = epassFormService.getAllEpassForm();
+		List<OutsideState> outsideStateList = outsideStateService.getAllOutsideState();
+		List<Passengers> passengersList = passengersService.getPassengers();
+		model.addAttribute("allepassform", epassFormList);
+		model.addAttribute("alloutsidestate", outsideStateList);
+		model.addAttribute("allpassengers", passengersList);
+		return "list-all-epassform";
+	}
+	
 }

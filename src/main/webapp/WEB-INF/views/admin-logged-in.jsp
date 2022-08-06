@@ -16,15 +16,17 @@ text-align: center;
 	<h2>Admin Page</h2>
 	<br>
 	<br>
-	<a href="addadminform">Add new Admin</a>
+	
+	<a href="allusers">All User Details</a>
 	<br>
-	<a href="allusers">All User Deatils</a>
-	<br>
-	<a href="allepasswithpassengers">All Epass details</a>
+	<a href="epassrequests">All Epass details</a>
 	<br>
 	<a href="updateadminform">Update Admin</a>
 	<br>
 	<a href="deleteadminform">Delete Admin</a>
+	<br>
+	<a href="addadminform">Add new Admin</a>
+	<br>
 
 </body>
 </html>

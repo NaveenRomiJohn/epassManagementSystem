@@ -1,36 +1,26 @@
-<%@ page import="java.io.*,java.util.*,java.sql.*"%>
-<%@ page import="javax.servlet.http.*,javax.servlet.*"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
-
 <html>
-<head>
-<title>sql:query Tag</title>
-</head>
 <body>
+	<script>
+		function validateform() {
+			var name = document.myform.name.value;
+			var password = document.myform.password.value;
 
-	<sql:setDataSource var="db" driver="oracle.jdbc.OracleDriver"
-		url="jdbc:oracle:thin:@localhost:1521:xe" user="system" password="oracle" />
-
-	<sql:query dataSource="${db}" var="rs">  
-SELECT * from epass_admin;  
-</sql:query>
-
-	<table border="2" width="100%">
-		<tr>
-			<th>Admin ID</th>
-			<th> Name</th>
-			<th>Email</th>
-			<th>Password</th>
-		</tr>
-		<c:forEach var="table" items="${rs.rows}">
-			<tr>
-				<td><c:out value="${table.admin_id}" /></td>
-				<td><c:out value="${table.admin_name}" /></td>
-				<td><c:out value="${table.admin_email}" /></td>
-				<td><c:out value="${table.admin_password}" /></td>
-			</tr>
-		</c:forEach>
-	</table>
+			if (name == null || name == "") {
+				alert("Name can't be blank");
+				return false;
+			} else if (password.length < 6) {
+				alert("Password must be at least 6 characters long.");
+				return false;
+			}
+		}
+	</script>
+<body>
+	<form name="myform" method="post"
+		action=""
+		onsubmit="return validateform()">
+		Name: <input type="text" name="name"><br /> Password: <input
+			type="password" name="password"><br /> <input type="submit"
+			value="register">
+	</form>
 </body>
 </html>

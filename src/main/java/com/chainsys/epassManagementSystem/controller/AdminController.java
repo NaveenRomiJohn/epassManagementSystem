@@ -129,4 +129,28 @@ public class AdminController {
 		return "list-all-epassform";
 	}
 	
+//	@RequestMapping("/epassrequeststatusbystatus")
+//	public String epassRequestsByStatus(){
+//		return"epass-request-status-form";
+//	}
+	@GetMapping("/epassprocessingstatus")
+	public String userApplicationStatus(Model model) {
+		List<EpassForm> epassForm = epassFormService.epassProcessing();
+		model.addAttribute("epassForm", epassForm);
+		return "admin-request-status";
+	}
+	
+	@GetMapping("/epassapprovedlist")
+	public String epassApprovedStatus(Model model) {
+		List<EpassForm> epassForm = epassFormService.epassApproved();
+		model.addAttribute("epassForm", epassForm);
+		return "admin-request-status";
+	}
+	
+	@GetMapping("/actionrequest")
+	public String userApprovedStatus(@ModelAttribute("epassForm") EpassForm epassForm) {
+		
+		return "admin-request-status";
+	}
+	
 }

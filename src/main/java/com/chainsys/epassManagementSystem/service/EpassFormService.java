@@ -38,6 +38,11 @@ public class EpassFormService {
 		return epassFormRepository.findById(id);
 	}
 
+	public List<EpassForm> findByApprovalStatuss(String status) {
+		List<EpassForm> statusList = epassFormRepository.findByApprovalStatus(status);
+		return statusList;
+	}
+
 	@Transactional
 	public void deleteById(int id) {
 		epassFormRepository.deleteById(id);
@@ -52,6 +57,15 @@ public class EpassFormService {
 		return dto;
 	}
 
+	public List<EpassForm> epassProcessing() {
+		String status = "processing";
+		return epassFormRepository.findByApprovalStatus(status);
+	}
+	
+	public List<EpassForm> epassApproved() {
+		String status = "Approved";
+		return epassFormRepository.findByApprovalStatus(status);
+	}
 
 //	public EpassFormOutsideStateDTO getOutsideStateEpass(int id) {
 //		EpassForm epassForm = epassFormRepository.findById(id);
@@ -61,7 +75,7 @@ public class EpassFormService {
 //		dto.setOutsideState(pass);
 //		return dto;
 //	}
-	
+
 // within and across district
 	@Transactional
 	public void addEpassAndPassengersWithinDistrict(EpassFormPassengersDTO dto) {
@@ -73,13 +87,13 @@ public class EpassFormService {
 			passengersRepositry.save(passengersList.get(i));
 		}
 	}
-	
+
 //	outside state	
 	@Transactional
 	public void addEpassOutsideState(EpassFormOutsideStateDTO dto) {
 		EpassForm epassForm = dto.getEpassForm();
 		save(epassForm);
-		OutsideState outsideState=dto.getOutsideState();
+		OutsideState outsideState = dto.getOutsideState();
 		outsideStateRepository.save(outsideState);
 		List<Passengers> passengersList = dto.getPassengers();
 		int count = passengersList.size();
@@ -87,4 +101,5 @@ public class EpassFormService {
 			passengersRepositry.save(passengersList.get(i));
 		}
 	}
+
 }

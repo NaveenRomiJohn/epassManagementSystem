@@ -30,5 +30,5 @@ public class AdminService {
 	public void deleteById(int admin_id) {
 		adminRepository.deleteById(admin_id);
 	}
-	
+
 }

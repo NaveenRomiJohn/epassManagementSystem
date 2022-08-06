@@ -17,9 +17,14 @@ text-align: center;
 	<br>
 	<br>
 	
-	<a href="allusers">All User Details</a>
+	<a href="allusers">Users List</a>
+	<br>
+	<a href="epassprocessingstatus">Epass Requests</a>
+	<br>
+	<a href="epassapprovedlist">Epass Approved</a>
 	<br>
 	<a href="epassrequests">All Epass details</a>
+	<br>
 	<br>
 	<a href="updateadminform">Update Admin</a>
 	<br>

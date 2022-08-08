@@ -110,7 +110,7 @@ table, th, td {
 				<form:hidden path="adminId" value="200" />
 			</div>
 			<br>
-
+			<h3>Passenger Details</h3>
 			<div id="passengerform">
 				<form:form modelAttribute="passengersacrossdistrict">
 					<div>

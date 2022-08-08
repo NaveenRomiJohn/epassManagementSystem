@@ -23,6 +23,8 @@ text-align: center;
 	<br>
 	<a href="epassapprovedlist">Epass Approved</a>
 	<br>
+	<a href="epassrejectedlist">Epass rejected</a>
+	<br>
 	<a href="epassrequests">All Epass details</a>
 	<br>
 	<br>

@@ -1,7 +1,6 @@
 package com.chainsys.epassManagementSystem.controller;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -34,19 +33,26 @@ public class AdminController {
 	@Autowired
 	public OutsideStateService outsideStateService;
 
-//	login
-	@RequestMapping("/adminloginform")
-	public String adminLoginForm() {
+//	admin login
+	@GetMapping("/adminloginform")
+	public String adminLoginForm(Model model) {
+		Admin admin=new Admin();
+		model.addAttribute("adminlogin", admin);
 		return "admin-login";
 	}
 
-	@RequestMapping("/adminlogin")
-	public String adminLogin(@RequestParam("adminId") String id, @RequestParam("adminPassword") String password,
-			Model model) {
-		if (id.equals("200") && password.equals("admin200")) {
-			return "admin-logged-in";
+	@GetMapping("/adminloggedin")
+    public String getIndex(Model model) {
+        return "admin-logged-in";
+    }
+	
+	@PostMapping("/adminlogin")
+	public String adminLogin(@ModelAttribute("adminlogin") Admin admin) {
+		Admin admin1=adminService.getAdminByIdAndPassword(admin.getAdminId(), admin.getAdminPassword());
+		if (admin1 != null) {
+			return "redirect:/adminloggedin";
 		} else {
-			return "admin-login";
+			return "redirect:/adminloginform";
 		}
 	}
 
@@ -101,14 +107,7 @@ public class AdminController {
 		return "redirect:/adminLogin";
 	}
 
-//	epass requests
-//	@GetMapping("/getepassrequestwithindistrict")
-//	public String getAppointments(@RequestParam("id") int id, Model model) {
-//		EpassFormPassengersDTO dto = adminService.getDoctorAndAppointments(id);
-//		model.addAttribute("getdoc", dto.getDoctor());
-//		model.addAttribute("applist", dto.getAppointments());
-//		return "list-doctor-appointments";
-//	}
+//	users list
 	
 	@GetMapping("/allusers")
 	public String getAllUsers(Model model) {
@@ -129,28 +128,41 @@ public class AdminController {
 		return "list-all-epassform";
 	}
 	
-//	@RequestMapping("/epassrequeststatusbystatus")
-//	public String epassRequestsByStatus(){
-//		return"epass-request-status-form";
-//	}
+
 	@GetMapping("/epassprocessingstatus")
 	public String userApplicationStatus(Model model) {
 		List<EpassForm> epassForm = epassFormService.epassProcessing();
 		model.addAttribute("epassForm", epassForm);
-		return "admin-request-status";
+		return "epass-processing-list";
 	}
 	
 	@GetMapping("/epassapprovedlist")
 	public String epassApprovedStatus(Model model) {
 		List<EpassForm> epassForm = epassFormService.epassApproved();
 		model.addAttribute("epassForm", epassForm);
-		return "admin-request-status";
+		return "epass-approved-list";
 	}
 	
-	@GetMapping("/actionrequest")
-	public String userApprovedStatus(@ModelAttribute("epassForm") EpassForm epassForm) {
-		
-		return "admin-request-status";
+	@GetMapping("/epassrejectedlist")
+	public String epassRejected(Model model) {
+		List<EpassForm> epassForm = epassFormService.epassRejected();
+		model.addAttribute("epassForm", epassForm);
+		return "epass-rejected-list";
+	}
+
+//	Epass status change
+
+	@GetMapping("/statuschange")
+	public String statusUpdateForm(@RequestParam("epassId") int id, Model model) {
+		EpassForm epassForm = epassFormService.findById(id);
+		model.addAttribute("epassstatus", epassForm);
+		return "epass-update-form";
+	}
+	
+	@PostMapping("/statuschanged")
+	public String statusUpdated(@ModelAttribute("epassstatus") EpassForm epassForm) {
+		epassFormService.save(epassForm);
+		return "redirect:/epassprocessingstatus";
 	}
 	
 }

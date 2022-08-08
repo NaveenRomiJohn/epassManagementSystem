@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,35 +10,51 @@
 * {
 	text-align: center;
 }
+
 .center {
 	margin-left: auto;
 	margin-right: auto;
 }
 </style>
 </head>
+<script>
+	function validateform() {
+		var userId = document.reg_form.userId.value;
+		var userPassword = document.reg_form.userPassword.value;
+		if (userId == null || userId == "") {
+			alert("User Id is required or can't be blank");
+			return false;
+		} else if (userPassword == null || userPassword == "") {
+			alert("User Password is required or can't be blank");
+			return false;
+		}
+	}
+</script>
 <body>
-	<h1>Covid-19 ePass</h1>
+	<h1>E-Pass Management System</h1>
+	<br>
 	<h2>User LogIn</h2>
 	<br>
 	<br>
-	<form action="userlogin" method="get" modelAttribute="userlogin">
+	<form:form action="userlogin" name="reg_form" method="post"
+		modelAttribute="userlogin" onsubmit="return validateform()">
 		<table class="center">
 			<tr>
 				<td>User Id :</td>
-				<td><input type="text" name="userId" /></td>
+				<td><form:input path="userId" name="userId"/></td>
 			</tr>
 			<tr>
 				<td>User Password :</td>
-				<td><input type="password" name="userPassword" /></td>
+				<td><form:password path="userPassword" name="userPassword"/></td>
 			</tr>
 			<tr>
-				<td><input type='submit' value="Login"></td>
+				<td><input type="submit" value="Login"></td>
 			</tr>
 		</table>
-	</form>
+	</form:form>
 	<br>
 	<br>
-	<h2>User Home</h2>
+	<h2>User Register</h2>
 	<div>
 		<a href="adduserform">Add New User</a>
 	</div>

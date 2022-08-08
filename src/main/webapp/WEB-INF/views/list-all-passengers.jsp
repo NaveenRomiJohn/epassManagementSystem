@@ -13,6 +13,9 @@ table, th, td {
 	border: 1px solid black;
 	border-collapse: collapse;
 }
+table {
+	width: 90%;
+}
 </style>
 <body>
 	<div id="Table root">

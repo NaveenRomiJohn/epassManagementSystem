@@ -7,6 +7,7 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
 
 @Entity
 @Table(name = "epass_user")
@@ -29,7 +30,6 @@ public class User {
 	@Column(name = "address")
 	private String address;
 	@Column(name = "user_password")
-//	@Pattern(regexp="^[a-zA-Z0-9]{6}",message="length must be 6")  
 	private String userPassword;
 
 	@OneToMany(mappedBy = "user", fetch = FetchType.LAZY)

@@ -15,17 +15,25 @@ h1, h2, h3 {
 table, th, td {
 	border: 2px solid black;
 	border-collapse: collapse;
+	text-align: center;
+}
+
+table {
+	width: 90%;
+}
+
+table.center {
 	margin-left: auto;
 	margin-right: auto;
-	text-align: center;
 }
 </style>
 </head>
 <body>
-<h1>E-Pass Management System</h1>
+	<h1>E-Pass Management System</h1>
 	<h2>All Epass List</h2>
+	<h3>Epass List Type</h3>
 	<div id="Epass table">
-		<table>
+		<table class="center">
 			<thead>
 				<tr>
 					<th>Epass Id</th>
@@ -38,10 +46,12 @@ table, th, td {
 					<th>From Address</th>
 					<th>Destination Address</th>
 					<th>Approval Status</th>
+					<th>Application Type</th>
 				</tr>
 			</thead>
 			<tbody>
 				<c:forEach var="epass" items="${allepassform}">
+					<%-- <c:if test="${epass.applicationType=='within district' }"> --%>
 					<!-- var-variables,items-collection -->
 					<tr>
 						<td>${epass.epassId}</td>
@@ -54,14 +64,17 @@ table, th, td {
 						<td>${epass.fromAddress}</td>
 						<td>${epass.destinationAddress}</td>
 						<td>${epass.approvalStatus}</td>
+						<td>${epass.applicationType}</td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
 	</div>
 	<br>
+	<br>
+	<h3>Outside state List</h3>
 	<div id="Outside state table">
-		<table>
+		<table class="center">
 			<thead>
 				<tr>
 					<th>Epass Id</th>
@@ -94,8 +107,10 @@ table, th, td {
 		</table>
 	</div>
 	<br>
+	<br>
+	<h3>Passengers List</h3>
 	<div id="Passengers Table">
-		<table>
+		<table class="center">
 			<thead>
 				<tr>
 					<th>Epass Id</th>

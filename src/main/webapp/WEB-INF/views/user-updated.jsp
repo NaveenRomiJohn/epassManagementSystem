@@ -14,10 +14,10 @@
 <body>
 	<h1>E-Pass Management System</h1>
 	<br>
-	<p>User details updated successfully</p>
+	<h3>Your details updated successfully</h3>
 	<br>
 	<a href="epassformtype">Epass Request</a>
 	<br>
-	<a href="epassrequeststatus">Epass Request Status</a>
+	<a href="home">Home</a>
 </body>
 </html>

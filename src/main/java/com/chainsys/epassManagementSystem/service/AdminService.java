@@ -30,5 +30,9 @@ public class AdminService {
 	public void deleteById(int admin_id) {
 		adminRepository.deleteById(admin_id);
 	}
+	
+	public Admin getAdminByIdAndPassword(Integer adminId, String adminPassword) {
+		return adminRepository.findByAdminIdAndAdminPassword(adminId,adminPassword);
+	}
 
 }

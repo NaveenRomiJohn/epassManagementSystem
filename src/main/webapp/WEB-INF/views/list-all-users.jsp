@@ -10,6 +10,8 @@
 <style>
 h1, h2, h3 {
 	text-align: center;
+}table {
+	width: 90%;
 }
 table, th, td {
 	border: 2px solid black;

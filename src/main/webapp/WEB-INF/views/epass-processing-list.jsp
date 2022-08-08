@@ -1,17 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Admin Application Status</title>
+<title>Epass Processing Status</title>
 <style>
 h1, h2, h3 {
 	text-align: center;
 }
-
+table {
+	width: 90%;
+}
 table, th, td {
 	border: 2px solid black;
 	border-collapse: collapse;
@@ -28,7 +29,7 @@ table, th, td {
 <body>
 	<h1>E-Pass Management System</h1>
 	<hr />
-	<h2>Application Status</h2>
+	<h2>Epass Processing List</h2>
 	<div id="applist">
 		<table>
 			<thead>
@@ -65,17 +66,16 @@ table, th, td {
 			</tbody>
 		</table>
 	</div>
-	<%-- <h3>Action</h3>
-	<form:form action="actionrequest" method="post"
-		modelAttribute="epassForm">
-		<div>
-			EpassId :
-			<form:input path="epassId" name="epassId" />
-		</div>
-		<div>
-			<form:hidden path="approvalStatus" />
-		</div>
-		<input type="submit" value="Submit" />
-	</form:form> --%>
+	<br>
+	<h3>Enter the EpassId to take action on epass request</h3>
+	<form action="statuschange" method="get">
+			<div>
+				Epass Id :
+				<input type="text" name="epassId" />
+			</div>
+			<div>
+				<input type="submit" value="Submit" />
+			</div>
+	</form>
 </body>
 </html>

@@ -66,15 +66,11 @@ public class EpassFormService {
 		String status = "Approved";
 		return epassFormRepository.findByApprovalStatus(status);
 	}
-
-//	public EpassFormOutsideStateDTO getOutsideStateEpass(int id) {
-//		EpassForm epassForm = epassFormRepository.findById(id);
-//		EpassFormOutsideStateDTO dto = new EpassFormOutsideStateDTO();
-//		dto.setEpassForm(epassForm);
-//		OutsideState pass = outsideStateRepository.findOutsideStateByEpassId(id);
-//		dto.setOutsideState(pass);
-//		return dto;
-//	}
+	
+	public List<EpassForm> epassRejected() {
+		String status = "Rejected";
+		return epassFormRepository.findByApprovalStatus(status);
+	}
 
 // within and across district
 	@Transactional

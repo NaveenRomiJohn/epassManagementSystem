@@ -8,26 +8,35 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "epass_outside_state")
 public class OutsideState {
 	@Id
 	@Column(name = "from_state")
+//	@NotNull(message = "please select the state")
 	private String fromState;
 	@Column(name = "to_state")
+//	@NotNull(message = "please select the state")
 	private String toState;
 	@Column(name = "quarantine_from_date")
+//	@NotNull
 	private Date quarantineFromDate;
 	@Column(name = "quarantine_to_date")
 	private Date quarantineToDate;
 	@Column(name = "quarantine_location")
+//	@NotNull(message = "please enter the location")
 	private String quarantineLocation;
 	@Column(name = "pcr_result_certificate_date")
 	private Date pcrResultCertificateDate;
 	@Column(name = "pcr_result_certificate_number")
+//	@NotNull @Min(6) @Max(15)
 	private Integer pcrResultCertificateNumber;
 	@Column(name = "pcr_certificate_issued_by")
+//	@NotNull(message = "please enter the certificate issued ")
 	private String pcrCertificateIssuedBy;
 	@Column(name = "epass_id")
 	private Integer epassId;

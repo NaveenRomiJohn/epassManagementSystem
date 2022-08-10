@@ -1,18 +1,11 @@
 package com.chainsys.epassManagementSystem.service;
 
-import java.io.PrintWriter;
 import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import com.chainsys.epassManagementSystem.commonutil.InvalidInputDataException;
-import com.chainsys.epassManagementSystem.commonutil.Validator;
-import com.chainsys.epassManagementSystem.model.Admin;
 import com.chainsys.epassManagementSystem.model.User;
 import com.chainsys.epassManagementSystem.repository.UserRepository;
 
@@ -26,13 +19,8 @@ public class UserService {
 		return userRepository.save(user);
 	}
 
-	public User findById(int user_id) {
+	public Optional<User> findById(String user_id) {
 		return userRepository.findById(user_id);
-	}
-
-	@Transactional
-	public void deleteById(int id) {
-		userRepository.deleteById(id);
 	}
 
 	public List<User> getUsers() {
@@ -40,17 +28,16 @@ public class UserService {
 		return listUsers;
 	}
 
-	public User getUserByIdAndPassword(int userId, String userPassword) {
+	public User getUserByIdAndPassword(String userId, String userPassword) {
 		return userRepository.findByUserIdAndUserPassword(userId, userPassword);
 	}
 
 //validate
 //	public void userFormValidate(User user) {
-//		
-////		HttpServletRequest request=
+		
 //		PrintWriter out = response.getWriter();
 //		try {
-//			String id = request.getParameter("userId");
+//			String id = user.getUserId();
 //			try {
 //				Validator.checkStringForParseInt(id);
 //			} catch (InvalidInputDataException err) {
@@ -91,13 +78,13 @@ public class UserService {
 //			
 //			String age = request.getParameter("age");
 //			Integer age1=Integer.parseInt(age);
-////			try {
-////				Validator.checkStringOnly(age1);
-////				Validator.checkCharLessThanTwenty(age1);
-////			} catch (InvalidInputDataException err) {
-////				out.print(err.getMessage());
-////				return;
-////			}
+//			try {
+//				Validator.checkStringOnly(age1);
+//				Validator.checkCharLessThanTwenty(age1);
+//			} catch (InvalidInputDataException err) {
+//				out.print(err.getMessage());
+//				return;
+//			}
 //			user.setAge(age1);
 //			
 //			String eMail = request.getParameter("email");
@@ -108,8 +95,6 @@ public class UserService {
 //				return;
 //			}
 //			user.setEmail(eMail);
-//			
-//			
 //	}
 
 }

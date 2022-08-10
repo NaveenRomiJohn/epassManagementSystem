@@ -1,14 +1,18 @@
 package com.chainsys.epassManagementSystem.model;
 
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -16,42 +20,53 @@ import javax.persistence.Table;
 public class EpassForm {
 	@Id
 	@Column(name = "epass_id")
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "epass_id_seq")
+	@SequenceGenerator(name = "epass_id_seq", sequenceName = "epass_id_seq", allocationSize = 1)
 	private Integer epassId;
+
 	@Column(name = "travel_reason")
 	private String travelReason;
+
 	@Column(name = "from_date")
 	private Date fromDate;
+
 	@Column(name = "to_date")
 	private Date toDate;
+
 	@Column(name = "vehicle_number")
 	private String vehicleNumber;
 
 	@Column(name = "application_type")
 	private String applicationType;
+
 	@Column(name = "from_district")
 	private String fromDistrict;
+
 	@Column(name = "to_district")
 	private String toDistrict;
+
 	@Column(name = "from_address")
 	private String fromAddress;
+
 	@Column(name = "destination_address")
 	private String destinationAddress;
 
 	@Column(name = "number_of_passengers")
 	private Integer numberOfPassengers;
+
 	@Column(name = "applied_date")
-	private Date appliedDate;
+	private LocalDate appliedDate;
+
 	@Column(name = "approval_status")
 	private String approvalStatus;
+
 	@Column(name = "approved_date")
 	private Date approvedDate;
 
 	@Column(name = "user_id")
-	private Integer userId;
+	private String userId;
 	@Column(name = "admin_id")
 	private Integer adminId;
-//	@Column(name = "district_id")
-//	private Integer districtId;
 
 	@OneToMany(mappedBy = "epassform", fetch = FetchType.LAZY)
 	private List<Passengers> listPass;
@@ -114,12 +129,12 @@ public class EpassForm {
 		this.numberOfPassengers = numberOfPassengers;
 	}
 
-	public Date getAppliedDate() {
+	public LocalDate getAppliedDate() {
 		return appliedDate;
 	}
 
-	public void setAppliedDate(Date appliedDate) {
-		this.appliedDate = appliedDate;
+	public void setAppliedDate(LocalDate localDate) {
+		this.appliedDate = localDate;
 	}
 
 	public String getApprovalStatus() {
@@ -162,11 +177,11 @@ public class EpassForm {
 		this.applicationType = applicationType;
 	}
 
-	public Integer getUserId() {
+	public String getUserId() {
 		return userId;
 	}
 
-	public void setUserId(Integer userId) {
+	public void setUserId(String userId) {
 		this.userId = userId;
 	}
 

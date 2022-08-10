@@ -11,10 +11,20 @@
 	text-align: center;
 }
 
+* {
+	background-image:
+		url("https://www.waters.com/content/dam/waters/en/Photography/stock/health-and-medical/stock-covid-19-coronavirus.jpg/_jcr_content/renditions/original");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 3000px 2000px;
+}
+
 .center {
 	margin-left: auto;
 	margin-right: auto;
 }
+
+
 </style>
 </head>
 <script>
@@ -32,9 +42,9 @@
 </script>
 <body>
 	<h1>Covid-19 ePass</h1>
-	<h2>Admin LogIn</h2>
 	<br>
 	<br>
+	
 	<form:form action="adminlogin" name="reg_form" method="post"
 		modelAttribute="adminlogin" onsubmit="return validateform()">
 		<table class="center">

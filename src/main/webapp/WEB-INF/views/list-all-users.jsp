@@ -13,6 +13,12 @@ h1, h2, h3 {
 }table {
 	width: 90%;
 }
+* {
+  background-image: url("https://www.waters.com/content/dam/waters/en/Photography/stock/health-and-medical/stock-covid-19-coronavirus.jpg/_jcr_content/renditions/original");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 3000px 2000px;
+}
 table, th, td {
 	border: 2px solid black;
 	border-collapse: collapse;

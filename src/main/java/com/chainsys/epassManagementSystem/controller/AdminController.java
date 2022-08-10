@@ -1,9 +1,11 @@
 package com.chainsys.epassManagementSystem.controller;
 
 import java.util.List;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -36,19 +38,19 @@ public class AdminController {
 //	admin login
 	@GetMapping("/adminloginform")
 	public String adminLoginForm(Model model) {
-		Admin admin=new Admin();
+		Admin admin = new Admin();
 		model.addAttribute("adminlogin", admin);
 		return "admin-login";
 	}
 
 	@GetMapping("/adminloggedin")
-    public String getIndex(Model model) {
-        return "admin-logged-in";
-    }
-	
+	public String getIndex(Model model) {
+		return "admin-logged-in";
+	}
+
 	@PostMapping("/adminlogin")
 	public String adminLogin(@ModelAttribute("adminlogin") Admin admin) {
-		Admin admin1=adminService.getAdminByIdAndPassword(admin.getAdminId(), admin.getAdminPassword());
+		Admin admin1 = adminService.getAdminByIdAndPassword(admin.getAdminId(), admin.getAdminPassword());
 		if (admin1 != null) {
 			return "redirect:/adminloggedin";
 		} else {
@@ -64,21 +66,14 @@ public class AdminController {
 		return "add-admin-form";
 	}
 
-//	@RequestMapping(value = "/submit", method = RequestMethod.POST)
-//    public String submit(@Valid @ModelAttribute("welcome") Welcome welcome, BindingResult result) {
-//          
-//        if (result.hasErrors()) {
-//            return "welcome";
-//        }
-//        else {
-//            return "summary";
-//        }
-//    }
-
 	@PostMapping("/addadmin")
-	public String addAdmin(@ModelAttribute("addAdmin") Admin admin) {
-		adminService.save(admin);
-		return "admin-registered";
+	public String addAdmin(@Valid @ModelAttribute("addAdmin") Admin admin, BindingResult br) {
+		if (br.hasErrors()) {
+			return "addadminform";
+		} else {
+			adminService.save(admin);
+			return "admin-registered";
+		}
 	}
 
 //	update admin
@@ -90,9 +85,13 @@ public class AdminController {
 	}
 
 	@PostMapping("/updateadmin")
-	public String updateAdmin(@ModelAttribute("updateAdmin") Admin admin) {
-		adminService.save(admin);
-		return "admin-updated";
+	public String updateAdmin(@Valid @ModelAttribute("updateAdmin") Admin admin, BindingResult br) {
+		if (br.hasErrors()) {
+			return "updateadminform";
+		} else {
+			adminService.save(admin);
+			return "admin-updated";
+		}
 	}
 
 //	delete admin
@@ -108,14 +107,13 @@ public class AdminController {
 	}
 
 //	users list
-	
 	@GetMapping("/allusers")
 	public String getAllUsers(Model model) {
 		List<User> user = userService.getUsers();
 		model.addAttribute("allusers", user);
 		return "list-all-users";
 	}
-	
+
 //all epass requests	
 	@GetMapping("/epassrequests")
 	public String getAllEpassRequests(Model model) {
@@ -127,7 +125,6 @@ public class AdminController {
 		model.addAttribute("allpassengers", passengersList);
 		return "list-all-epassform";
 	}
-	
 
 	@GetMapping("/epassprocessingstatus")
 	public String userApplicationStatus(Model model) {
@@ -135,14 +132,14 @@ public class AdminController {
 		model.addAttribute("epassForm", epassForm);
 		return "epass-processing-list";
 	}
-	
+
 	@GetMapping("/epassapprovedlist")
 	public String epassApprovedStatus(Model model) {
 		List<EpassForm> epassForm = epassFormService.epassApproved();
 		model.addAttribute("epassForm", epassForm);
 		return "epass-approved-list";
 	}
-	
+
 	@GetMapping("/epassrejectedlist")
 	public String epassRejected(Model model) {
 		List<EpassForm> epassForm = epassFormService.epassRejected();
@@ -158,11 +155,11 @@ public class AdminController {
 		model.addAttribute("epassstatus", epassForm);
 		return "epass-update-form";
 	}
-	
+
 	@PostMapping("/statuschanged")
 	public String statusUpdated(@ModelAttribute("epassstatus") EpassForm epassForm) {
 		epassFormService.save(epassForm);
 		return "redirect:/epassprocessingstatus";
 	}
-	
+
 }

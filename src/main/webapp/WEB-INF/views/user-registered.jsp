@@ -17,7 +17,6 @@
 	<h3>User Registration</h3>
 	<br>
 	<p>Your details are registered successfully</p>
-	${first_name}
 	<br>
 	<div>
 		<a href="home">Home</a>

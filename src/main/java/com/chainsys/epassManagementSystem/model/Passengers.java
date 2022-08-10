@@ -14,7 +14,7 @@ import javax.persistence.Table;
 public class Passengers {
 	@Id
 	@Column(name = "id_proof_number")
-	private Integer idProofNumber;
+	private String idProofNumber;
 	@Column(name = "epass_id")
 	private Integer epassId;
 	@Column(name = "passenger_name")
@@ -80,11 +80,11 @@ public class Passengers {
 		this.idProofType = idProofType;
 	}
 
-	public Integer getIdProofNumber() {
+	public String getIdProofNumber() {
 		return idProofNumber;
 	}
 
-	public void setIdProofNumber(Integer idProofNumber) {
+	public void setIdProofNumber(String idProofNumber) {
 		this.idProofNumber = idProofNumber;
 	}
 

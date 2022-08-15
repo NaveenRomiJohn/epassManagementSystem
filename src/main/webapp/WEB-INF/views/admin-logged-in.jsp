@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Admin In</title>
@@ -9,6 +9,8 @@
 <%@include file="navbar.css"%>
 <%@include file="dashboard.css"%>
 </style>
+<!-- <link rel="stylesheet" href="/epassManagementSystem/navbar.css" type="text/css">
+<link rel="stylesheet" href="/epassManagementSystem/dashboard.css" type="text/css"> -->
 </head>
 <body>
 	<ul class="topnav">
@@ -20,7 +22,7 @@
 
 	<div class="row">
 		<div class="container">
-			<table id="alter" class="center">
+			<table id="alter" class="center"><caption></caption><th></th>
 				<tr>
 					<td>
 						<div class="test_box box-01 col-xs-6 col-md-4">
@@ -114,6 +116,5 @@
 			</table>
 		</div>
 	</div>
-
 </body>
 </html>

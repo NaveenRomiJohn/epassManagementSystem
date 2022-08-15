@@ -48,12 +48,14 @@ public class EpassFormController {
 		epassFormService.save(epassForm);
 		Passengers passengers = new Passengers();
 		model.addAttribute("epassId", epassForm.getEpassId());
+		model.addAttribute("noOfPassengers", epassForm.getNumberOfPassengers());
 		model.addAttribute("passengerswithindistrict", passengers);
 		return "epass-passengers-within-district";
 	}
 
 	@PostMapping("/epasswithinregistered")
 	public String passengersWithinDistrict(@ModelAttribute("passengerswithindistrict") Passengers passengers) {
+		
 		passengersService.save(passengers);
 		return "epass-registered";
 	}

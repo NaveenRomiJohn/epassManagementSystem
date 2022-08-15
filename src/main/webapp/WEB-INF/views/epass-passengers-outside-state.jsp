@@ -3,24 +3,12 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ page import="java.io.*,java.util.*, javax.servlet.*,java.sql.*"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Ouside State</title>
 <style>
-h1, h2, h3 {
-	text-align: center;
-}
-
-div {
-	height: 200px;
-	width: 400px;
-	position: fixed;
-	top: 30%;
-	left: 50%;
-	margin-top: -100px;
-	margin-left: -200px;
-}
+<%@include file="form.css" %>
 <%@include file="navbar.css" %>
 </style>
 </head>
@@ -35,22 +23,22 @@ div {
 
 	<div style="padding: 0 16px;">
 	<div id="passengerform">
-		<h2>Epass Registration form</h2>
+		<h2>Epass Registration Form</h2>
 		<h3>Passengers Outside State</h3>
 		<form:form action="epassoutsidestateregistered" method="post"
 			modelAttribute="passengersoutsidestate">
-			<table>
+			<table class="center"><caption></caption>
 				<tr>
-					<td>Your Epass Id:</td>
+					<th scope="col">Your Epass Id:</th>
 					<td><form:input path="epassId" value="${epassId}"
 							readonly="true" /></td>
 				</tr>
 				<tr>
-					<td>Passenger Name :</td>
+					<th scope="col">Passenger Name :</th>
 					<td><form:input path="passengerName" required="true" /></td>
 				</tr>
 				<tr>
-					<td>Gender :</td>
+					<th scope="col">Gender :</th>
 					<td><form:radiobutton path="passengerGender" name="gender"
 							value="Male" required="true" /> Male <form:radiobutton
 							path="passengerGender" name="gender" value="Female"
@@ -59,11 +47,11 @@ div {
 							required="true" /> Others</td>
 				</tr>
 				<tr>
-					<td>Date of Birth :</td>
+					<th scope="col">Date of Birth :</th>
 					<td><form:input path="dateOfBirth" type="date" required="true" /></td>
 				</tr>
 				<tr>
-					<td>Id Proof Type :</td>
+					<th scope="col">Id Proof Type :</th>
 					<td><form:select path="idProofType">
 							<form:option value="Aadhar Card" label="Aadhar Card"
 								required="true" />
@@ -72,20 +60,20 @@ div {
 						</form:select></td>
 				</tr>
 				<tr>
-					<td>Id Proof Number :</td>
+					<th scope="col">Id Proof Number :</th>
 					<td><form:input path="idProofNumber"
 							pattern="^[1-9]{4}[-]{1}[0-9]{4}[-]{1}[0-9]{4}$"
 							title="Adhaar must be number(ex: 1234-5678-9012)" required="true" /></td>
 				</tr>
 				<tr>
-					<td>Covid Symptoms :</td>
+					<th scope="col">Covid Symptoms :</th>
 					<td><form:radiobutton path="covidSymptoms" value="Yes"
 							required="true" /> Yes <form:radiobutton path="covidSymptoms"
 							value="No" required="true" /> No</td>
 				</tr>
 				<tr>
-					<td><form:button type="submit">Register</form:button> <form:button
-							type="reset">Reset</form:button></td>
+					<td><button type="reset" class="cancelbtn">Reset</button>
+					 <button type="submit" class="signupbtn">Submit</button></td>
 				</tr>
 			</table>
 		</form:form>

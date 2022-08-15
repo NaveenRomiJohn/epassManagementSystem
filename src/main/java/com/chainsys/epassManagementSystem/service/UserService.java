@@ -18,13 +18,12 @@ public class UserService {
 		return userRepository.save(user);
 	}
 
-	public Optional<User> findById(String user_id) {
-		return userRepository.findById(user_id);
+	public Optional<User> findById(String userid) {
+		return userRepository.findById(userid);
 	}
 
 	public List<User> getUsers() {
-		List<User> listUsers = userRepository.findAll();
-		return listUsers;
+		return userRepository.findAll();
 	}
 
 	public User getUserByIdAndPassword(String userId, String userPassword) {

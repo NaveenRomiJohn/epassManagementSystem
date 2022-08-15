@@ -3,7 +3,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>All EPass Form</title>
@@ -21,7 +21,7 @@
 	</ul>
 	<h2>All Epass List</h2>
 	<div id="Epass table">
-		<table class="center" id="alter">
+		<table class="center" id="alter"><caption></caption>
 			<thead>
 				<tr>
 					<th>Epass Id</th>
@@ -62,7 +62,7 @@
 	<br>
 	<h3>Outside state List</h3>
 	<div id="Outside state table">
-		<table class="center" id="alter">
+		<table class="center" id="alter"><caption></caption>
 			<thead>
 				<tr>
 					<th>Epass Id</th>
@@ -98,7 +98,7 @@
 	<br>
 	<h3>Passengers List</h3>
 	<div id="Passengers Table">
-		<table class="center" id="alter">
+		<table class="center" id="alter"><caption></caption>
 			<thead>
 				<tr>
 					<th>Epass Id</th>

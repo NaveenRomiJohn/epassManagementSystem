@@ -2,8 +2,13 @@ package com.chainsys.epassmanagementsystem.businesslogic;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
+
+import com.chainsys.epassmanagementsystem.model.User;
+
 import java.time.LocalDate;
 
 public class Logic {
@@ -38,4 +43,10 @@ public class Logic {
 		LocalDate date = LocalDate.now();
 		return date.plusDays(1);
 	}
+	
+//	public static List<User> getUserid(){
+//		User user= new User();
+//		 List<User> userid = user.getUserId();
+//		return 
+//	}
 }

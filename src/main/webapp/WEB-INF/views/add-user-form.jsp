@@ -3,7 +3,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>E-Pass User form</title>
@@ -38,62 +38,62 @@
 		<form:form action="adduser" name="reg_form" method="post"
 			modelAttribute="adduser" onsubmit="return validateform()">
 			 <div class="container">
-			<table class="center">
+			<table class="center"><caption></caption>
 				<tr>
-					<td>User Id :</td>
+					<th scope="col">User Id :</th>
 					<td><input type="text" id="userId" name="userId" min="6" max="15"
 							required/></td>
 				</tr>
 				<tr>
-					<td>First Name :</td>
+					<th scope="col">First Name :</th>
 					<td><input type="text" id="firstName" name="firstName"
 							title="Name can't be empty or must contain only alphabets"
 							pattern="^[a-zA-Z]+$" required /></td>
 				</tr>
 				<tr>
-					<td>Last Name :</td>
+					<th scope="col">Last Name :</th>
 					<td><input type="text" id="lastName" name="lastName"
 							title="Name can't be empty or must contain only alphabets"
 							pattern="^[a-zA-Z]+$" required/></td>
 				</tr>
 				<tr>
-					<td>Gender :</td>
+					<th scope="col">Gender :</th>
 					<td><input type="radio" id="gender" name="gender" value="Male"
 							required/> Male <input type="radio" id="gender"
 							name="gender" value="Female" required/> Female <input type="radio" id="gender" name="gender" value="Others" required/>
 						Others</td>
 				</tr>
 				<tr>
-					<td>Age :</td>
+					<th scope="col">Age :</th>
 					<td><input type="number" id="age" name="age" min="15" max="70"
 						title="Age must be gretaer than 15 or less than 70" required /></td>
 				</tr>
 				<tr>
-					<td>Email :</td>
+					<th scope="col">Email :</th>
 					<td><input type="text" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,4}"
 							title="Invalid email ex: epass@gmail.com" required/></td>
 				</tr>
 				<tr>
-					<td>Address :</td>
+					<th scope="col">Address :</th>
 					<td><input type="text" id="address" name="address"
 							title="Address should atleast contain 10 characters"
 							required/></td>
 				</tr>
 				<tr>
-					<td>Mobile Number :</td>
+					<th scope="col">Mobile Number :</th>
 					<td><input type="text" id="mobileNumber" name="mobileNumber"
 							pattern="[1-9]{1}[0-9]{9}"
 							title="Phone number should have atleast 10 digits"
 							required/></td>
 				</tr>
 				<tr>
-					<td>User Password :</td>
+					<th scope="col">User Password :</th>
 					<td><input type="password" id="userPassword" name="userPassword"
 							pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$"
 							required /></td>
 				</tr>
 				<tr>
-					<td>Confirm Password :</td>
+					<th scope="col">Confirm Password :</th>
 					<td><input type="password" id="secondpassword"
 						name="secondpassword" required/></td>
 				</tr>

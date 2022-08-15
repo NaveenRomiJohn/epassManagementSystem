@@ -37,8 +37,8 @@ public class UserController {
 	}
 
 	@PostMapping("/adduser")
-	public String addUser(@ModelAttribute("adduser") User user) {
-		userService.save(user);
+	public String addUser(@ModelAttribute("adduser") User user1) {
+		userService.save(user1);
 		return "user-registered";
 	}
 
@@ -62,8 +62,8 @@ public class UserController {
 	}
 
 	@PostMapping("/updateuser")
-	public String updateUser(@ModelAttribute("updateuser") User user) {
-		userService.save(user);
+	public String updateUser(@ModelAttribute("updateuser") User user2) {
+		userService.save(user2);
 		return "user-updated";
 	}
 
@@ -81,8 +81,8 @@ public class UserController {
 	}
 
 	@PostMapping("/userlogin")
-	public String userLogin(@ModelAttribute("userlogin") User user) {
-		User user1 = userService.getUserByIdAndPassword(user.getUserId(), user.getUserPassword());
+	public String userLogin(@ModelAttribute("userlogin") User user3) {
+		User user1 = userService.getUserByIdAndPassword(user3.getUserId(), user3.getUserPassword());
 		if (user1 != null) {
 			return "redirect:/userloggedin";
 		} else {

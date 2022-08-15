@@ -48,8 +48,8 @@ public class AdminController {
 	}
 
 	@PostMapping("/adminlogin")
-	public String adminLogin(@ModelAttribute("adminlogin") Admin admin) {
-		Admin admin1 = adminService.getAdminByIdAndPassword(admin.getAdminId(), admin.getAdminPassword());
+	public String adminLogin(@ModelAttribute("adminlogin") Admin admin2) {
+		Admin admin1 = adminService.getAdminByIdAndPassword(admin2.getAdminId(), admin2.getAdminPassword());
 		if (admin1 != null) {
 			return "redirect:/adminloggedin";
 		} else {
@@ -91,7 +91,7 @@ public class AdminController {
 		return "delete-admin";
 	}
 
-	@RequestMapping("/deleteadmin")
+	@GetMapping("/deleteadmin")
 	public String deleteAdmin(@RequestParam("adminId") String id) {
 		adminService.deleteById(id);
 		return "redirect:/adminLogin";

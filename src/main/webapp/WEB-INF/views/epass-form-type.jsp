@@ -1,27 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Epass Form Type</title>
 <style type="text/css">
-<%@include file ="navbar.css" %> 
-* {
-	box-sizing: border-box;
-}
-
-.column {
-	float: left;
-	width: 33.33%;
-	padding: 5px;
-}
-
-.row::after {
-	content: "";
-	clear: both;
-	display: table;
-}
+<%@include file ="navbar.css"%>
+<%@include file="user-dashboard.css"%>
 </style>
 </head>
 <body>
@@ -32,19 +18,38 @@
 		<li class="right"><a href="home">Epass Management System</a></li>
 	</ul>
 
-	<div class="D116_offer_box">
-		<a target="_blank" rel="noopener noreferrer"
-			href="epassformwithindistrict" class="D116_offer_anchor">
-			<div class="D116_container">
-				<img
-					src="https://images.newindianexpress.com/uploads/user/imagelibrary/2021/5/26/w600X390/lockdown_TN_EPS54.jpg"
-					width="273" height="146">
-			</div>
-			<div class="D116_offer-footer">
-				<b>Within District</b>
-			</div>
-		</a>
+	<div class="row">
+		<div class="container">
+						<div class="test_box box-01 col-xs-6 col-md-4">
+							<div class="inner">
+								<a href="epassformwithindistrict" class="test_click">
+									<div class="flex_this">
+										<h1 class="test_title">Within District</h1>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="test_box box-02 col-xs-6 col-md-4">
+							<div class="inner">
+								<a href="epassformacrossdistrict" class="test_click">
+									<div class="flex_this">
+										<h1 class="test_title">Across District</h1>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="test_box box-03 col-xs-6 col-md-4">
+							<div class="inner">
+								<a href="epassformoutsidestate" class="test_click">
+									<div class="flex_this">
+										<h1 class="test_title">Outside State</h1>
+									</div>
+								</a>
+							</div>
+						</div>
+		</div>
 	</div>
+
 	<!-- <div style="padding: 0 16px;">
 	<h2>Epass Type</h2>
 	<br>

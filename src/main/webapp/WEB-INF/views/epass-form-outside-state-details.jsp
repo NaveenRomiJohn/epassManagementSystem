@@ -1,25 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ page import="java.io.*,java.util.*, javax.servlet.*,java.sql.*, com.chainsys.epassManagementSystem.businesslogic.Logic"%>
+<%@ page import="java.io.*,java.util.*, javax.servlet.*,java.sql.*, com.chainsys.epassmanagementsystem.businesslogic.Logic"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Outside State Details</title>
 <style>
-h1, h2, h3 {
-	text-align: center;
+<%@include file="form.css" %>
+<%@include file="navbar.css" %>
+label {
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
 }
 
-th, td {
-	border: 2px solid black;
-	border-collapse: collapse;
-	margin-left: auto;
-	margin-right: auto;
-	text-align: center;
+input,
+label {
+    margin: .4rem 0;
 }
-<%@include file="navbar.css" %>
 </style>
 </head>
 <body>
@@ -32,18 +31,18 @@ th, td {
 	</ul>
 
 	<div style="padding: 0 16px;">
-	<h2>Epass Registration form</h2>
+	<h2>Epass Registration Form</h2>
 	<h3>Outside State Details</h3>
 	<div id="outsidestateform">
 		<form:form action="outsidestatedetailsregistered" method="post"
 			modelAttribute="outsidestatedetails">
-			<div>
+			<table class="center"><caption></caption>
+			<tr>
 				<form:hidden path="epassId" value="${epassId}" />
-			</div>
-			<br>
-			<div>
-				From State :
-				<form:select path="fromState">
+			</tr>
+			<tr>
+				<th scope="col">From State :</th>
+				<td><form:select path="fromState">
 					<form:option value="SelectState" />Select State
                         <form:option value="Andra Pradesh"
 						label="Andra Pradesh" />
@@ -84,12 +83,11 @@ th, td {
 					<form:option value="Delhi" label="Delhi" />
 					<form:option value="Lakshadeep" label="Lakshadeep" />
 					<form:option value="Pondicherry" label="Pondicherry" />
-				</form:select>
-			</div>
-			<br>
-			<div>
-				To State :
-				<form:select path="toState">
+				</form:select></td>
+			</tr>
+			<tr>
+				<th scope="col">To State :</th>
+				<td><form:select path="toState">
 					<form:option value="SelectState" />Select State
                         <form:option value="Andra Pradesh"
 						label="Andra Pradesh" />
@@ -130,52 +128,41 @@ th, td {
 					<form:option value="Delhi" label="Delhi" />
 					<form:option value="Lakshadeep" label="Lakshadeep" />
 					<form:option value="Pondicherry" label="Pondicherry" />
-				</form:select>
-			</div>
-			<br>
-			<div>
-				Quarantine From date :
-				<input  id="quarantineFromDate" name="quarantineFromDate" type="date" max="<%=Logic.getInstanceDate()%>" required />
-			</div>
-			<br>
-			<div>
-				Quarantine To date :
-				<input  id="quarantineToDate" name="quarantineToDate" type="date" max="<%=Logic.getInstanceDate()%>" required />
-			</div>
-			<br>
-			<div>
-				Quarantine Location :
-				<form:input path="quarantineLocation" />
-			</div>
-			<br>
-			<div>
-				PCR Result Certificate Date :
-				<form:input path="pcrResultCertificateDate" type="date" />
-			</div>
-			<br>
-			<div>
-				PCR Result Certificate Number :
-				<form:input path="pcrResultCertificateNumber" />
-			</div>
-			<br>
-			<div>
-				PCR Certificate Issued by:
-				<form:input path="pcrCertificateIssuedBy" />
-				<%-- <form:option value="Ghaziabad" label="Ghaziabad" />
-						<form:option value="Modinagar" label="Modinagar" />
-						<form:option value="Meerut" label="Meerut" />
-						<form:option value="Amristar" label="Amristar" />
-					</form:select> --%>
-			</div>
-			<br>
-			<div>
-			 select a file :<input type="file" id="rtPcrFile" name="rtPcrFile">
-			 </div>
-			<br>
-			<div>
-				<input type="submit" value="Submit" /> <input type="reset"
-					value="Reset" />
-			</div>
+				</form:select></td>
+			</tr>
+			<tr>
+				<th scope="col">Quarantine From date :</th>
+				<td><input  id="quarantineFromDate" name="quarantineFromDate" type="date" max="<%=Logic.getInstanceDate()%>" required /></td>
+			</tr>
+			<tr>
+				<th scope="col">Quarantine To date :</th>
+				<td><input  id="quarantineToDate" name="quarantineToDate" type="date" max="<%=Logic.getInstanceDate()%>" required /></td>
+			</tr>
+			<tr>
+				<th scope="col">Quarantine Location :</th>
+				<td><form:input path="quarantineLocation" /></td>
+			</tr>
+			<tr>
+				<th scope="col">PCR Result Certificate Date :</th>
+				<td><form:input path="pcrResultCertificateDate" type="date" max="<%=Logic.getInstanceDate()%>" /><td>
+			</tr>
+			<tr>
+				<th scope="col">PCR Result Certificate Number :</th>
+				<td><form:input path="pcrResultCertificateNumber" /></td>
+			</tr>
+			<tr>
+				<th scope="col">PCR Certificate Issued by:</th>
+				<td><form:input path="pcrCertificateIssuedBy" /></td>
+			</tr>
+			<tr>
+			 <td><label for="rtPcrFile">Choose a file:</label></td>
+			 <td><input type="file" id="rtPcrFile" name="rtPcrFile"></td>
+			 </tr>
+			<tr>
+				<td><button type="reset" class="cancelbtn">Reset</button>
+					 <button type="submit" class="signupbtn">Submit</button></td>
+			</tr>
+			</table>
 		</form:form>
 	</div>
 	</div>

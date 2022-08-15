@@ -4,13 +4,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="java.util.List"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Admin form</title>
 <style>
  <%@include file="navbar.css"%>
-  <%@include file="form.css"%>
+ <%@include file="form.css"%>
 </style>
 <script>
 function validateadmin() {
@@ -42,37 +42,37 @@ function validateadmin() {
 		<h3>Admin Registration form</h3>
 		<form:form action="addadmin" method="post" modelAttribute="addAdmin"
 			onsubmit="return validateadmin()">
-			<table class="center">
+			<table class="center"><caption></caption>
 				<tr>
-					<td><form:label path="adminId">Admin Id: </form:label></td>
+					<th scope="col"><form:label path="adminId">Admin Id: </form:label></th>
 					<td><form:input path="adminId" required="true" /></td>
 				</tr>
 				<tr>
-					<td><form:label path="adminName">Name: </form:label></td>
+					<th scope="col"><form:label path="adminName">Name: </form:label></th>
 					<td><form:input path="adminName"
 							title="Name can't be empty or must contain only alphabets"
 							pattern="^[a-zA-Z ]+$" required="true" /></td>
 				</tr>
 				<tr>
-					<td><form:label path="adminEmail">Email: </form:label></td>
+					<th scope="col"><form:label path="adminEmail">Email: </form:label></th>
 					<td><form:input type="email" path="adminEmail"
 							pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$"
 							title="Invalid email ex: epass@gmail.com" required="true" /></td>
 				</tr>
 				<tr>
-					<td><form:label path="adminPassword">Password: </form:label></td>
+					<th scope="col"><form:label path="adminPassword">Password: </form:label></th>
 					<td><form:password path="adminPassword"
 							pattern="^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8}$"
 							title="Password must be minimum 8 characters with alphabets,one special and one number"
 							required="true" /></td>
 				</tr>
 				<tr>
-					<td><form:label path="dateOfJoining">Date of Joining: </form:label></td>
+					<th scope="col"><form:label path="dateOfJoining">Date of Joining: </form:label></th>
 					<td><form:input type="date" path="dateOfJoining"
 							required="true" /></td>
 				</tr>
 				<tr>
-					<td><form:label path="adminDesignation">Designation: </form:label></td>
+					<th scope="col"><form:label path="adminDesignation">Designation: </form:label></th>
 					<td><form:input path="adminDesignation"
 							title="Name can't be empty or must contain only alphabets"
 							pattern="^[a-zA-Z]+$" required="true" /></td>

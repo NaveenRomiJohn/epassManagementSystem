@@ -1,56 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Home</title>
 <style>
-* {
-	text-align: center;
-}
-
-body {
-	margin: 0;
-}
-
-ul.topnav {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-	background-color: #333;
-}
-
-ul.topnav li {
-	float: left;
-}
-
-ul.topnav li a {
-	display: block;
-	color: white;
-	text-align: center;
-	padding: 14px 16px;
-	text-decoration: none;
-}
-
-ul.topnav li a:hover:not(.active) {
-	background-color: #111;
-}
-
-ul.topnav li a.active {
-	background-color: #04AA6D;
-}
-
-ul.topnav li.right {
-	float: right;
-}
-
-@media screen and (max-width: 600px) {
-	ul.topnav li.right, ul.topnav li {
-		float: none;
-	}
-}
+<%@include file="navbar.css" %>
 </style>
 </head>
 <body>
@@ -87,5 +43,54 @@ ul.topnav li.right {
 			<label>5. This Vehicle e-Pass is non-transferable. </label>
 		</div>
 	</div>
+	<!-- <iframe src="https://covid19.who.int/region/searo/country/in" width="400" height="400"></iframe> -->
+	
+	<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="" style="width:100%">
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="https://blog.mygov.in/wp-content/uploads/2020/05/WhatsApp-Image-2020-05-27-at-5.04.29-PM.jpeg" style="width:100%">
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="img_mountains_wide.jpg" style="width:100%">
+</div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 3000); // Change image every 2 seconds
+}
+</script>
 </body>
 </html>

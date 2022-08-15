@@ -33,8 +33,7 @@ public class EpassFormService {
 	}
 
 	public List<EpassForm> getAllEpassForm() {
-		List<EpassForm> listEpassForm = epassFormRepository.findAll();
-		return listEpassForm;
+		return epassFormRepository.findAll();
 	}
 
 	public EpassForm findById(int id) {
@@ -42,8 +41,7 @@ public class EpassFormService {
 	}
 
 	public List<EpassForm> findByApprovalStatuss(String status) {
-		List<EpassForm> statusList = epassFormRepository.findByApprovalStatus(status);
-		return statusList;
+		return epassFormRepository.findByApprovalStatus(status);
 	}
 
 	@Transactional
@@ -61,7 +59,7 @@ public class EpassFormService {
 	}
 
 	public List<EpassForm> epassProcessing() {
-		String status = "processing";
+		String status = "Processing";
 		return epassFormRepository.findByApprovalStatus(status);
 	}
 
@@ -90,10 +88,10 @@ public class EpassFormService {
 //	outside state	
 	@Transactional
 	public void addEpassOutsideState(EpassFormOutsideStateDTO dto) {
-		EpassForm epassForm = dto.getEpassForm();
-		save(epassForm);
-		OutsideState outsideState = dto.getOutsideState();
-		outsideStateRepository.save(outsideState);
+//		EpassForm epassForm = dto.getEpassForm();
+//		save(epassForm);
+//		OutsideState outsideState = dto.getOutsideState();
+//		outsideStateRepository.save(outsideState);
 		List<Passengers> passengersList = dto.getPassengers();
 		int count = passengersList.size();
 		for (int i = 0; i < count; i++) {

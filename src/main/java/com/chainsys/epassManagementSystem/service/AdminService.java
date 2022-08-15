@@ -19,17 +19,16 @@ public class AdminService {
 	}
 
 	public List<Admin> getRequests() {
-		List<Admin> reqList = adminRepository.findAll();
-		return reqList;
+		return adminRepository.findAll();
 	}
 
-	public Admin findById(String admin_id) {
-		return adminRepository.findByAdminId(admin_id);
+	public Admin findById(String adminid) {
+		return adminRepository.findByAdminId(adminid);
 	}
 
 	@Transactional
-	public void deleteById(String admin_id) {
-		adminRepository.deleteByAdminId(admin_id);
+	public void deleteById(String adminid) {
+		adminRepository.deleteByAdminId(adminid);
 	}
 	
 	public Admin getAdminByIdAndPassword(String adminId, String adminPassword) {

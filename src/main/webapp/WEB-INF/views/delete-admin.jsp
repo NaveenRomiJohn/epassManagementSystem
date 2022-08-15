@@ -2,7 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Delete Admin</title>
@@ -27,10 +27,12 @@
 		<li class="right"><a href="home">Epass Management System</a></li>
 	</ul>
 	<h3>Delete Admin Details</h3>
-	<form action="deleteadmin" name="reg_form" onsubmit="return validateform()">
-		<table class="center">
+	<form action="deleteadmin" name="reg_form" method="get" onsubmit="return validateform()">
+		<table class="center"><caption></caption>
 		<tr>
-			<td>AdminId :</td>
+			<th>AdminId</th>
+		</tr>
+		<tr>
 			<td> <input type="text" name="adminId" id="adminId"/></td>
 		</tr>
 		<tr>

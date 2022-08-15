@@ -2,7 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Epass Processing Status</title>
@@ -18,7 +18,7 @@
 		<li><a href="userloginform">User</a></li>
 		<div class="dropdown">
         <button class="dropbtn">Admin 
-     	 <i class="fa fa-caret-down"></i> </button>
+     	 <em class="fa fa-caret-down"></em> </button>
     	<div class="dropdown-content">
     	  	<a href="allusers">Users</a>
      	 	<a href="epassprocessingstatus">Epass requests</a>

@@ -4,12 +4,12 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
 import com.chainsys.epassManagementSystem.dto.EpassFormPassengersDTO;
 import com.chainsys.epassManagementSystem.model.EpassForm;
 import com.chainsys.epassManagementSystem.model.OutsideState;
@@ -30,13 +30,11 @@ public class EpassFormController {
 	@Autowired
 	public OutsideStateService outsideStateService;
 
-//--------------------------form type---------------------------------------------------------------------------------
 	@RequestMapping("/epassformtype")
 	public String epassFormType() {
 		return "epass-form-type";
 	}
 
-//-----------------------Epass within district------------------------------------------------------------------------
 	@GetMapping("/epassformwithindistrict")
 	public String epassFormWithinDistrict(Model model) {
 		EpassForm epassForm = new EpassForm();
@@ -60,7 +58,6 @@ public class EpassFormController {
 		return "epass-registered";
 	}
 
-//----------------------Epass across district--------------------------------------------------------------------------
 	@GetMapping("/epassformacrossdistrict")
 	public String epassFormAcrossDistrict(Model model) {
 		EpassForm epassForm = new EpassForm();
@@ -70,10 +67,8 @@ public class EpassFormController {
 
 	@PostMapping("/epassformacrossregistered")
 	public String epassFormAcrossDistrict(@Valid @ModelAttribute("epassacrossdistrict") EpassForm epassForm,
-			Model model, BindingResult br) {
-		/*
-		 * if (br.hasErrors()) { return "epassformacrossdistrict"; } else {
-		 */
+			Model model) {
+		
 		epassFormService.save(epassForm);
 		Passengers passengers = new Passengers();
 		model.addAttribute("epassId", epassForm.getEpassId());
@@ -82,16 +77,11 @@ public class EpassFormController {
 	}
 
 	@PostMapping("/epassacrossregistered")
-	public String passengersAcrossDistrict(@Valid @ModelAttribute("passengersacrossdistrict") Passengers passengers,
-			BindingResult br) {
-		/*
-		 * if (br.hasErrors()) { return "epassformacrossregistered"; } else {
-		 */
+	public String passengersAcrossDistrict( @ModelAttribute("passengersacrossdistrict") Passengers passengers) {
 		passengersService.save(passengers);
 		return "epass-registered";
 	}
 
-//------------------------Epass outside state--------------------------------------------------------------------------
 	@GetMapping("/epassformoutsidestate")
 	public String epassFormOutsideState(Model model) {
 		EpassForm epassForm = new EpassForm();
@@ -100,11 +90,7 @@ public class EpassFormController {
 	}
 
 	@PostMapping("/epassformoutsidestateregistered")
-	public String epassFormOutsideState(@Valid @ModelAttribute("epassoutsidestate") EpassForm epassForm, Model model,
-			BindingResult br) {
-		/*
-		 * if (br.hasErrors()) { return "epassformoutsidestate"; } else {
-		 */
+	public String epassFormOutsideState( @ModelAttribute("epassoutsidestate") EpassForm epassForm, Model model) {
 		epassFormService.save(epassForm);
 		OutsideState outsideState = new OutsideState();
 		model.addAttribute("epassId", epassForm.getEpassId());
@@ -113,11 +99,8 @@ public class EpassFormController {
 	}
 
 	@PostMapping("/outsidestatedetailsregistered")
-	public String epassFormOutsideState(@Valid @ModelAttribute("epassoutsidestate") OutsideState outsideState,
-			Model model, BindingResult br) {
-		/*
-		 * if (br.hasErrors()) { return "epassformoutsidestateregistered"; } else {
-		 */
+	public String epassFormOutsideState( @ModelAttribute("epassoutsidestate") OutsideState outsideState,
+			Model model) {
 		outsideStateService.save(outsideState);
 		Passengers passengers = new Passengers();
 		model.addAttribute("epassId", outsideState.getEpassId());
@@ -126,16 +109,11 @@ public class EpassFormController {
 	}
 
 	@PostMapping("/epassoutsidestateregistered")
-	public String passengersOutsideState(@Valid @ModelAttribute("passengersacrossdistrict") Passengers passengers,
-			BindingResult br) {
-		/*
-		 * if (br.hasErrors()) { return "outsidestatedetailsregistered"; } else {
-		 */
+	public String passengersOutsideState(@Valid @ModelAttribute("passengersacrossdistrict") Passengers passengers) {
 		passengersService.save(passengers);
 		return "epass-registered";
 	}
 
-//			get passengers by epass-id
 	@GetMapping("/getpassengersbyepassid")
 	public String getPassengersByEpassId(@RequestParam("id") Integer id, Model model) {
 		EpassFormPassengersDTO dto = epassFormService.getEpassAndPassengers(id);

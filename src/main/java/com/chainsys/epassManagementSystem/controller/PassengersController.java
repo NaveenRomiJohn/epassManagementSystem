@@ -21,4 +21,9 @@ public class PassengersController {
 		model.addAttribute("allpassengers", passengersList);
 		return "list-all-passengers";
 	}
+	
+	@GetMapping("/getpassengers")
+	public String getPassengers() {
+		return "NewFile";
+	}
 }

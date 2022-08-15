@@ -20,16 +20,7 @@ public class PassengersService {
 	}
 
 	public List<Passengers> getPassengers() {
-		List<Passengers> listPassengers = passengersRepository.findAll();
-		return listPassengers;
-	}
-
-//	public Passengers findById(int id) {
-//		return passengersRepository.findById(id);
-//	}
-
-	public int getNextPassenger() {
-		return 0;
+		return passengersRepository.findAll();
 	}
 
 }

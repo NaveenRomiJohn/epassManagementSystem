@@ -7,38 +7,21 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>All EPass Form</title>
-<style>
-h1, h2, h3 {
-	text-align: center;
-}
-* {
-  background-image: url("https://www.waters.com/content/dam/waters/en/Photography/stock/health-and-medical/stock-covid-19-coronavirus.jpg/_jcr_content/renditions/original");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 3000px 2000px;
-}
-table, th, td {
-	border: 2px solid black;
-	border-collapse: collapse;
-	text-align: center;
-}
-
-table {
-	width: 90%;
-}
-
-table.center {
-	margin-left: auto;
-	margin-right: auto;
-}
+<style type="text/css">
+  <%@include file="style.css" %>
+   <%@include file="navbar.css"%>
 </style>
 </head>
 <body>
-	<h1>E-Pass Management System</h1>
+<ul class="topnav">
+		<li><a href="home">Home</a></li>
+		<li><a href="userloginform">User</a></li>
+		<li><a class="active" href="adminloginform">Admin</a></li>
+		<li class="right"><a href="home">Epass Management System</a></li>
+	</ul>
 	<h2>All Epass List</h2>
-	<h3>Epass List Type</h3>
 	<div id="Epass table">
-		<table class="center">
+		<table class="center" id="alter">
 			<thead>
 				<tr>
 					<th>Epass Id</th>
@@ -79,7 +62,7 @@ table.center {
 	<br>
 	<h3>Outside state List</h3>
 	<div id="Outside state table">
-		<table class="center">
+		<table class="center" id="alter">
 			<thead>
 				<tr>
 					<th>Epass Id</th>
@@ -115,7 +98,7 @@ table.center {
 	<br>
 	<h3>Passengers List</h3>
 	<div id="Passengers Table">
-		<table class="center">
+		<table class="center" id="alter">
 			<thead>
 				<tr>
 					<th>Epass Id</th>

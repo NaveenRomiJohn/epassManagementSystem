@@ -7,52 +7,57 @@
 <meta charset="ISO-8859-1">
 <title>Admin form</title>
 <style>
-*{text-align: center;}
-* {
-  background-image: url("https://www.waters.com/content/dam/waters/en/Photography/stock/health-and-medical/stock-covid-19-coronavirus.jpg/_jcr_content/renditions/original");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 3000px 2000px;
-}
+  <%@include file="navbar.css"%>
+  <%@include file="form.css"%>
 </style>
 </head>
 <body>
-<h1>E-Pass Management System</h1>
-	<h3>Update Admin Details</h3>
-	<div id="root">
-		<div id="form">
-			<form:form action="updateadmin" method="post" modelAttribute="updateAdmin">
-				
-				<div>
-				AdminId :<form:input path="adminId" />
-				</div>
-				<br>
-				<div>
-				Name : <form:input path="adminName" />
-				</div>
-				<br>
-				<div>
-				Email : <form:input path="adminEmail" />
-				</div>
-				<br>
-				<div>
-				Password : <form:password path="adminPassword"/>
-				</div>
-				<br>
-				<div>
-				Date Of Joining : <form:input path="dateOfJoining"/>
-				</div>
-				<br>
-				<div>
-				Designation : <form:input path="adminDesignation"/>
-				</div>
-				<br>
-				<div>
-				<input type="submit" value="Submit" />
-				<input type="reset">
-				</div>
-			</form:form>
-		</div>
-	</div>
+<ul class="topnav">
+		<li><a href="home">Home</a></li>
+		<li><a href="userloginform">User</a></li>
+		<li><a class="active" href="adminloginform">Admin</a></li>
+		<li class="right"><a href="home">Epass Management System</a></li>
+	</ul>
+		<h3>Admin Details Updation</h3>
+		<form:form action="updateadmin" method="post" modelAttribute="updateadmin">
+			<table class="center">
+				<tr>
+					<td><form:label path="adminId">Admin Id: </form:label></td>
+					<td><form:input path="adminId" required="true" /></td>
+				</tr>
+				<tr>
+					<td><form:label path="adminName">Name: </form:label></td>
+					<td><form:input path="adminName"
+							title="Name can't be empty or must contain only alphabets"
+							pattern="^[a-zA-Z]+$" required="true" /></td>
+				</tr>
+				<tr>
+					<td><form:label path="adminEmail">Email: </form:label></td>
+					<td><form:input type="email" path="adminEmail"
+							pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$"
+							title="Invalid email ex: epass@gmail.com" required="true" /></td>
+				</tr>
+				<tr>
+					<td><form:label path="adminPassword">Password: </form:label></td>
+					<td><form:password path="adminPassword"
+							pattern="^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8}$"
+							required="true" /></td>
+				</tr>
+				<tr>
+					<td><form:label path="dateOfJoining">Date of Joining: </form:label></td>
+					<td><form:input type="date" path="dateOfJoining" /></td>
+				</tr>
+				<tr>
+					<td><form:label path="adminDesignation">Designation: </form:label></td>
+					<td><form:input path="adminDesignation"
+							title="Name can't be empty or must contain only alphabets"
+							pattern="^[a-zA-Z]+$" required="true" /></td>
+				</tr>
+				<tr>
+					<td><button type="reset" class="cancelbtn">Reset</button>
+					 <button type="submit" class="signupbtn">Update</button></td>
+				</tr>
+			</table>
+		</form:form>
 </body>
 </html>

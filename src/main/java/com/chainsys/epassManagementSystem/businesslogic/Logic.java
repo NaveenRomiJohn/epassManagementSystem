@@ -5,11 +5,12 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.time.LocalDate;
-import java.time.LocalDateTime;  
-import java.time.format.DateTimeFormatter;
 
 public class Logic {
-	public static Date getInstanceDate() {
+	
+	private Logic(){
+	}
+	public static Date getInstanceDate1() {
 		Calendar vcalendar = Calendar.getInstance();
 		String dates = vcalendar.get(Calendar.DATE) + "/" + (vcalendar.get(Calendar.MONTH) + 1) + "/"
 				+ vcalendar.get(Calendar.YEAR);
@@ -23,9 +24,18 @@ public class Logic {
 		}
 		return date;
 	}
+
+	public static LocalDate getInstanceDate() {
+		return java.time.LocalDate.now();
+	}
+
+	public static LocalDate getMinusDate() {
+		LocalDate date = LocalDate.now();
+		return date.minusDays(1);
+	}
 	
-	public static LocalDate getInstanceDate1() {
-		LocalDate date=java.time.LocalDate.now();
-		return date;
+	public static LocalDate getAddDate() {
+		LocalDate date = LocalDate.now();
+		return date.plusDays(1);
 	}
 }

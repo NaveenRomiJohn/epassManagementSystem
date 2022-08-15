@@ -7,17 +7,8 @@
 <meta charset="ISO-8859-1">
 <title>Delete Admin</title>
 <style>
-* {
-	text-align: center;
-}
-
-* {
-	background-image:
-		url("https://www.waters.com/content/dam/waters/en/Photography/stock/health-and-medical/stock-covid-19-coronavirus.jpg/_jcr_content/renditions/original");
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: 3000px 2000px;
-}
+ <%@include file="navbar.css"%>
+  <%@include file="form.css"%>
 </style>
 </head>
 <script>
@@ -29,13 +20,23 @@
 		}
 		</script>
 <body>
-	<h1>E-Pass Management System</h1>
+<ul class="topnav">
+		<li><a href="home">Home</a></li>
+		<li><a href="userloginform">User</a></li>
+		<li><a class="active" href="adminloginform">Admin</a></li>
+		<li class="right"><a href="home">Epass Management System</a></li>
+	</ul>
 	<h3>Delete Admin Details</h3>
 	<form action="deleteadmin" name="reg_form" onsubmit="return validateform()">
-		<div>
-			AdminId : <input type="text" name="adminId" id="adminId"/>
-		</div>
-		<br> <input type="submit" value="Delete" />
+		<table class="center">
+		<tr>
+			<td>AdminId :</td>
+			<td> <input type="text" name="adminId" id="adminId"/></td>
+		</tr>
+		<tr>
+			<td><button type="submit" class="signupbtn">Update</button></td>
+		</tr>
+		</table>
 	</form>
 </body>
 </html>

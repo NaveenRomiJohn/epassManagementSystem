@@ -1,16 +1,15 @@
 package com.chainsys.epassManagementSystem.controller;
 
 import java.util.List;
-import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
 import com.chainsys.epassManagementSystem.model.Admin;
 import com.chainsys.epassManagementSystem.model.EpassForm;
 import com.chainsys.epassManagementSystem.model.OutsideState;
@@ -67,31 +66,23 @@ public class AdminController {
 	}
 
 	@PostMapping("/addadmin")
-	public String addAdmin(@Valid @ModelAttribute("addAdmin") Admin admin, BindingResult br) {
-		if (br.hasErrors()) {
-			return "addadminform";
-		} else {
-			adminService.save(admin);
-			return "admin-registered";
-		}
+	public String addAdmin(@ModelAttribute("addadmin") Admin admin) {
+		adminService.save(admin);
+		return "admin-registered";
 	}
 
 //	update admin
 	@GetMapping("/updateadminform")
 	public String showUpdateForm(Model model) {
 		Admin admin = new Admin();
-		model.addAttribute("updateAdmin", admin);
+		model.addAttribute("updateadmin", admin);
 		return "update-admin-form";
 	}
 
 	@PostMapping("/updateadmin")
-	public String updateAdmin(@Valid @ModelAttribute("updateAdmin") Admin admin, BindingResult br) {
-		if (br.hasErrors()) {
-			return "updateadminform";
-		} else {
-			adminService.save(admin);
-			return "admin-updated";
-		}
+	public String updateAdmin(@ModelAttribute("updateadmin") Admin admin) {
+		adminService.save(admin);
+		return "admin-updated";
 	}
 
 //	delete admin
@@ -101,7 +92,7 @@ public class AdminController {
 	}
 
 	@RequestMapping("/deleteadmin")
-	public String deleteAdmin(@RequestParam("adminId") int id) {
+	public String deleteAdmin(@RequestParam("adminId") String id) {
 		adminService.deleteById(id);
 		return "redirect:/adminLogin";
 	}
@@ -129,21 +120,21 @@ public class AdminController {
 	@GetMapping("/epassprocessingstatus")
 	public String userApplicationStatus(Model model) {
 		List<EpassForm> epassForm = epassFormService.epassProcessing();
-		model.addAttribute("epassForm", epassForm);
+		model.addAttribute("epassFormProcessing", epassForm);
 		return "epass-processing-list";
 	}
 
 	@GetMapping("/epassapprovedlist")
 	public String epassApprovedStatus(Model model) {
 		List<EpassForm> epassForm = epassFormService.epassApproved();
-		model.addAttribute("epassForm", epassForm);
+		model.addAttribute("epassFormApproved", epassForm);
 		return "epass-approved-list";
 	}
 
 	@GetMapping("/epassrejectedlist")
 	public String epassRejected(Model model) {
 		List<EpassForm> epassForm = epassFormService.epassRejected();
-		model.addAttribute("epassForm", epassForm);
+		model.addAttribute("epassFormRejected", epassForm);
 		return "epass-rejected-list";
 	}
 

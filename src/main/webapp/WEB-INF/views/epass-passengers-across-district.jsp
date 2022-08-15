@@ -12,14 +12,6 @@ h1, h2, h3 {
 	text-align: center;
 }
 
-* {
-	background-image:
-		url("https://www.waters.com/content/dam/waters/en/Photography/stock/health-and-medical/stock-covid-19-coronavirus.jpg/_jcr_content/renditions/original");
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: 3000px 2000px;
-}
-
 div {
 	height: 200px;
 	width: 400px;
@@ -29,15 +21,19 @@ div {
 	margin-top: -100px;
 	margin-left: -200px;
 }
-
-.text-danger {
-	color: #e80c4d;
-	font-size: 0.9em;
-}
+<%@include file="navbar.css" %>
 </style>
 </head>
 <body>
-	<h1>E-Pass Management System</h1>
+<ul class="topnav">
+		<li><a href="home">Home</a></li>
+		<li><a href="userloginform">User</a></li>
+		<li><a href="adminloginform">Admin</a></li>
+		<li><a class="active" href="epassformtype">EpassForm</a></li>
+		<li class="right"><a href="home">Epass Management System</a></li>
+	</ul>
+
+	<div style="padding: 0 16px;">
 	<div id="passengerform">
 		<h2>Epass Registration form</h2>
 		<h3>Passengers Across District</h3>
@@ -94,6 +90,7 @@ div {
 				</tr>
 			</table>
 		</form:form>
+	</div>
 	</div>
 </body>
 </html>

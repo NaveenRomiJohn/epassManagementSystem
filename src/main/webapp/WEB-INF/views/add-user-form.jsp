@@ -1,42 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>E-Pass User form</title>
 <style>
-* {
-	text-align: center;
-}
-
-div {
-	height: 200px;
-	width: 400px;
-	position: fixed;
-	top: 30%;
-	left: 50%;
-	margin-top: -100px;
-	margin-left: -200px;
-}
-
-td {
-	text-align: center;
-}
-
-* {
-	background-image:
-		url("https://www.waters.com/content/dam/waters/en/Photography/stock/health-and-medical/stock-covid-19-coronavirus.jpg/_jcr_content/renditions/original");
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: 3000px 2000px;
-}
-
-.text-danger {
-	color: #e80c4d;
-	font-size: 14px;
-}
+<%@include file="form.css" %>
+<%@include file="navbar.css" %>
 </style>
 </head>
 <script>
@@ -53,79 +26,85 @@ td {
 	}
 </script>
 <body>
-	<h1>E-Pass Management System</h1>
-	<div>
+<ul class="topnav">
+		<li><a href="home">Home</a></li>
+		<li><a class="active" href="userloginform">User</a></li>
+		<li><a href="adminloginform">Admin</a></li>
+		<li class="right"><a href="home">Epass Management System</a></li>
+	</ul>
+<div>
+	<div style="padding: 0 18px;">
 		<h2>User Registration Form</h2>
 		<form:form action="adduser" name="reg_form" method="post"
 			modelAttribute="adduser" onsubmit="return validateform()">
-			<table>
+			 <div class="container">
+			<table class="center">
 				<tr>
 					<td>User Id :</td>
-					<td><form:input path="userId" name="userId" min="6" max="15"
-							required="true" /></td>
+					<td><input type="text" id="userId" name="userId" min="6" max="15"
+							required/></td>
 				</tr>
 				<tr>
 					<td>First Name :</td>
-					<td><form:input path="firstName" name="firstName"
+					<td><input type="text" id="firstName" name="firstName"
 							title="Name can't be empty or must contain only alphabets"
-							pattern="^[a-zA-Z]+$" required="true" /></td>
+							pattern="^[a-zA-Z]+$" required /></td>
 				</tr>
 				<tr>
 					<td>Last Name :</td>
-					<td><form:input path="lastName" name="lastName"
+					<td><input type="text" id="lastName" name="lastName"
 							title="Name can't be empty or must contain only alphabets"
-							pattern="^[a-zA-Z]+$" required="true" /></td>
+							pattern="^[a-zA-Z]+$" required/></td>
 				</tr>
 				<tr>
 					<td>Gender :</td>
-					<td><form:radiobutton path="gender" name="gender" value="Male"
-							required="true" /> Male <form:radiobutton path="gender"
-							name="gender" value="Female" required="true" /> Female <form:radiobutton
-							path="gender" name="gender" value="Others" required="true" />
+					<td><input type="radio" id="gender" name="gender" value="Male"
+							required/> Male <input type="radio" id="gender"
+							name="gender" value="Female" required/> Female <input type="radio" id="gender" name="gender" value="Others" required/>
 						Others</td>
 				</tr>
 				<tr>
 					<td>Age :</td>
-					<td><form:input path="age" name="age" pattern="^[0-9]{2,3}$"
-							title="Age must be gretaer than 15 or less than 70"
-							required="true" /></td>
+					<td><input type="number" id="age" name="age" min="15" max="70"
+						title="Age must be gretaer than 15 or less than 70" required /></td>
 				</tr>
 				<tr>
 					<td>Email :</td>
-					<td><form:input path="email" name="email"
-							pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$"
-							title="Invalid email ex: epass@gmail.com" required="true" /></td>
+					<td><input type="text" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,4}"
+							title="Invalid email ex: epass@gmail.com" required/></td>
 				</tr>
 				<tr>
 					<td>Address :</td>
-					<td><form:textarea path="address" name="address"
+					<td><input type="text" id="address" name="address"
 							title="Address should atleast contain 10 characters"
-							required="true" /></td>
+							required/></td>
 				</tr>
 				<tr>
 					<td>Mobile Number :</td>
-					<td><form:input path="mobileNumber" name="mobileNumber"
+					<td><input type="text" id="mobileNumber" name="mobileNumber"
 							pattern="[1-9]{1}[0-9]{9}"
 							title="Phone number should have atleast 10 digits"
-							required="true" /></td>
+							required/></td>
 				</tr>
 				<tr>
 					<td>User Password :</td>
-					<td><form:password path="userPassword" name="firstpassword"
-							pattern="^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8}$"
-							required="true" /></td>
+					<td><input type="password" id="userPassword" name="userPassword"
+							pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$"
+							required /></td>
 				</tr>
 				<tr>
 					<td>Confirm Password :</td>
 					<td><input type="password" id="secondpassword"
-						name="secondpassword" /></td>
+						name="secondpassword" required/></td>
 				</tr>
 				<tr>
-					<td><form:button type="submit">Register</form:button> <form:button
-							type="reset">Reset</form:button></td>
+					<td><button type="reset" class="cancelbtn">Reset</button>
+					 <button type="submit" class="signupbtn">Register</button></td>
 				</tr>
 			</table>
+			</div>
 		</form:form>
-	</div>
+		</div>
+		</div>
 </body>
 </html>

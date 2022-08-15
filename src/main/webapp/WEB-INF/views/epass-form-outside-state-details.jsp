@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ page import="java.io.*,java.util.*, javax.servlet.*,java.sql.*, com.chainsys.epassManagementSystem.businesslogic.Logic"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,27 +19,19 @@ th, td {
 	margin-right: auto;
 	text-align: center;
 }
-
-.text-danger {
-	color: #e80c4d;
-	font-size: 0.9em;
-}
-
-* {
-	background-image:
-		url("https://www.waters.com/content/dam/waters/en/Photography/stock/health-and-medical/stock-covid-19-coronavirus.jpg/_jcr_content/renditions/original");
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: 3000px 2000px;
-}
-
-* {
-	text-align: center;
-}
+<%@include file="navbar.css" %>
 </style>
 </head>
 <body>
-	<h1>E-Pass Management System</h1>
+<ul class="topnav">
+		<li><a href="home">Home</a></li>
+		<li><a href="userloginform">User</a></li>
+		<li><a href="adminloginform">Admin</a></li>
+		<li><a class="active" href="epassformtype">EpassForm</a></li>
+		<li class="right"><a href="home">Epass Management System</a></li>
+	</ul>
+
+	<div style="padding: 0 16px;">
 	<h2>Epass Registration form</h2>
 	<h3>Outside State Details</h3>
 	<div id="outsidestateform">
@@ -142,12 +135,12 @@ th, td {
 			<br>
 			<div>
 				Quarantine From date :
-				<form:input path="quarantineFromDate" type="date" />
+				<input  id="quarantineFromDate" name="quarantineFromDate" type="date" max="<%=Logic.getInstanceDate()%>" required />
 			</div>
 			<br>
 			<div>
 				Quarantine To date :
-				<form:input path="quarantineToDate" type="date" />
+				<input  id="quarantineToDate" name="quarantineToDate" type="date" max="<%=Logic.getInstanceDate()%>" required />
 			</div>
 			<br>
 			<div>
@@ -176,10 +169,15 @@ th, td {
 			</div>
 			<br>
 			<div>
+			 select a file :<input type="file" id="rtPcrFile" name="rtPcrFile">
+			 </div>
+			<br>
+			<div>
 				<input type="submit" value="Submit" /> <input type="reset"
 					value="Reset" />
 			</div>
 		</form:form>
+	</div>
 	</div>
 </body>
 </html>

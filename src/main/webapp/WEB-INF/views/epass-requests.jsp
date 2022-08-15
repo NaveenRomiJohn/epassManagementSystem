@@ -8,16 +8,27 @@
 <meta charset="ISO-8859-1">
 <title>Epass Requests</title>
 <style type="text/css">
-* {
-  background-image: url("https://www.waters.com/content/dam/waters/en/Photography/stock/health-and-medical/stock-covid-19-coronavirus.jpg/_jcr_content/renditions/original");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 3000px 2000px;
-}
+ <%@include file="navbar.css"%>
+  <%@include file="dropdown.css"%>
 </style>
 </head>
 <body>
-	<h1>E-Pass Management System</h1>
+<ul class="topnav">
+		<li><a href="home">Home</a></li>
+		<li><a href="userloginform">User</a></li>
+		<div class="dropdown">
+        <button class="dropbtn">Admin 
+     	 <i class="fa fa-caret-down"></i> </button>
+    	<div class="dropdown-content">
+    	  	<a href="allusers">Users</a>
+     	 	<a href="epassprocessingstatus">Epass requests</a>
+      		<a href="epassapprovedlist">Epass Approved</a>
+      		<a href="epassrejectedlist">Epass Rejected</a>
+      		<a href="epassrequests">Epass Details</a>
+    	</div>
+    	</div>
+		<li class="right"><a href="home">Epass Management System</a></li>
+	</ul>
 	<h3>Epass Requests</h3>
 	<div id="applist">
 		<table>

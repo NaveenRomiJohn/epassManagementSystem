@@ -4,6 +4,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 import com.chainsys.epassManagementSystem.businesslogic.Logic;
 import com.chainsys.epassManagementSystem.dto.EpassFormOutsideStateDTO;
 import com.chainsys.epassManagementSystem.dto.EpassFormPassengersDTO;
@@ -27,8 +28,7 @@ public class EpassFormService {
 
 	@Transactional
 	public EpassForm save(EpassForm epass) {
-//		epass.setAppliedDate(Logic.getInstanceDate());
-//		epass.setAppliedDate(Logic.getInstanceDate1());
+		epass.setAppliedDate(Logic.getInstanceDate());
 		return epassFormRepository.save(epass);
 	}
 
@@ -64,12 +64,12 @@ public class EpassFormService {
 		String status = "processing";
 		return epassFormRepository.findByApprovalStatus(status);
 	}
-	
+
 	public List<EpassForm> epassApproved() {
 		String status = "Approved";
 		return epassFormRepository.findByApprovalStatus(status);
 	}
-	
+
 	public List<EpassForm> epassRejected() {
 		String status = "Rejected";
 		return epassFormRepository.findByApprovalStatus(status);

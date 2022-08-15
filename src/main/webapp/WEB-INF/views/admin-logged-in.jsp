@@ -6,40 +6,114 @@
 <meta charset="ISO-8859-1">
 <title>Admin In</title>
 <style>
-*{
-text-align: center;
-}
-* {
-  background-image: url("https://www.waters.com/content/dam/waters/en/Photography/stock/health-and-medical/stock-covid-19-coronavirus.jpg/_jcr_content/renditions/original");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 3000px 2000px;
-}
+<%@include file="navbar.css"%>
+<%@include file="dashboard.css"%>
 </style>
 </head>
 <body>
-	<h1>E-Pass Management System</h1>
-	<h2>Admin Page</h2>
-	<br>
-	<br>
-	
-	<a href="allusers">Users List</a>
-	<br>
-	<a href="epassprocessingstatus">Epass Requests</a>
-	<br>
-	<a href="epassapprovedlist">Epass Approved</a>
-	<br>
-	<a href="epassrejectedlist">Epass rejected</a>
-	<br>
-	<a href="epassrequests">All Epass details</a>
-	<br>
-	<br>
-	<a href="updateadminform">Update Admin</a>
-	<br>
-	<a href="deleteadminform">Delete Admin</a>
-	<br>
-	<a href="addadminform">Add new Admin</a>
-	<br>
+	<ul class="topnav">
+		<li><a href="home">Home</a></li>
+		<li><a href="userloginform">User</a></li>
+		<li><a class="active" href="adminloggedin">Admin</a></li>
+		<li class="right"><a href="home">Epass Management System</a></li>
+	</ul>
+
+	<div class="row">
+		<div class="container">
+			<table id="alter" class="center">
+				<tr>
+					<td>
+						<div class="test_box box-01 col-xs-6 col-md-4">
+							<div class="inner">
+								<a href="allusers" class="test_click">
+									<div class="flex_this">
+										<h1 class="test_title">Users List</h1>
+									</div>
+								</a>
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="test_box box-02 col-xs-6 col-md-4">
+							<div class="inner">
+								<a href="epassprocessingstatus" class="test_click">
+									<div class="flex_this">
+										<h1 class="test_title">Epass Requests</h1>
+									</div>
+								</a>
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="test_box box-03 col-xs-6 col-md-4">
+							<div class="inner">
+								<a href="epassapprovedlist" class="test_click">
+									<div class="flex_this">
+										<h1 class="test_title">Epass Approved</h1>
+									</div>
+								</a>
+							</div>
+						</div>
+					</td>
+					<td><div class="test_box box-04 col-xs-6 col-md-4">
+							<div class="inner">
+								<a href="epassrejectedlist" class="test_click">
+									<div class="flex_this">
+										<h1 class="test_title">Epass Rejected</h1>
+									</div>
+								</a>
+							</div>
+						</div></td>
+				</tr>
+				<tr>
+					<td>
+						<div class="test_box box-05 col-xs-6 col-md-4">
+							<div class="inner">
+								<a href="epassrequests" class="test_click">
+									<div class="flex_this">
+										<h1 class="test_title">All Epass Details</h1>
+									</div>
+								</a>
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="test_box box-06 col-xs-6 col-md-4">
+							<div class="inner">
+								<a href="updateadminform" class="test_click">
+									<div class="flex_this">
+										<h1 class="test_title">Update Admin</h1>
+									</div>
+								</a>
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="test_box box-07 col-xs-6 col-md-4">
+							<div class="inner">
+								<a href="deleteadminform" class="test_click">
+									<div class="flex_this">
+										<h1 class="test_title">Delete Admin</h1>
+									</div>
+								</a>
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="test_box box-08 col-xs-6 col-md-4">
+							<div class="inner">
+								<a href="addadminform" class="test_click">
+									<div class="flex_this">
+										<h1 class="test_title">Add Admin</h1>
+									</div>
+								</a>
+							</div>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
 
 </body>
 </html>

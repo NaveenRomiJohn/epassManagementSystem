@@ -1,0 +1,65 @@
+@charset "ISO-8859-1";
+body {font-family: Arial, Helvetica, sans-serif;}
+form {box-sizing: border-box; margin: auto; width: 50%; text-align: center;}
+
+input[type=text], input[type=password],input[type=number],input[type=email],input[type=date] {
+  width: 100%;
+  padding: 12px;
+  margin: 5px 0 25px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus,input[type=number]:focus,input[type=email]:focus,input[type=date]:focus{
+  background-color: #ddd;
+  outline: none;
+}
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 60%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+     width: 100%;
+  }
+}
+
+table.center {
+  margin-left: auto; 
+  margin-right: auto;
+}
+td,h2 {
+	text-align: center;
+}

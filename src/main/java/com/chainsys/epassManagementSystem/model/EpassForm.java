@@ -63,10 +63,13 @@ public class EpassForm {
 	@Column(name = "approved_date")
 	private Date approvedDate;
 
+	@Column(name = "reason")
+	private String reason;
+
 	@Column(name = "user_id")
 	private String userId;
 	@Column(name = "admin_id")
-	private Integer adminId;
+	private String adminId;
 
 	@OneToMany(mappedBy = "epassform", fetch = FetchType.LAZY)
 	private List<Passengers> listPass;
@@ -74,9 +77,6 @@ public class EpassForm {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "user_id", insertable = false, updatable = false, nullable = false)
 	private User user;
-
-	@OneToMany(mappedBy = "epassForm", fetch = FetchType.LAZY)
-	private List<AcrossDistrict> acrossDistrict;
 
 	@OneToMany(mappedBy = "epassForm", fetch = FetchType.LAZY)
 	private List<OutsideState> outsideState;
@@ -185,11 +185,11 @@ public class EpassForm {
 		this.userId = userId;
 	}
 
-	public Integer getAdminId() {
+	public String getAdminId() {
 		return adminId;
 	}
 
-	public void setAdminId(Integer adminId) {
+	public void setAdminId(String adminId) {
 		this.adminId = adminId;
 	}
 
@@ -225,20 +225,20 @@ public class EpassForm {
 		this.toDistrict = toDistrict;
 	}
 
-	public List<AcrossDistrict> getAcrossDistrict() {
-		return acrossDistrict;
-	}
-
-	public void setAcrossDistrict(List<AcrossDistrict> acrossDistrict) {
-		this.acrossDistrict = acrossDistrict;
-	}
-
 	public List<OutsideState> getOutsideState() {
 		return outsideState;
 	}
 
 	public void setOutsideState(List<OutsideState> outsideState) {
 		this.outsideState = outsideState;
+	}
+
+	public String getReason() {
+		return reason;
+	}
+
+	public void setReason(String reason) {
+		this.reason = reason;
 	}
 
 }

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
 import com.chainsys.epassManagementSystem.model.EpassForm;
 import com.chainsys.epassManagementSystem.model.User;
 import com.chainsys.epassManagementSystem.service.EpassFormService;
@@ -37,7 +38,6 @@ public class UserController {
 
 	@PostMapping("/adduser")
 	public String addUser(@ModelAttribute("adduser") User user) {
-		
 		userService.save(user);
 		return "user-registered";
 	}

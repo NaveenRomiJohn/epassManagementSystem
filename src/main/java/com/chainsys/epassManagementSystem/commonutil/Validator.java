@@ -4,6 +4,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Validator {
+	private Validator() {
+	}
 	public static boolean checkStringForParseInt(String data) throws InvalidInputDataException {
 		boolean result = false;
 		for (int i = 0; i < data.length(); i++) 

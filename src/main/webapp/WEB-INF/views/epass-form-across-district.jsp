@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ page import="java.io.*,java.util.*, javax.servlet.*,java.sql.*, com.chainsys.epassManagementSystem.businesslogic.Logic"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,13 +12,6 @@ h1, h2, h3 {
 	text-align: center;
 }
 
-* {
-	background-image:
-		url("https://www.waters.com/content/dam/waters/en/Photography/stock/health-and-medical/stock-covid-19-coronavirus.jpg/_jcr_content/renditions/original");
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: 3000px 2000px;
-}
 div {
 	height: 200px;
 	width: 400px;
@@ -27,18 +21,18 @@ div {
 	margin-top: -100px;
 	margin-left: -200px;
 }
-.text-danger {
-	color: #e80c4d;
-	font-size: 0.9em;
-}
-.center {
-	margin-left: auto;
-	margin-right: auto;
-}
+<%@include file="navbar.css" %>
 </style>
 </head>
 <body>
-	<h1>E-Pass Management System</h1>
+<ul class="topnav">
+		<li><a href="home">Home</a></li>
+		<li><a class="active" href="userloginform">User</a></li>
+		<li><a href="adminloginform">Admin</a></li>
+		<li class="right"><a href="home">Epass Management System</a></li>
+	</ul>
+
+	<div style="padding: 0 16px;">
 	<div id="epassform">
 	<h2>Epass Registration form</h2>
 	<h3>Across District</h3>
@@ -53,7 +47,7 @@ div {
 					<tr>
 						<td>Travel Reason :</td>
 						<td><form:select path="travelReason">
-								<form:option value="-" label="--Please Select--" />
+								<form:option value="-" label="--Please Select--" required="true"/>
 								<form:option value="Medical Emergency" label="Medical Emergency"
 									required="true" />
 								<form:option value="Marriage" label="Marriage" required="true" />
@@ -64,12 +58,12 @@ div {
 					</tr>
 					<tr>
 						<td>From Date :</td>
-						<td><form:input path="fromDate" type="date" required="true" />
+						<td><input  id="fromDate" name="fromDate" type="date" min="<%=Logic.getInstanceDate()%>" required  />
 						</td>
 					</tr>
 					<tr>
 						<td>To Date :</td>
-						<td><form:input path="toDate" type="date" required="true" />
+						<td><input  id="toDate" name="toDate" type="date" min="<%=Logic.getInstanceDate()%>" required />
 						</td>
 					</tr>
 					<tr>
@@ -108,19 +102,14 @@ div {
 					</tr>
 					<tr>
 						<td>Number of passengers :</td>
-						<td><form:input path="numberOfPassengers"
-								name="numberOfPassengers" title="Select the number of passengers" required="true" /></td>
+						<td><input type="number" id="numberOfPassengers" name="numberOfPassengers" min="1"
+						title="Select the number of passengers" required/></td>
 					</tr>
-					<%-- <tr>
-						<td>Applied Date :</td>
-						<td><form:input path="appliedDate" type="date"
-								required="true" /></td>
-					</tr> --%>
 					<tr>
 						<form:hidden path="approvalStatus" value="processing" />
 					</tr>
 					<tr>
-						<form:hidden path="adminId" value="200" />
+						<form:hidden path="adminId" value="admin01" />
 					</tr>
 					<tr>
 						<td><form:button type="submit">Register</form:button> <form:button
@@ -128,6 +117,7 @@ div {
 					</tr>
 				</table>
 			</form:form>
+		</div>
 		</div>
 </body>
 </html>

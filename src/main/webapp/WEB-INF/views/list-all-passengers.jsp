@@ -15,6 +15,9 @@
   background-attachment: fixed;
   background-size: 3000px 2000px;
 }
+tr:nth-child(even) {
+  background-color: #D6EEEE;
+}
 table, th, td {
 	border: 1px solid black;
 	border-collapse: collapse;

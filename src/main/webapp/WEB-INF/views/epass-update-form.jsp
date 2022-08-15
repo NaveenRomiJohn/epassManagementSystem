@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,106 +10,89 @@
 * {
 	text-align: center;
 }
-* {
-  background-image: url("https://www.waters.com/content/dam/waters/en/Photography/stock/health-and-medical/stock-covid-19-coronavirus.jpg/_jcr_content/renditions/original");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 3000px 2000px;
+
+div {
+	height: 200px;
+	width: 400px;
+	position: fixed;
+	top: 30%;
+	left: 50%;
+	margin-top: -100px;
+	margin-left: -200px;
 }
-table, th, td {
-	border: 2px solid black;
-	border-collapse: collapse;
-	margin-left: auto;
-	margin-right: auto;
-	text-align: center;
+
+* {
+	background-image:
+		url("https://www.waters.com/content/dam/waters/en/Photography/stock/health-and-medical/stock-covid-19-coronavirus.jpg/_jcr_content/renditions/original");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 3000px 2000px;
 }
 </style>
 </head>
 <body>
 	<h1>E-Pass Management System</h1>
+	<br>
 	<h2>All Epass List</h2>
-	<br>
-	<br>
 	<div id="form">
 		<form:form action="statuschanged" method="post"
 			modelAttribute="epassstatus">
-			<div>
-				User Id:
-				<form:input path="userId" />
-			</div>
-			<br>
-			<div>
-				EpassId :
-				<form:input path="epassId" name="epassId" />
-			</div>
-			<br>
-			<div>
-				Travel Reason :
-				<form:select path="travelReason">
-					<form:option value="Medical Emergency" label="Medical Emergency" />
-					<form:option value="Marriage" label="Marriage" />
-					<form:option value="Death" label="Death" />
-					<form:option value="On Going Government Work"
-						label="On Going Government Work" />
-					<form:option value="Hospital staff" label="Hospital staff" />
-				</form:select>
-			</div>
-			<br>
-			<div>
-				From Date :
-				<form:input path="fromDate" type="date" />
-			</div>
-			<br>
-			<div>
-				To Date :
-				<form:input path="toDate" type="date" />
-			</div>
-			<br>
-			<div>
-				<form:hidden path="applicationType" value="Within District" />
-			</div>
-			<br>
-			<div>
-				From Address :
-				<form:textarea path="fromAddress" cols="30" rows="3" />
-			</div>
-			<br>
-			<div>
-				Destination Address :
-				<form:textarea path="destinationAddress" cols="30" rows="3" />
-			</div>
-			<br>
-			<div>
-				Vehicle Number :
-				<form:input path="vehicleNumber" />
-			</div>
-			<br>
-			<div>
-				Number of passengers :
-				<form:input path="numberOfPassengers" name="numberOfPassengers" />
-			</div>
-			<br>
-			<div>
-				Applied Date :
-				<form:input path="appliedDate" type="date" />
-			</div>
-			<br>
-			<div>
-				Approved Date :
-				<form:input path="appliedDate" type="date" />
-			</div>
-			<br>
-			<div>
-			Approval Status :
-				<form:input path="approvalStatus" value="processing" />
-			</div>
-			<div>
-				<form:hidden path="adminId" value="200" />
-			</div>
-			<br>
-			<div>
-				<input type="submit" value="Submit" /> <input type="reset">
-			</div>
+			<table>
+				<tr>
+					<td>Travel Reason :</td>
+					<td><form:select path="travelReason" readonly="true">
+							<form:option value="Medical Emergency" label="Medical Emergency" readonly="true"/>
+							<form:option value="Marriage" label="Marriage" readonly="true"/>
+							<form:option value="Death" label="Death" readonly="true"/>
+							<form:option value="On Going Government Work"
+								label="On Going Government Work" readonly="true"/>
+						</form:select></td>
+				</tr>
+				<tr>
+					<td>From Date :</td>
+					<td><form:input path="fromDate" type="date" readonly="true" /></td>
+				</tr>
+				<tr>
+					<td>To Date :</td>
+					<td><form:input path="toDate" type="date" readonly="true" /></td>
+				</tr>
+				<tr>
+					<td>Application Type :</td>
+					<td><form:input path="applicationType" readonly="true" /></td>
+				</tr>
+				<tr>
+					<td>District :</td>
+					<td><form:input path="fromDistrict" readonly="true" /></td>
+				</tr>
+				<tr>
+					<td>From Address :</td>
+					<td><form:textarea path="fromAddress" readonly="true" /></td>
+				</tr>
+				<tr>
+					<td>Destination Address :</td>
+					<td><form:textarea path="destinationAddress" readonly="true" /></td>
+				</tr>
+				<tr>
+					<td>Vehicle Number :</td>
+					<td><form:input path="vehicleNumber" readonly="true" /></td>
+				</tr>
+				<tr>
+					<td>Number of passengers :</td>
+					<td><form:input path="numberOfPassengers"
+							name="numberOfPassengers" readonly="true" /></td>
+				</tr>
+				<tr>
+					<td>Approval Status :</td>
+					<td><form:select path="approvalStatus">
+							<form:option value="processing" label="processing" />
+							<form:option value="Approved" label="Approved" />
+							<form:option value="Rejected" label="Rejected" />
+						</form:select></td>
+				</tr>
+				<tr>
+					<td><form:button type="submit">Update</form:button></td>
+				</tr>
+			</table>
 		</form:form>
 	</div>
 </body>

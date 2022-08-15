@@ -4,6 +4,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 import com.chainsys.epassManagementSystem.model.Admin;
 import com.chainsys.epassManagementSystem.repository.AdminRepository;
 
@@ -22,16 +23,16 @@ public class AdminService {
 		return reqList;
 	}
 
-	public Admin findById(int admin_id) {
-		return adminRepository.findById(admin_id);
+	public Admin findById(String admin_id) {
+		return adminRepository.findByAdminId(admin_id);
 	}
 
 	@Transactional
-	public void deleteById(int admin_id) {
-		adminRepository.deleteById(admin_id);
+	public void deleteById(String admin_id) {
+		adminRepository.deleteByAdminId(admin_id);
 	}
 	
-	public Admin getAdminByIdAndPassword(Integer adminId, String adminPassword) {
+	public Admin getAdminByIdAndPassword(String adminId, String adminPassword) {
 		return adminRepository.findByAdminIdAndAdminPassword(adminId,adminPassword);
 	}
 

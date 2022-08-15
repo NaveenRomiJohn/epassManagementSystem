@@ -1,4 +1,4 @@
-package com.chainsys.epassManagementSystem.model;
+package com.chainsys.epassmanagementsystem.model;
 
 import java.sql.Date;
 import java.time.LocalDate;

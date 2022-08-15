@@ -1,4 +1,4 @@
-package com.chainsys.epassManagementSystem.controller;
+package com.chainsys.epassmanagementsystem.controller;
 
 import org.springframework.stereotype.Controller;
 

@@ -1,4 +1,4 @@
-package com.chainsys.epassManagementSystem.controller;
+package com.chainsys.epassmanagementsystem.controller;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -6,8 +6,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.chainsys.epassManagementSystem.model.Passengers;
-import com.chainsys.epassManagementSystem.service.PassengersService;
+import com.chainsys.epassmanagementsystem.model.Passengers;
+import com.chainsys.epassmanagementsystem.service.PassengersService;
 
 @Controller
 public class PassengersController {

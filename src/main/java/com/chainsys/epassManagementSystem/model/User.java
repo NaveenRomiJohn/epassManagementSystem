@@ -1,4 +1,4 @@
-package com.chainsys.epassManagementSystem.model;
+package com.chainsys.epassmanagementsystem.model;
 
 import java.util.List;
 import javax.persistence.Column;

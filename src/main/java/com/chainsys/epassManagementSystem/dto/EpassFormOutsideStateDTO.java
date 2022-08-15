@@ -1,11 +1,11 @@
-package com.chainsys.epassManagementSystem.dto;
+package com.chainsys.epassmanagementsystem.dto;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.chainsys.epassManagementSystem.model.EpassForm;
-import com.chainsys.epassManagementSystem.model.OutsideState;
-import com.chainsys.epassManagementSystem.model.Passengers;
+import com.chainsys.epassmanagementsystem.model.EpassForm;
+import com.chainsys.epassmanagementsystem.model.OutsideState;
+import com.chainsys.epassmanagementsystem.model.Passengers;
 
 public class EpassFormOutsideStateDTO {
 

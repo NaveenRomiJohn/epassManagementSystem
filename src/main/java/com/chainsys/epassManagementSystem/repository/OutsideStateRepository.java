@@ -1,10 +1,10 @@
-package com.chainsys.epassManagementSystem.repository;
+package com.chainsys.epassmanagementsystem.repository;
 
 import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.chainsys.epassManagementSystem.model.OutsideState;
+import com.chainsys.epassmanagementsystem.model.OutsideState;
 
 @Repository
 public interface OutsideStateRepository extends CrudRepository<OutsideState, Integer>{

@@ -1,4 +1,4 @@
-package com.chainsys.epassManagementSystem.commonutil;
+package com.chainsys.epassmanagementsystem.commonutil;
 
 public class InvalidInputDataException extends Exception {
 	public InvalidInputDataException() {

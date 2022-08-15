@@ -1,4 +1,4 @@
-package com.chainsys.epassManagementSystem;
+package com.chainsys.epassmanagementsystem;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

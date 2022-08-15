@@ -1,4 +1,4 @@
-package com.chainsys.epassManagementSystem.controller;
+package com.chainsys.epassmanagementsystem.controller;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,16 +10,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.epassManagementSystem.model.Admin;
-import com.chainsys.epassManagementSystem.model.EpassForm;
-import com.chainsys.epassManagementSystem.model.OutsideState;
-import com.chainsys.epassManagementSystem.model.Passengers;
-import com.chainsys.epassManagementSystem.model.User;
-import com.chainsys.epassManagementSystem.service.AdminService;
-import com.chainsys.epassManagementSystem.service.EpassFormService;
-import com.chainsys.epassManagementSystem.service.OutsideStateService;
-import com.chainsys.epassManagementSystem.service.PassengersService;
-import com.chainsys.epassManagementSystem.service.UserService;
+import com.chainsys.epassmanagementsystem.model.Admin;
+import com.chainsys.epassmanagementsystem.model.EpassForm;
+import com.chainsys.epassmanagementsystem.model.OutsideState;
+import com.chainsys.epassmanagementsystem.model.Passengers;
+import com.chainsys.epassmanagementsystem.model.User;
+import com.chainsys.epassmanagementsystem.service.AdminService;
+import com.chainsys.epassmanagementsystem.service.EpassFormService;
+import com.chainsys.epassmanagementsystem.service.OutsideStateService;
+import com.chainsys.epassmanagementsystem.service.PassengersService;
+import com.chainsys.epassmanagementsystem.service.UserService;
 
 @Controller
 public class AdminController {

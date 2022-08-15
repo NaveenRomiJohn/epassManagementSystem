@@ -1,4 +1,4 @@
-package com.chainsys.epassManagementSystem.commonutil;
+package com.chainsys.epassmanagementsystem.commonutil;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

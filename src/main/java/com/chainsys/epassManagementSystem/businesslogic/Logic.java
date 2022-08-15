@@ -1,4 +1,4 @@
-package com.chainsys.epassManagementSystem.businesslogic;
+package com.chainsys.epassmanagementsystem.businesslogic;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

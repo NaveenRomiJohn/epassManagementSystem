@@ -1,4 +1,4 @@
-package com.chainsys.epassManagementSystem.controller;
+package com.chainsys.epassmanagementsystem.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.epassManagementSystem.model.EpassForm;
-import com.chainsys.epassManagementSystem.model.User;
-import com.chainsys.epassManagementSystem.service.EpassFormService;
-import com.chainsys.epassManagementSystem.service.UserService;
+import com.chainsys.epassmanagementsystem.model.EpassForm;
+import com.chainsys.epassmanagementsystem.model.User;
+import com.chainsys.epassmanagementsystem.service.EpassFormService;
+import com.chainsys.epassmanagementsystem.service.UserService;
 
 @Controller
 public class UserController {

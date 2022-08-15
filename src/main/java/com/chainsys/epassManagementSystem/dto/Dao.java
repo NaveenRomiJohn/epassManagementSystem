@@ -1,4 +1,4 @@
-package com.chainsys.epassManagementSystem.dto;
+package com.chainsys.epassmanagementsystem.dto;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -6,35 +6,22 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Epass Application Status</title>
-<style>
-h1, h2, h3 {
-	text-align: center;
-}
-* {
-  background-image: url("https://www.waters.com/content/dam/waters/en/Photography/stock/health-and-medical/stock-covid-19-coronavirus.jpg/_jcr_content/renditions/original");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 3000px 2000px;
-}
-table, th, td {
-	border: 2px solid black;
-	border-collapse: collapse;
-	margin-left: auto;
-	margin-right: auto;
-	text-align: center;
-}
-
-* {
-	text-align: center;
-}
+<style type="text/css">
+  <%@include file="css/style.css" %>
+  <%@include file="css/navbar.css"%>
 </style>
 </head>
 <body>
-	<h1>E-Pass Management System</h1>
-	<hr />
+<ul class="topnav">
+		<li><a href="home">Home</a></li>
+		<li><a class="active" href="userloggedin">User</a></li>
+		<li><a href="adminloginform">Admin</a></li>
+		<li><a href="epassformtype">EpassForm</a></li>
+		<li class="right"><a href="home">Epass Management System</a></li>
+	</ul>
 	<h2>Application Status</h2>
 	<div id="applist">
-		<table>
+		<table id="alter" class="center"><caption></caption>
 			<thead>
 				<tr>
 					<th>Epass Id</th>

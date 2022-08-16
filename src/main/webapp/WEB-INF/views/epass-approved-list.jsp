@@ -8,9 +8,9 @@
 <meta charset="ISO-8859-1">
 <title>Admin Approved List</title>
 <style type="text/css">
-  <%@include file="style.css" %>
-  <%@include file="navbar.css"%>
-  <%@include file="dropdown.css"%>
+  <%@include file="css/style.css" %>
+  <%@include file="css/navbar.css"%>
+  <%@include file="css/dropdown.css"%>
 </style>
 </head>
 <body>
@@ -22,7 +22,7 @@
      	 <em class="fa fa-caret-down"></em> </button>
     	<div class="dropdown-content">
     	  	<a href="allusers">Users</a>
-     	 	<a href="epassprocessingstatus">Epass requests</a>
+     	 	<a href="epassprocessingstatus">Epass Requests</a>
       		<a href="epassapprovedlist">Epass Approved</a>
       		<a href="epassrejectedlist">Epass Rejected</a>
       		<a href="epassrequests">Epass Details</a>

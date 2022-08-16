@@ -7,8 +7,8 @@
 <meta charset="ISO-8859-1">
 <title>Admin form</title>
 <style>
-  <%@include file="navbar.css"%>
-  <%@include file="form.css"%>
+  <%@include file="css/navbar.css"%>
+  <%@include file="css/form.css"%>
 </style>
 </head>
 <body>

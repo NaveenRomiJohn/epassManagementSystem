@@ -31,13 +31,15 @@ public class EpassFormController {
 	public OutsideStateService outsideStateService;
 
 	@RequestMapping("/epassformtype")
-	public String epassFormType() {
+	public String epassFormType(@RequestParam("userId")String userId,Model model) {
+		model.addAttribute("userId", userId);
 		return "epass-form-type";
 	}
 
 	@GetMapping("/epassformwithindistrict")
-	public String epassFormWithinDistrict(Model model) {
+	public String epassFormWithinDistrict(@RequestParam("userId")String userId,Model model) {
 		EpassForm epassForm = new EpassForm();
+		model.addAttribute("userId", userId);
 		model.addAttribute("epasswithindistrict", epassForm);
 		return "epass-form-within-district";
 	}

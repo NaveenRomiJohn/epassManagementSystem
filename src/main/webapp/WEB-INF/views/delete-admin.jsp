@@ -7,8 +7,8 @@
 <meta charset="ISO-8859-1">
 <title>Delete Admin</title>
 <style>
- <%@include file="navbar.css"%>
-  <%@include file="form.css"%>
+ <%@include file="css/navbar.css"%>
+  <%@include file="css/form.css"%>
 </style>
 </head>
 <script>
@@ -36,7 +36,7 @@
 			<td> <input type="text" name="adminId" id="adminId"/></td>
 		</tr>
 		<tr>
-			<td><button type="submit" class="signupbtn">Update</button></td>
+			<td><button type="submit" class="signupbtn">Delete</button></td>
 		</tr>
 		</table>
 	</form>

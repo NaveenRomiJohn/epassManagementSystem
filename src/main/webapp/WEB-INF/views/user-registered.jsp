@@ -7,10 +7,7 @@
 <meta charset="ISO-8859-1">
 <title>User registered</title>
 <style type="text/css">
-<%@include file ="navbar.css" %> 
-* {
-	text-align: center;
-}
+<%@include file ="css/navbar.css" %> 
 </style>
 </head>
 <body>

@@ -8,9 +8,9 @@
 <meta charset="ISO-8859-1">
 <title>EPass Update Form</title>
 <style type="text/css">
-  <%@include file="form.css" %>
-  <%@include file="navbar.css"%>
-  <%@include file="dropdown.css"%>
+  <%@include file="css/form.css" %>
+  <%@include file="css/navbar.css"%>
+  <%@include file="css/dropdown.css"%>
 </style>
 </head>
 <body>
@@ -22,7 +22,7 @@
      	 <em class="fa fa-caret-down"></em> </button>
     	<div class="dropdown-content">
     	  	<a href="allusers">Users</a>
-     	 	<a href="epassprocessingstatus">Epass requests</a>
+     	 	<a href="epassprocessingstatus">Epass Requests</a>
       		<a href="epassapprovedlist">Epass Approved</a>
       		<a href="epassrejectedlist">Epass Rejected</a>
       		<a href="epassrequests">Epass Details</a>
@@ -98,8 +98,7 @@
 				</tr>
 				<tr>
 					<th scope="col">Reason :</th>
-					<td><form:input path="reason"
-							name="reason"  /></td>
+					<td><form:input path="reason" name="reason"  required="true"/></td>
 				</tr>
 				<tr>
 					<td><form:button type="submit">Update</form:button></td>

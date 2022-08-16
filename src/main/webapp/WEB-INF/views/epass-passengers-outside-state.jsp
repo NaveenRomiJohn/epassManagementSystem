@@ -8,8 +8,8 @@
 <meta charset="ISO-8859-1">
 <title>Ouside State</title>
 <style>
-<%@include file="form.css" %>
-<%@include file="navbar.css" %>
+<%@include file="css/form.css" %>
+<%@include file="css/navbar.css" %>
 </style>
 </head>
 <body>

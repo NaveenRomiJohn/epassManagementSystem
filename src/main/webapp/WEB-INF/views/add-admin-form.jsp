@@ -9,8 +9,8 @@
 <meta charset="ISO-8859-1">
 <title>Admin form</title>
 <style>
- <%@include file="navbar.css"%>
- <%@include file="form.css"%>
+ <%@include file="css/navbar.css"%>
+ <%@include file="css/form.css"%>
 </style>
 <script>
 function validateadmin() {
@@ -39,7 +39,7 @@ function validateadmin() {
 		<li><a class="active" href="adminloginform">Admin</a></li>
 		<li class="right"><a href="home">Epass Management System</a></li>
 	</ul>
-		<h3>Admin Registration form</h3>
+		<h2>Admin Registration form</h2>
 		<form:form action="addadmin" method="post" modelAttribute="addAdmin"
 			onsubmit="return validateadmin()">
 			<table class="center"><caption></caption>

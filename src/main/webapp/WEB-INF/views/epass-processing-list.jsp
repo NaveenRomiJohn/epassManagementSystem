@@ -7,9 +7,9 @@
 <meta charset="ISO-8859-1">
 <title>Epass Processing Status</title>
 <style type="text/css">
-<%@include file="style.css" %>
- <%@include file="navbar.css"%>
-  <%@include file="dropdown.css"%>
+<%@include file="css/style.css" %>
+ <%@include file="css/navbar.css"%>
+  <%@include file="css/dropdown.css"%>
 </style>
 </head>
 <body>

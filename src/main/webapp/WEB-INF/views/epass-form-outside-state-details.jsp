@@ -8,19 +8,23 @@
 <meta charset="ISO-8859-1">
 <title>Outside State Details</title>
 <style>
-<%@include file="form.css" %>
-<%@include file="navbar.css" %>
-label {
-    display: block;
-    font: 1rem 'Fira Sans', sans-serif;
-}
-
-input,
-label {
-    margin: .4rem 0;
-}
+<%@include file="css/form.css" %>
+<%@include file="css/navbar.css" %>
 </style>
 </head>
+<script>
+	function validateform() {
+		var fromState = document.reg_form.fromState.value;
+		var toState = document.reg_form.toState.value;
+
+		if (fromState == toState) {
+			alert("From state and To state should not be same!");
+			return false;
+		} else {
+			return true;
+		}
+	}
+</script>
 <body>
 <ul class="topnav">
 		<li><a href="home">Home</a></li>
@@ -34,18 +38,17 @@ label {
 	<h2>Epass Registration Form</h2>
 	<h3>Outside State Details</h3>
 	<div id="outsidestateform">
-		<form:form action="outsidestatedetailsregistered" method="post"
-			modelAttribute="outsidestatedetails">
+		<form:form action="outsidestatedetailsregistered" name="reg_form" method="post"
+			modelAttribute="outsidestatedetails" onsubmit="return validateform()">
 			<table class="center"><caption></caption>
 			<tr>
 				<form:hidden path="epassId" value="${epassId}" />
 			</tr>
 			<tr>
 				<th scope="col">From State :</th>
-				<td><form:select path="fromState">
-					<form:option value="SelectState" />Select State
-                        <form:option value="Andra Pradesh"
-						label="Andra Pradesh" />
+				<td><form:select path="fromState" name="fromState" required="true">
+					<form:option value="" label="None" />
+                    <form:option value="Andra Pradesh" label="Andra Pradesh" />
 					<form:option value="Arunachal Pradesh" label="Arunachal Pradesh" />
 					<form:option value="Assam" label="Assam" />
 					<form:option value="Bihar" label="Bihar" />
@@ -87,10 +90,9 @@ label {
 			</tr>
 			<tr>
 				<th scope="col">To State :</th>
-				<td><form:select path="toState">
-					<form:option value="SelectState" />Select State
-                        <form:option value="Andra Pradesh"
-						label="Andra Pradesh" />
+				<td><form:select path="toState" name="toState" required="true">
+					<form:option value="" label="None" />
+                    <form:option value="Andra Pradesh" label="Andra Pradesh" />
 					<form:option value="Arunachal Pradesh" label="Arunachal Pradesh" />
 					<form:option value="Assam" label="Assam" />
 					<form:option value="Bihar" label="Bihar" />
@@ -140,7 +142,8 @@ label {
 			</tr>
 			<tr>
 				<th scope="col">Quarantine Location :</th>
-				<td><form:input path="quarantineLocation" /></td>
+				<td><form:input path="quarantineLocation" title="Location should atleast contain 10 characters" placeholder="Please enter the quarantine location"
+								required="true"/></td>
 			</tr>
 			<tr>
 				<th scope="col">PCR Result Certificate Date :</th>
@@ -148,14 +151,19 @@ label {
 			</tr>
 			<tr>
 				<th scope="col">PCR Result Certificate Number :</th>
-				<td><form:input path="pcrResultCertificateNumber" /></td>
+				<td><input type="text" id="pcrResultCertificateNumber" name="pcrResultCertificateNumber"
+							pattern="[1-9]{1}[0-9]{5,9}"
+							title="Phone number should have atleast 10 digits"
+							required/></td>
 			</tr>
 			<tr>
 				<th scope="col">PCR Certificate Issued by:</th>
-				<td><form:input path="pcrCertificateIssuedBy" /></td>
+				<td><input type="text" id="pcrCertificateIssuedBy" name="pcrCertificateIssuedBy" placeholder="Please enter the details of certificate issued"
+								title="Name can't be empty or must contain only alphabets"
+								pattern="^[a-zA-Z]+$" required /></td>
 			</tr>
 			<tr>
-			 <td><label for="rtPcrFile">Choose a file:</label></td>
+			 <th scope="col"><label for="rtPcrFile">Choose a file:</label></th>
 			 <td><input type="file" id="rtPcrFile" name="rtPcrFile"></td>
 			 </tr>
 			<tr>

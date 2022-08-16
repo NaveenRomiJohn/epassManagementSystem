@@ -9,8 +9,8 @@
 <meta charset="ISO-8859-1">
 <title>Outside State</title>
 <style>
-<%@include file="form.css" %>
-<%@include file="navbar.css" %>
+<%@include file="css/form.css" %>
+<%@include file="css/navbar.css" %>
 </style>
 </head>
 <body>
@@ -30,21 +30,19 @@
 			modelAttribute="epassoutsidestate">
 			<table class="center"><caption></caption>
 				<tr>
-					<th scope="col">User Id :</th>
-					<td><form:input path="userId" required="true" /></td>
+					<td><form:hidden path="userId" value="${userId}"/></td>
 				</tr>
 				<tr>
-					<th scope="col">Travel Reason :</th>
-					<td><form:select path="travelReason">
-							<form:option value="-" label="--Please Select--" required="true" />
-							<form:option value="Medical Emergency" label="Medical Emergency"
-								required="true" />
-							<form:option value="Marriage" label="Marriage" required="true" />
-							<form:option value="Death" label="Death" required="true" />
-							<form:option value="On Going Government Work"
-								label="On Going Government Work" required="true" />
-						</form:select></td>
-				</tr>
+						<th scope="col">Travel Reason :</th>
+						<td><form:select path="travelReason" required="true">
+								<form:option value="" label="None" />
+								<form:option value="Medical Emergency" label="Medical Emergency" />
+								<form:option value="Marriage" label="Marriage" />
+								<form:option value="Death" label="Death" />
+								<form:option value="On Going Government Work"
+									label="On Going Government Work" />
+							</form:select></td>
+					</tr>
 				<tr>
 					<th scope="col">From Date :</th>
 					<td><input id="fromDate" name="fromDate" type="date"
@@ -62,39 +60,36 @@
 				<tr>
 					<th scope="col">From Address :</th>
 					<td><form:textarea path="fromAddress"
-							title="Address should atleast contain 10 characters"
+					placeholder="Please enter the from address"		title="Address should atleast contain 10 characters"
 							required="true" /></td>
 				</tr>
 				<tr>
 					<th scope="col">Destination Address :</th>
 					<td><form:textarea path="destinationAddress"
-							title="Address should atleast contain 10 characters"
+					placeholder="Please enter the destination address"	title="Address should atleast contain 10 characters"
 							required="true" /></td>
 				</tr>
 				<tr>
 					<th scope="col">Vehicle Number :</th>
 					<td><form:input path="vehicleNumber"
-							pattern="^[A-Z]{2}[0-9]{2}[A-HJ-NP-Z]{1,2}[0-9]{4}$"
-							title="Vehicle number must be in TN12AB1234 format" /></td>
+							pattern="^[A-Z]{2}[0-9]{2}[A-HJ-NP-Z]{1,2}[0-9]{4}$" placeholder="Please enter the vehicle number"
+							title="Vehicle number must be in TN12AB1234 format" required="true"/></td>
 				</tr>
 				<tr>
 					<th scope="col">Number of passengers :</th>
 					<td><input type="number" id="numberOfPassengers"
-						name="numberOfPassengers" min="1"
+						name="numberOfPassengers" min="1" max="10" placeholder="Please select the number of passengers"	
 						title="Select the number of passengers" required /></td>
 				</tr>
 				<tr>
 					<form:hidden path="approvalStatus" value="Processing" />
 				</tr>
 				<tr>
-						<td><form:hidden path="appliedDate" name="appliedDate"  value="<%=Logic.getInstanceDate()%>" /></td>
-				</tr>
-				<tr>
 					<form:hidden path="adminId" value="admin01" />
 				</tr>
 				<tr>
 					<td><button type="reset" class="cancelbtn">Reset</button>
-					 <button type="submit" class="signupbtn">Add Passengers</button></td>
+					 <button type="submit" class="signupbtn">Submit</button></td>
 				</tr>
 			</table>
 		</form:form>

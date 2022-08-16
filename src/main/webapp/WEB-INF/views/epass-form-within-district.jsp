@@ -9,8 +9,8 @@
 <meta charset="ISO-8859-1">
 <title>E-Pass User form</title>
 <style>
-<%@include file="navbar.css" %>
-<%@include file="form.css" %>
+<%@include file="css/navbar.css" %>
+<%@include file="css/form.css" %>
 </style>
 </head>
 <body>
@@ -22,7 +22,6 @@
 		<li class="right"><a href="home">Epass Management System</a></li>
 	</ul>
 
-	<div style="padding: 0 30px;">
 		<div id="epassform">
 			<h2>Epass Registration Form</h2>
 			<h3>Within District</h3>
@@ -30,23 +29,22 @@
 				modelAttribute="epasswithindistrict">
 				<table class="center"><caption></caption>
 					<tr>
-						<th scope="col">User Id :</th>
-						<td><form:input path="userId" required="true" /></td>
+						<td><form:hidden path="userId" value="${userId}"/></td>
 					</tr>
 					<tr>
-						<th scope="col">Travel Reason :</th>
-						<td><form:select path="travelReason" required="true">
-								<form:option value="Medical Emergency" label="Medical Emergency"
-									required="true" />
-								<form:option value="Marriage" label="Marriage" required="true" />
-								<form:option value="Death" label="Death" required="true" />
+						<th scope="col" class="custom-select" style="width:200px;">Travel Reason :</th>
+						<td><form:select path="travelReason" required="true" class="custom-select" style="width:200px;">
+								<form:option value="" label="None" />
+								<form:option value="Medical Emergency" label="Medical Emergency" />
+								<form:option value="Marriage" label="Marriage" />
+								<form:option value="Death" label="Death" />
 								<form:option value="On Going Government Work"
-									label="On Going Government Work" required="true" />
+									label="On Going Government Work" />
 							</form:select></td>
 					</tr>
 					<tr>
 						<th scope="col">From Date :</th>
-						<td><input id="fromDate" name="fromDate" type="date"
+						<td><input id="fromDate" name="fromDate" type="date" 
 							min="<%=Logic.getInstanceDate()%>" required /></td>
 					</tr>
 					<tr>
@@ -60,36 +58,33 @@
 					</tr>
 					<tr>
 						<th scope="col">District :</th>
-						<td><form:input path="fromDistrict"
+						<td><form:input path="fromDistrict" placeholder="Please enter the district"
 								title="Name can't be empty or must contain only alphabets"
 								pattern="^[a-zA-Z]+$" required="true" /></td>
 					</tr>
 					<tr>
 						<th scope="col">From Address :</th>
-						<td><form:textarea path="fromAddress"
+						<td><form:textarea path="fromAddress" placeholder="Please enter the from address"
 								title="Address should atleast contain 10 characters"
 								required="true" /></td>
 					</tr>
 					<tr>
 						<th scope="col">Destination Address :</th>
-						<td><form:textarea path="destinationAddress"
+						<td><form:textarea path="destinationAddress" placeholder="Please enter the destination address"
 								title="Address should atleast contain 10 characters"
 								required="true" /></td>
 					</tr>
 					<tr>
 						<th scope="col">Vehicle Number :</th>
-						<td><form:input path="vehicleNumber"
+						<td><form:input path="vehicleNumber" placeholder="Please enter the vehicle number"
 								pattern="^[A-Z]{2}[0-9]{2}[A-HJ-NP-Z]{1,2}[0-9]{4}$"
 								title="Vehicle number must be in TN12AB1234 format" /></td>
 					</tr>
 					<tr>
 						<th scope="col">Number of passengers :</th>
-						<td><input type="number" id="numberOfPassengers"
+						<td><input type="number" id="numberOfPassengers" placeholder="Please enter the number of passengers"
 							name="numberOfPassengers" min="1"
 							title="Select the number of passengers" required /></td>
-					</tr>
-					<tr>
-						<td><form:hidden path="appliedDate" name="appliedDate" value="<%=Logic.getInstanceDate()%>" /></td>
 					</tr>
 					<tr>
 						<form:hidden path="approvalStatus" value="Processing" />
@@ -104,6 +99,8 @@
 				</table>
 			</form:form>
 		</div>
-	</div>
+<script type="text/javascript">
+<%@include file="select.js" %>
+</script>
 </body>
 </html>

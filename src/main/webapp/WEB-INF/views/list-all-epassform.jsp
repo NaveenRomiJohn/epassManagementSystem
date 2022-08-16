@@ -8,15 +8,26 @@
 <meta charset="ISO-8859-1">
 <title>All EPass Form</title>
 <style type="text/css">
-  <%@include file="style.css" %>
-   <%@include file="navbar.css"%>
+  <%@include file="css/style.css" %>
+   <%@include file="css/navbar.css"%>
+    <%@include file="css/dropdown.css"%>
 </style>
 </head>
 <body>
 <ul class="topnav">
 		<li><a href="home">Home</a></li>
 		<li><a href="userloginform">User</a></li>
-		<li><a class="active" href="adminloginform">Admin</a></li>
+		<div class="dropdown">
+        <button class="dropbtn">Admin 
+     	 <em class="fa fa-caret-down"></em> </button>
+    	<div class="dropdown-content">
+    	  	<a href="allusers">Users</a>
+     	 	<a href="epassprocessingstatus">Epass requests</a>
+      		<a href="epassapprovedlist">Epass Approved</a>
+      		<a href="epassrejectedlist">Epass Rejected</a>
+      		<a href="epassrequests">Epass Details</a>
+    	</div>
+    	</div>
 		<li class="right"><a href="home">Epass Management System</a></li>
 	</ul>
 	<h2>All Epass List</h2>

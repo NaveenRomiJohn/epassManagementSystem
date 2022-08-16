@@ -6,11 +6,9 @@
 <meta charset="ISO-8859-1">
 <title>Admin In</title>
 <style>
-<%@include file="navbar.css"%>
-<%@include file="dashboard.css"%>
+<%@include file="css/navbar.css"%>
+<%@include file="css/admin-dashboard.css"%>
 </style>
-<!-- <link rel="stylesheet" href="/epassManagementSystem/navbar.css" type="text/css">
-<link rel="stylesheet" href="/epassManagementSystem/dashboard.css" type="text/css"> -->
 </head>
 <body>
 	<ul class="topnav">

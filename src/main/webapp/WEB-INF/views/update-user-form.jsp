@@ -8,102 +8,102 @@
 <meta charset="ISO-8859-1">
 <title>E-Pass User form</title>
 <style>
-* {
-	text-align: center;
-}
-.center {
-	margin-left: auto;
-	margin-right: auto;
-}
-* {
-  background-image: url("https://www.waters.com/content/dam/waters/en/Photography/stock/health-and-medical/stock-covid-19-coronavirus.jpg/_jcr_content/renditions/original");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 3000px 2000px;
-}
-.error {
-	color: red
-}
+<%@include file="css/form.css" %>
+<%@include file="css/navbar.css" %>
 </style>
 </head>
 <script>
 	function validateform() {
-		var firstpassword = document.reg_form.firstpassword.value;
+		var userPassword = document.reg_form.userPassword.value;
 		var secondpassword = document.reg_form.secondpassword.value;
-		if (firstpassword.length < 6) {
-			alert("Password must be at least 6 characters long");
-			return false;
-		}
-		if (firstpassword == secondpassword) {
+	
+		if (userPassword == secondpassword) {
 			return true;
 		} else {
-			alert("Password must be same!");
+			alert("User and Confirm password must be same!");
 			return false;
 		}
 	}
 </script>
 <body>
-	<h1>E-Pass Management System</h1>
+<ul class="topnav">
+		<li><a href="home">Home</a></li>
+		<li><a class="active" href="userloggedin">User</a></li>
+		<li><a href="adminloginform">Admin</a></li>
+		<li class="right"><a href="home">Epass Management System</a></li>
+	</ul>
+<div>
+	<div style="padding: 0 18px;">
 	<h3>Update user details</h3>
-	<br>
+
 	<form:form action="updateuser" method="post" name="reg_form"
 		modelAttribute="updateuser" onsubmit="return validateform()">
-		<table class="center">
-			<tr>
-				<td>UserId :</td>
-				<td><form:input path="userId" name="userId" /></td>
-				<td><form:errors path="userId" cssClass="error" /></td>
-			</tr>
-			<tr>
-				<td>First Name :</td>
-				<td><form:input path="firstName" name="firstName" /></td>
-				<td><form:errors path="firstName" cssClass="error" /></td>
-			</tr>
-			<tr>
-				<td>Last Name :</td>
-				<td><form:input path="lastName" name="lastName" /></td>
-			</tr>
-			<tr>
-				<td>Gender :</td>
-				<td><form:radiobutton path="gender" name="gender" value="Male" />
-					Male <form:radiobutton path="gender" name="gender" value="Female" />
-					Female</td>
-			</tr>
-			<tr>
-				<td>Age :</td>
-				<td><form:input type="text" path="age" name="age" /></td>
-				<td><form:errors path="age" cssClass="error" /></td>
-			</tr>
-			<tr>
-				<td>Email :</td>
-				<td><form:input path="email" name="email" /></td>
-			</tr>
-			<tr>
-				<td>Address :</td>
-				<td><form:textarea path="address" name="address" cols="20"
-						rows="2" /></td>
-			</tr>
-			<tr>
-				<td>Mobile Number :</td>
-				<td><form:input path="mobileNumber" name="mobileNumber"
-						size="10" /></td>
-				<td><form:errors path="mobileNumber" cssClass="error" /></td>
-			</tr>
-			<tr>
-				<td>User Password :</td>
-				<td><form:password path="userPassword" name="firstpassword" /></td>
-				<td><form:errors path="userPassword" cssClass="error" /></td>
-			</tr>
-			<%-- <tr>
-				<td>Confirm Password :</td>
-				<td><form:password path="userPassword" name="secondpassword" /></td>
-				<td><form:errors path="userPassword" cssClass="error" /></td>
-			</tr> --%>
-			<tr>
-				<td><input type="submit" name="submit" value="Submit">
-					<input type="reset" name="reset" value="Reset"></td>
-			</tr>
-		</table>
+		<div class="container">
+			<table class="center"><caption></caption>
+				<tr>
+					<td><form:hidden path="userId" value="${userId}" /></td>
+				</tr>
+				<tr>
+					<th scope="col">First Name :</th>
+					<td><input type="text" id="firstName" name="firstName"
+							title="Name can't be empty or must contain only alphabets"
+							placeholder="Enter the first name" pattern="^[a-zA-Z]+$" required /></td>
+				</tr>
+				<tr>
+					<th scope="col">Last Name :</th>
+					<td><input type="text" id="lastName" name="lastName"
+							title="Name can't be empty or must contain only alphabets"
+						placeholder="Enter the last name"	pattern="^[a-zA-Z]+$" required/></td>
+				</tr>
+				<tr>
+					<th scope="col">Gender :</th>
+					<td><input type="radio" id="gender" name="gender" value="Male"
+							required/> Male <input type="radio" id="gender" 
+							name="gender" value="Female" required/> Female <input type="radio" id="gender" name="gender" value="Others" required/>
+						Others</td>
+				</tr>
+				<tr>
+					<th scope="col">Age :</th>
+					<td><input type="number" id="age" name="age" min="15" max="70" placeholder="Enter the age"
+						title="Age must be gretaer than 15 or less than 70" required /></td>
+				</tr>
+				<tr>
+					<th scope="col">Email :</th>
+					<td><input type="text" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,4}"
+					placeholder="Enter the email(ex: epass@gmail.com) " title="Invalid email (ex: epass@gmail.com)" required/></td>
+				</tr>
+				<tr>
+					<th scope="col">Address :</th>
+					<td><input type="text" id="address" name="address"
+						placeholder="Enter the address"	title="Address should atleast contain 10 characters"
+							required/></td>
+				</tr>
+				<tr>
+					<th scope="col">Mobile Number :</th>
+					<td><input type="text" id="mobileNumber" name="mobileNumber"
+							pattern="[1-9]{1}[0-9]{9}" placeholder="Enter the mobile number"
+							title="Phone number should have atleast 10 digits"
+							required/></td>
+				</tr>
+				<tr>
+					<th scope="col">User Password :</th>
+					<td><input type="password" id="userPassword" name="userPassword" placeholder="Enter the password"
+							pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$"
+						title="password must contain one uppercase, one lowercase & one special symbol"	required /></td>
+				</tr>
+				<tr>
+					<th scope="col">Confirm Password :</th>
+					<td><input type="password" id="secondpassword" placeholder="Confirm the password"
+						name="secondpassword" required/></td>
+				</tr>
+				<tr>
+					<td><button type="reset" class="cancelbtn">Reset</button>
+					 <button type="submit" class="signupbtn">Update</button></td>
+				</tr>
+			</table>
+			</div>
 	</form:form>
+	</div>
+	</div>
 </body>
 </html>

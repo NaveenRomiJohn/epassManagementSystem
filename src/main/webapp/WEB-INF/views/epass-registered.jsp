@@ -6,16 +6,7 @@
 <meta charset="ISO-8859-1">
 <title>Epass registered</title>
 <style>
-div {
-	height: 200px;
-	width: 400px;
-	position: fixed;
-	top: 30%;
-	left: 50%;
-	margin-top: -100px;
-	margin-left: -200px;
-}
-<%@include file="navbar.css" %>
+<%@include file="css/navbar.css" %>
 </style>
 </head>
 <body>

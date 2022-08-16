@@ -5,8 +5,8 @@ form {box-sizing: border-box; margin: auto; width: 50%; text-align: center;}
 input[type=text], input[type=password],input[type=number],input[type=email],
 input[type=date],input[type=textarea],input[type=select] {
   width: 100%;
-  padding: 12px;
-  margin: 5px 0 25px 0;
+  padding: 10px;
+  margin: 4px 0 20px 0;
   display: inline-block;
   border: none;
   background: #f1f1f1;
@@ -38,7 +38,7 @@ button:hover {
 }
 
 .cancelbtn, .signupbtn {
-  float: left;
+  float: right;
   width: 50%;
 }
 
@@ -77,7 +77,7 @@ td,h2 {
 }
 
 .select-selected {
-  background-color: #04AA6D;
+  background-color: DodgerBlue;
 }
 
 /*style the arrow inside the select element:*/
@@ -111,7 +111,7 @@ td,h2 {
 /*style items (options):*/
 .select-items {
   position: absolute;
-  background-color: DodgerBlue;
+  background-color: #04AA6D;
   top: 100%;
   left: 0;
   right: 0;
@@ -125,4 +125,29 @@ td,h2 {
 
 .select-items div:hover, .same-as-selected {
   background-color: rgba(0, 0, 0, 0.1);
+}
+
+.fieldset {
+	background-color:white;
+	border-radius: 3px;
+}
+.fieldset form{
+  border:1px solid #2f2f2f;
+  margin:0 auto;
+  display:block;
+  width:45%;
+  padding:30px 20px;
+  box-sizing:border-box;
+  border-radius:0 0 3px 3px;
+}
+textarea {
+  width: 110%;
+  height: 50px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
 }

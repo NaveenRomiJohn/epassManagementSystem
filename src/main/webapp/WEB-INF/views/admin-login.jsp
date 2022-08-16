@@ -19,20 +19,10 @@
 	}
 </script>
 <style>
-<%@include file="navbar.css"%>
-<%@include file="login.css"%>
+<%@include file="css/login.css"%>
 </style>
 </head>
 <body>
-	<div>
-		<ul class="topnav">
-			<li><a class="active" href="home">Home</a></li>
-			<li><a href="userloginform">User</a></li>
-			<li><a href="adminloginform">Admin</a></li>
-			<li class="right"><a href="home">Epass Management System</a></li>
-		</ul>
-	</div>
-	<div>
 		<div class="app">
 			<div class="bg"></div>
 			<form action="adminlogin" name="reg_form" method="post"
@@ -49,6 +39,5 @@
 				<button type="submit" value="Login">Login</button>
 			</form>
 		</div>
-	</div>
 </body>
 </html>

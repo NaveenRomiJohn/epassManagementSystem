@@ -52,12 +52,10 @@
 				</tr>
 				<tr>
 					<th scope="col">Id Proof Type :</th>
-					<td><form:select path="idProofType">
+					<td><div class="custom-select" style="width:108%;"><form:select path="idProofType">
 							<form:option value="Aadhar Card" label="Aadhar Card"
 								required="true" />
-							<form:option value="Driving License" label="Driving License"
-								required="true" />
-						</form:select></td>
+						</form:select></div></td>
 				</tr>
 				<tr>
 					<th scope="col">Id Proof Number :</th>
@@ -79,5 +77,8 @@
 		</form:form>
 	</div>
 	</div>
+	<script type="text/javascript">
+<%@include file="js/select.js" %>
+</script>
 </body>
 </html>

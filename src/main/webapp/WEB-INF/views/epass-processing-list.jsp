@@ -21,7 +21,7 @@
      	 <em class="fa fa-caret-down"></em> </button>
     	<div class="dropdown-content">
     	  	<a href="allusers">Users</a>
-     	 	<a href="epassprocessingstatus">Epass requests</a>
+     	 	<a href="epassprocessingstatus">Epass Requests</a>
       		<a href="epassapprovedlist">Epass Approved</a>
       		<a href="epassrejectedlist">Epass Rejected</a>
       		<a href="epassrequests">Epass Details</a>

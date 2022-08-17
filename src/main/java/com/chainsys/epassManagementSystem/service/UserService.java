@@ -32,7 +32,7 @@ public class UserService {
 
 //validate
 //	public void userFormValidate(User user) {
-		
+
 //		PrintWriter out = response.getWriter();
 //		try {
 //			String id = user.getUserId();

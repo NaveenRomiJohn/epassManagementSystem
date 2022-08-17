@@ -45,7 +45,7 @@ public class EpassFormController {
 	}
 
 	@PostMapping("/epassformwithinregistered")
-	public String epassFormWithinDistrict(@Valid @ModelAttribute("epasswithindistrict") EpassForm epassForm,
+	public String epassFormWithinDistrict( @ModelAttribute("epasswithindistrict") EpassForm epassForm,
 			Model model) {
 		epassFormService.save(epassForm);
 		Passengers passengers = new Passengers();
@@ -57,7 +57,6 @@ public class EpassFormController {
 
 	@PostMapping("/epasswithinregistered")
 	public String passengersWithinDistrict(@ModelAttribute("passengerswithindistrict") Passengers passengers) {
-		
 		passengersService.save(passengers);
 		return "epass-registered";
 	}
@@ -70,9 +69,8 @@ public class EpassFormController {
 	}
 
 	@PostMapping("/epassformacrossregistered")
-	public String epassFormAcrossDistrict(@Valid @ModelAttribute("epassacrossdistrict") EpassForm epassForm,
+	public String epassFormAcrossDistrict(@ModelAttribute("epassacrossdistrict") EpassForm epassForm,
 			Model model) {
-		
 		epassFormService.save(epassForm);
 		Passengers passengers = new Passengers();
 		model.addAttribute("epassId", epassForm.getEpassId());

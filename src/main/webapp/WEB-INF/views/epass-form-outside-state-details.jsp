@@ -46,7 +46,7 @@
 			</tr>
 			<tr>
 				<th scope="col">From State :</th>
-				<td><form:select path="fromState" name="fromState" required="true">
+				<td><div class="custom-select" style="width:108%;" ><form:select path="fromState" name="fromState" required="true">
 					<form:option value="" label="None" />
                     <form:option value="Andra Pradesh" label="Andra Pradesh" />
 					<form:option value="Arunachal Pradesh" label="Arunachal Pradesh" />
@@ -86,11 +86,11 @@
 					<form:option value="Delhi" label="Delhi" />
 					<form:option value="Lakshadeep" label="Lakshadeep" />
 					<form:option value="Pondicherry" label="Pondicherry" />
-				</form:select></td>
+				</form:select></div></td>
 			</tr>
 			<tr>
 				<th scope="col">To State :</th>
-				<td><form:select path="toState" name="toState" required="true">
+				<td><div class="custom-select" style="width:108%;" ><form:select path="toState" name="toState" required="true">
 					<form:option value="" label="None" />
                     <form:option value="Andra Pradesh" label="Andra Pradesh" />
 					<form:option value="Arunachal Pradesh" label="Arunachal Pradesh" />
@@ -130,7 +130,7 @@
 					<form:option value="Delhi" label="Delhi" />
 					<form:option value="Lakshadeep" label="Lakshadeep" />
 					<form:option value="Pondicherry" label="Pondicherry" />
-				</form:select></td>
+				</form:select></div></td>
 			</tr>
 			<tr>
 				<th scope="col">Quarantine From date :</th>
@@ -165,6 +165,7 @@
 			<tr>
 			 <th scope="col"><label for="rtPcrFile">Choose a file:</label></th>
 			 <td><input type="file" id="rtPcrFile" name="rtPcrFile"></td>
+			 
 			 </tr>
 			<tr>
 				<td><button type="reset" class="cancelbtn">Reset</button>
@@ -174,5 +175,8 @@
 		</form:form>
 	</div>
 	</div>
+	<script type="text/javascript">
+<%@include file="js/select.js" %>
+</script>
 </body>
 </html>

@@ -34,14 +34,14 @@
 				</tr>
 				<tr>
 						<th scope="col">Travel Reason :</th>
-						<td><form:select path="travelReason" required="true">
-								<form:option value="" label="None" />
+						<td ><div class="custom-select" style="width:108%;" >
+						<form:select path="travelReason" required="true" >
 								<form:option value="Medical Emergency" label="Medical Emergency" />
 								<form:option value="Marriage" label="Marriage" />
 								<form:option value="Death" label="Death" />
 								<form:option value="On Going Government Work"
 									label="On Going Government Work" />
-							</form:select></td>
+							</form:select></div></td>
 					</tr>
 				<tr>
 					<th scope="col">From Date :</th>
@@ -72,7 +72,7 @@
 				<tr>
 					<th scope="col">Vehicle Number :</th>
 					<td><form:input path="vehicleNumber"
-							pattern="^[A-Z]{2}[0-9]{2}[A-HJ-NP-Z]{1,2}[0-9]{4}$" placeholder="Please enter the vehicle number"
+							pattern="^[a-zA-Z]{2}[0-9]{2}[a-hA-Hj-nJ-Np-zP-Z]{1,2}[0-9]{4}$" placeholder="Please enter the vehicle number"
 							title="Vehicle number must be in TN12AB1234 format" required="true"/></td>
 				</tr>
 				<tr>
@@ -95,5 +95,8 @@
 		</form:form>
 	</div>
 	</div>
+<script type="text/javascript">
+<%@include file="js/select.js" %>
+</script>
 </body>
 </html>

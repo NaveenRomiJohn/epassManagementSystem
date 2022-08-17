@@ -1,5 +1,7 @@
 package com.chainsys.epassmanagementsystem.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -100,8 +102,8 @@ public class UserController {
 	}
 
 	@GetMapping("/epassapplicationstatus")
-	public String userApplicationStatus(@RequestParam("epassId") Integer id, Model model) {
-		EpassForm epassForm = epassFormService.findById(id);
+	public String userApplicationStatus(@RequestParam("userId") String id, Model model) {
+		List<EpassForm> epassForm = epassFormService.findByUserId(id);
 		model.addAttribute("epassForm", epassForm);
 		return "user-application-status";
 	}

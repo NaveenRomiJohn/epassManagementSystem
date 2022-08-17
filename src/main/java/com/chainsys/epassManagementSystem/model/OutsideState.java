@@ -6,7 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -32,9 +31,9 @@ public class OutsideState {
 	private String pcrCertificateIssuedBy;
 	@Column(name = "epass_id")
 	private Integer epassId;
-	@Lob
-	@Column(name = "rt_pcr_file, length=100000")
-	private byte[] rtPcrFile;
+//	@Lob
+//	@Column(name = "rt_pcr_file")
+//	private byte[] rtPcrFile;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "epass_id", insertable = false, updatable = false, nullable = false)
@@ -120,12 +119,12 @@ public class OutsideState {
 		this.epassForm = epassForm;
 	}
 
-	public byte[] getRtPcrFile() {
-		return rtPcrFile;
-	}
-
-	public void setRtPcrFile(byte[] rtPcrFile) {
-		this.rtPcrFile = rtPcrFile;
-	}
+//	public byte[] getRtPcrFile() {
+//		return rtPcrFile;
+//	}
+//
+//	public void setRtPcrFile(byte[] rtPcrFile) {
+//		this.rtPcrFile = rtPcrFile;
+//	}
 
 }

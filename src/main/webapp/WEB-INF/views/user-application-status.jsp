@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +17,7 @@
 		<li><a href="home">Home</a></li>
 		<li><a class="active" href="userloggedin">User</a></li>
 		<li><a href="adminloginform">Admin</a></li>
-		<li><a href="epassformtype">EpassForm</a></li>
+		<li><a href="usertype">user</a></li>
 		<li class="right"><a href="home">Epass Management System</a></li>
 	</ul>
 	<h2>Application Status</h2>
@@ -38,19 +39,21 @@
 				</tr>
 			</thead>
 			<tbody>
+			<c:forEach var="user" items="${epassForm}">
 				<tr>
-					<td>${epassForm.epassId}</td>
-					<td>${epassForm.travelReason}</td>
-					<td>${epassForm.fromDate}</td>
-					<td>${epassForm.toDate}</td>
-					<td>${epassForm.applicationType}</td>
-					<td>${epassForm.fromAddress}</td>
-					<td>${epassForm.destinationAddress}</td>
-					<td>${epassForm.appliedDate}</td>
-					<td>${epassForm.vehicleNumber}</td>
-					<td>${epassForm.numberOfPassengers}</td>
-					<td>${epassForm.approvalStatus}</td>
+					<td>${user.epassId}</td>
+					<td>${user.travelReason}</td>
+					<td>${user.fromDate}</td>
+					<td>${user.toDate}</td>
+					<td>${user.applicationType}</td>
+					<td>${user.fromAddress}</td>
+					<td>${user.destinationAddress}</td>
+					<td>${user.appliedDate}</td>
+					<td>${user.vehicleNumber}</td>
+					<td>${user.numberOfPassengers}</td>
+					<td>${user.approvalStatus}</td>
 				</tr>
+				</c:forEach>
 			</tbody>
 		</table>
 	</div>

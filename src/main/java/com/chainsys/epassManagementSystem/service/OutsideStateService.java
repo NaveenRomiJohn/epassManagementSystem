@@ -8,6 +8,8 @@ import org.springframework.transaction.annotation.Transactional;
 import com.chainsys.epassmanagementsystem.model.OutsideState;
 import com.chainsys.epassmanagementsystem.repository.OutsideStateRepository;
 
+import oracle.jdbc.proxy.annotation.Post;
+
 @Service
 public class OutsideStateService {
 
@@ -27,26 +29,18 @@ public class OutsideStateService {
 		return outsideStateRepository.save(outsideState);
 	}
 	
-//	public OutsideState storeFile(MultipartFile file) {
-//        // Normalize file name
-//        String fileName = StringUtils.cleanPath(file.getOriginalFilename());
-//
-//        try {
-//            // Check if the file's name contains invalid characters
-//            if(fileName.contains("..")) {
-//                throw new FileStorageException("Sorry! Filename contains invalid path sequence " + fileName);
-//            }
-//
-//            OutsideState dbFile = new OutsideState(fileName, file.getContentType(), file.getBytes());
-//
-//            return dbFileRepository.save(dbFile);
-//        } catch (IOException ex) {
-//            throw new FileStorageException("Could not store file " + fileName + ". Please try again!", ex);
-//        }
-//    }
-//
-//    public DBFile getFile(String fileId) {
-//        return dbFileRepository.findById(fileId)
-//                .orElseThrow(() -> new MyFileNotFoundException("File not found with id " + fileId));
-//    }
+//	public byte[] getPostImageByteArray(int id) {
+//		OutsideState post = outsideStateRepository.findById(id);
+//		byte[] imageBytes = null;
+//			
+//			if(post != null)
+//			{
+//				imageBytes = post.getPosts();
+//			}
+//			else
+//			{	
+//				System.out.println("debug:" + this.getClass().getName() + " image is null " + id);
+//			}	
+//		return imageBytes;
+//	}
 }

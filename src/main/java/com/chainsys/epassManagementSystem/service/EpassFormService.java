@@ -9,10 +9,8 @@ import com.chainsys.epassmanagementsystem.businesslogic.Logic;
 import com.chainsys.epassmanagementsystem.dto.EpassFormOutsideStateDTO;
 import com.chainsys.epassmanagementsystem.dto.EpassFormPassengersDTO;
 import com.chainsys.epassmanagementsystem.model.EpassForm;
-import com.chainsys.epassmanagementsystem.model.OutsideState;
 import com.chainsys.epassmanagementsystem.model.Passengers;
 import com.chainsys.epassmanagementsystem.repository.EpassFormRepository;
-import com.chainsys.epassmanagementsystem.repository.OutsideStateRepository;
 import com.chainsys.epassmanagementsystem.repository.PassengersRepository;
 
 @Service
@@ -22,9 +20,6 @@ public class EpassFormService {
 
 	@Autowired
 	private PassengersRepository passengersRepositry;
-
-	@Autowired
-	private OutsideStateRepository outsideStateRepository;
 
 	@Transactional
 	public EpassForm save(EpassForm epass) {
@@ -38,6 +33,10 @@ public class EpassFormService {
 
 	public EpassForm findById(int id) {
 		return epassFormRepository.findById(id);
+	}
+	
+	public List<EpassForm> findByUserId(String id) {
+		return epassFormRepository.findByUserId(id);
 	}
 
 	public List<EpassForm> findByApprovalStatuss(String status) {

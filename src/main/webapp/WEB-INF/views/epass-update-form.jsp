@@ -41,13 +41,14 @@
 				</tr>
 				<tr>
 					<th scope="col">Travel Reason :</th>
-					<td><form:select path="travelReason" readonly="true">
-							<form:option value="Medical Emergency" label="Medical Emergency" readonly="true"/>
-							<form:option value="Marriage" label="Marriage" readonly="true"/>
-							<form:option value="Death" label="Death" readonly="true"/>
+					<td><div class="custom-select" style="width:108%;" >
+					<form:select path="travelReason" readonly="true">
+							<form:option value="Medical Emergency" label="Medical Emergency"/>
+							<form:option value="Marriage" label="Marriage"/>
+							<form:option value="Death" label="Death"/>
 							<form:option value="On Going Government Work"
-								label="On Going Government Work" readonly="true"/>
-						</form:select></td>
+								label="On Going Government Work"/>
+						</form:select></div></td>
 				</tr>
 				<tr>
 					<th scope="col">From Date :</th>
@@ -84,11 +85,11 @@
 				</tr>
 				<tr>
 					<th scope="col">Approval Status :</th>
-					<td><form:select path="approvalStatus">
+					<td><div class="custom-select" style="width:108%;" ><form:select path="approvalStatus">
 							<form:option value="Processing" label="Processing" />
 							<form:option value="Approved" label="Approved" />
 							<form:option value="Rejected" label="Rejected" />
-						</form:select></td>
+						</form:select></div></td>
 				</tr>
 				<tr>
 						<form:hidden path="adminId" value="admin01" />
@@ -98,7 +99,8 @@
 				</tr>
 				<tr>
 					<th scope="col">Reason :</th>
-					<td><form:input path="reason" name="reason"  required="true"/></td>
+					<td><form:input path="reason" name="reason" 
+					placeholder="Please enter the reason" required="true"/></td>
 				</tr>
 				<tr>
 					<td><form:button type="submit">Update</form:button></td>
@@ -106,5 +108,8 @@
 			</table>
 		</form:form>
 	</div>
+<script type="text/javascript">
+<%@include file="js/select.js" %>
+</script>
 </body>
 </html>

@@ -14,6 +14,8 @@ public interface EpassFormRepository extends CrudRepository<EpassForm, Integer> 
 	List<EpassForm> findAll();
 
 	EpassForm findById(int epassId);
+	
+	List<EpassForm> findByUserId(String userId);
 
 	void deleteById(int epassId);
 

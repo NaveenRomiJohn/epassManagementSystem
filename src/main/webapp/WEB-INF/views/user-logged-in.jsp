@@ -16,8 +16,7 @@ include file="css/navbar.css"%>
 <body>
 	<ul class="topnav">
 		<li><a href="home">Home</a></li>
-		<li><a class="active" href="userloggedin">User</a></li>
-		<li><a href="adminloginform">Admin</a></li>
+		<li><a class="active" href="userloggedin?userId=${userId}">User</a></li>
 		<li class="right"><a href="home">Epass Management System</a></li>
 	</ul>
 	<div class="row">
@@ -47,26 +46,19 @@ include file="css/navbar.css"%>
 						</div>
 					</div>
 				</td>
+				<td>
+					<div class="test_box box-03 col-xs-6 col-md-4">
+						<div class="inner">
+							<a href="epassapplicationstatus?userId=${userId}" class="test_click">
+								<div class="flex_this">
+									<h1 class="test_title">Application Status</h1>
+								</div>
+							</a>
+						</div>
+					</div>
+				</td>
 			</table>
 		</div>
 	</div>
-
-	<div style="padding: 0 16px;">
-		<br> <br>
-		<h3>Check application status by EpassId</h3>
-		<br>
-			<form action="epassapplicationstatus" method="get">
-				<table class="center"><caption></caption>
-				<tr>
-						<th scope="col">Epass Id :</th>
-						<td><input id="epassId" name="epassId" required/></td>
-						<td><input type="hidden" name="userId" id="userId" value="${userId}"></td>
-				</tr>
-				<tr>
-				<td><button type="submit" class="signupbtn">Get Status</button></td>
-				</tr>
-				</table>
-			</form>
-		</div>
 </body>
 </html>

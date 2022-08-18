@@ -31,7 +31,7 @@ public class OutsideState {
 	private String pcrCertificateIssuedBy;
 	@Column(name = "epass_id")
 	private Integer epassId;
-//	@Lob
+	
 //	@Column(name = "rt_pcr_file")
 //	private byte[] rtPcrFile;
 

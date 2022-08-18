@@ -19,8 +19,6 @@ public class Passengers {
 	private Integer epassId;
 	@Column(name = "passenger_name")
 	private String passengerName;
-	@Column(name = "date_of_birth")
-	private Date dateOfBirth;
 	@Column(name = "passenger_gender")
 	private String passengerGender;
 	@Column(name = "covid_symptoms")
@@ -46,14 +44,6 @@ public class Passengers {
 
 	public void setPassengerName(String passengerName) {
 		this.passengerName = passengerName;
-	}
-
-	public Date getDateOfBirth() {
-		return dateOfBirth;
-	}
-
-	public void setDateOfBirth(Date dateOfBirth) {
-		this.dateOfBirth = dateOfBirth;
 	}
 
 	public String getPassengerGender() {

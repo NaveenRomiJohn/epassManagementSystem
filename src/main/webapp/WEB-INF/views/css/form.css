@@ -39,7 +39,7 @@ button:hover {
 
 .cancelbtn, .signupbtn {
   float: right;
-  width: 50%;
+  width: 100%;
 }
 
 .container {

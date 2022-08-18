@@ -90,10 +90,12 @@
 					<tr>
 						<form:hidden path="adminId" value="admin01" />
 					</tr>
-					<tr>
-						<td><button type="reset" class="cancelbtn">Reset</button>
+					<table  class="center">
+				<tr>
+					<td><button type="reset" class="cancelbtn">Reset</button>
 					 <button type="submit" class="signupbtn">Submit</button></td>
-					</tr>
+				</tr>
+				</table>
 				</table>
 			</form:form>
 		</div>

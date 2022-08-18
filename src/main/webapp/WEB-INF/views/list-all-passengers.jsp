@@ -33,7 +33,6 @@ table {
 				<tr>
 					<th>Passenger Name</th>
 					<th>Gender</th>
-					<th>Date Of Birth</th>
 					<th>Covid Symptoms</th>
 					<th>Id Proof Type</th>
 					<th>Id proof Number</th>
@@ -45,7 +44,6 @@ table {
 					<tr>
 						<td>${passengers.passengerName}</td>
 						<td>${passengers.passengerGender}</td>
-						<td>${passengers.dateOfBirth}</td>
 						<td>${passengers.covidSymptoms}</td>
 						<td>${passengers.idProofType}</td>
 						<td>${passengers.idProofNumber}</td>

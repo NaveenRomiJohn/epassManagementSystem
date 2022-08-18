@@ -1,7 +1,12 @@
 package com.chainsys.epassmanagementsystem.controller;
 
+import java.io.IOException;
+import java.util.List;
+
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,6 +14,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.chainsys.epassmanagementsystem.dto.EpassFormPassengersDTO;
 import com.chainsys.epassmanagementsystem.model.EpassForm;
@@ -35,7 +42,7 @@ public class EpassFormController {
 		model.addAttribute("userId", userId);
 		return "epass-form-type";
 	}
-
+//  within district
 	@GetMapping("/epassformwithindistrict")
 	public String epassFormWithinDistrict(@RequestParam("userId")String userId,Model model) {
 		EpassForm epassForm = new EpassForm();
@@ -48,74 +55,78 @@ public class EpassFormController {
 	public String epassFormWithinDistrict( @ModelAttribute("epasswithindistrict") EpassForm epassForm,
 			Model model) {
 		epassFormService.save(epassForm);
-		Passengers passengers = new Passengers();
-		model.addAttribute("epassId", epassForm.getEpassId());
-		model.addAttribute("noOfPassengers", epassForm.getNumberOfPassengers());
-		model.addAttribute("passengerswithindistrict", passengers);
-		return "epass-passengers-within-district";
+		int id=epassForm.getEpassId();
+		return "redirect:/noOfpassengers?id="+id;
 	}
+	
 
-	@PostMapping("/epasswithinregistered")
-	public String passengersWithinDistrict(@ModelAttribute("passengerswithindistrict") Passengers passengers) {
-		passengersService.save(passengers);
-		return "epass-registered";
-	}
 
+// across district
 	@GetMapping("/epassformacrossdistrict")
-	public String epassFormAcrossDistrict(Model model) {
+	public String epassFormAcrossDistrict(@RequestParam("userId")String userId,Model model) {
 		EpassForm epassForm = new EpassForm();
+		model.addAttribute("userId", userId);
 		model.addAttribute("epassacrossdistrict", epassForm);
 		return "epass-form-across-district";
 	}
-
 	@PostMapping("/epassformacrossregistered")
-	public String epassFormAcrossDistrict(@ModelAttribute("epassacrossdistrict") EpassForm epassForm,
-			Model model) {
+	public String epassFormAcrossDistrict( @ModelAttribute("epassacrossdistrict") 
+	EpassForm epassForm, Model model) {
 		epassFormService.save(epassForm);
-		Passengers passengers = new Passengers();
-		model.addAttribute("epassId", epassForm.getEpassId());
-		model.addAttribute("passengersacrossdistrict", passengers);
-		return "epass-passengers-across-district";
+		int id=epassForm.getEpassId();
+		return "redirect:/noOfpassengers?id="+id;
 	}
 
-	@PostMapping("/epassacrossregistered")
-	public String passengersAcrossDistrict( @ModelAttribute("passengersacrossdistrict") Passengers passengers) {
-		passengersService.save(passengers);
-		return "epass-registered";
-	}
-
+//	outside state
 	@GetMapping("/epassformoutsidestate")
-	public String epassFormOutsideState(Model model) {
+	public String epassFormOutsideState(@RequestParam("userId")String userId,
+			Model model) {
 		EpassForm epassForm = new EpassForm();
+		model.addAttribute("userId", userId);
 		model.addAttribute("epassoutsidestate", epassForm);
 		return "epass-form-outside-state";
 	}
 
 	@PostMapping("/epassformoutsidestateregistered")
-	public String epassFormOutsideState( @ModelAttribute("epassoutsidestate") EpassForm epassForm, Model model) {
+	public String epassFormOutsideState( @ModelAttribute("epassoutsidestate") 
+		EpassForm epassForm, Model model) {
 		epassFormService.save(epassForm);
 		OutsideState outsideState = new OutsideState();
 		model.addAttribute("epassId", epassForm.getEpassId());
 		model.addAttribute("outsidestatedetails", outsideState);
 		return "epass-form-outside-state-details";
 	}
-
-	@PostMapping("/outsidestatedetailsregistered")
-	public String epassFormOutsideState( @ModelAttribute("epassoutsidestate") OutsideState outsideState,
-			Model model) {
-		outsideStateService.save(outsideState);
+	@PostMapping("/epassoutsidestate")
+	public String addEpasssOutSideState(@ModelAttribute("outsidestatedetails")OutsideState OutSideState,Model model) {
+		outsideStateService.save(OutSideState);
+		int id=OutSideState.getEpassId();
+		return "redirect:/noOfpassengers?id="+id;
+	}
+//	number of passengers
+	@GetMapping("/noOfpassengers")
+	public String getpassengersDetails(@RequestParam("id")int epassId,Model model) {
 		Passengers passengers = new Passengers();
-		model.addAttribute("epassId", outsideState.getEpassId());
-		model.addAttribute("passengersoutsidestate", passengers);
-		return "epass-passengers-outside-state";
+		model.addAttribute("epassId", epassId);
+		model.addAttribute("epasspassengers", passengers);
+		List<Passengers> passengerList=passengersService.getPassengersByEpassid(epassId);
+		model.addAttribute("passengersList", passengerList);
+		return "epass-passengers";
 	}
 
-	@PostMapping("/epassoutsidestateregistered")
-	public String passengersOutsideState(@Valid @ModelAttribute("passengersacrossdistrict") Passengers passengers) {
+	@PostMapping("/epassregistered")
+	public String passengersWithinDistrict(@ModelAttribute("passengerswithindistrict") Passengers passengers,Model model) {
 		passengersService.save(passengers);
+		int id=passengers.getEpassId();
+		List<Passengers>passengerList=passengersService.getPassengersByEpassid(id);
+		model.addAttribute("passengersList", passengerList);
+		return "redirect:/noOfpassengers?id="+id;
+	}
+	
+	@GetMapping("/getResult")
+	public String getResult(Model mdoel) {
 		return "epass-registered";
 	}
-
+	
 	@GetMapping("/getpassengersbyepassid")
 	public String getPassengersByEpassId(@RequestParam("id") Integer id, Model model) {
 		EpassFormPassengersDTO dto = epassFormService.getEpassAndPassengers(id);
@@ -125,3 +136,11 @@ public class EpassFormController {
 	}
 
 }
+
+//@ResponseBody
+//	@GetMapping("/getfile")
+//	public ResponseEntity<byte[]> getImage(@RequestParam("id") int id)
+//	{
+//		byte[] documentBytes=outsideStateService.getDocumentByteArray(id);
+//		return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(documentBytes);	
+//	}

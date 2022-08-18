@@ -22,5 +22,7 @@ public class PassengersService {
 	public List<Passengers> getPassengers() {
 		return passengersRepository.findAll();
 	}
-
+	public List<Passengers> getPassengersByEpassid(int id){
+		return passengersRepository.findByEpassformEpassId(id);
+	}
 }

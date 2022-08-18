@@ -1,0 +1,35 @@
+@charset "ISO-8859-1";
+h1, h2, h3 {
+	text-align: center;
+}
+
+#alter table {
+	text-align: center;
+	width: 90%;
+}
+
+#alter table,#alter th,#alter td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+#alter th,#alter td {
+	padding: 10px;
+}
+
+#alter table tr:nth-child(even) {
+	background-color: #eee;
+}
+
+#alter table tr:nth-child(odd) {
+	background-color: #fff;
+}
+
+#alter table,#alter th {
+	color: black;
+	background-color: gray;
+}
+.center {
+	margin-left: 10%;
+	margin-right: auto;
+}

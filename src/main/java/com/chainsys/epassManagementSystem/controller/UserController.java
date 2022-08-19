@@ -39,8 +39,8 @@ public class UserController {
 	}
 
 	@PostMapping("/adduser")
-	public String addUser(@ModelAttribute("adduser") User user1) {
-		userService.save(user1);
+	public String addUser(@ModelAttribute("adduser") User user) {
+		userService.save(user);
 		return "user-registered";
 	}
 
@@ -54,9 +54,9 @@ public class UserController {
 	}
 
 	@PostMapping("/updateuser")
-	public String updateUser(@RequestParam("userId")String userId,@ModelAttribute("updateuser") User user2) {
-		userService.save(user2);
-		return "redirect:/userloggedin?userId="+user2.getUserId();
+	public String updateUser(@RequestParam("userId")String userId,@ModelAttribute("updateuser") User user) {
+		userService.save(user);
+		return "redirect:/userloggedin?userId="+user.getUserId();
 	}
 
 //	user login
@@ -74,10 +74,10 @@ public class UserController {
 	}
 
 	@PostMapping("/userlogin")
-	public String userLogin(@ModelAttribute("userlogin") User user3) {
-		User user1 = userService.getUserByIdAndPassword(user3.getUserId(), user3.getUserPassword());
+	public String userLogin(@ModelAttribute("userlogin") User user) {
+		User user1 = userService.getUserByIdAndPassword(user.getUserId(), user.getUserPassword());
 		if (user1 != null) {
-			return "redirect:/userloggedin?userId="+user3.getUserId();
+			return "redirect:/userloggedin?userId="+user.getUserId();
 		} else {
 			return "redirect:/userloginaccessdenied";
 		}

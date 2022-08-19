@@ -48,8 +48,8 @@ public class AdminController {
 	}
 
 	@PostMapping("/adminlogin")
-	public String adminLogin(@ModelAttribute("adminlogin") Admin admin2) {
-		Admin admin1 = adminService.getAdminByIdAndPassword(admin2.getAdminId(), admin2.getAdminPassword());
+	public String adminLogin(@ModelAttribute("adminlogin") Admin admin) {
+		Admin admin1 = adminService.getAdminByIdAndPassword(admin.getAdminId(), admin.getAdminPassword());
 		if (admin1 != null) {
 			return "redirect:/adminloggedin";
 		} else {
@@ -66,8 +66,8 @@ public class AdminController {
 	}
 
 	@PostMapping("/addadmin")
-	public String addAdmin(@ModelAttribute("addadmin") Admin admin3) {
-		adminService.save(admin3);
+	public String addAdmin(@ModelAttribute("addadmin") Admin admin) {
+		adminService.save(admin);
 		return "admin-registered";
 	}
 
@@ -80,8 +80,8 @@ public class AdminController {
 	}
 
 	@PostMapping("/updateadmin")
-	public String updateAdmin(@ModelAttribute("updateadmin") Admin admin4) {
-		adminService.save(admin4);
+	public String updateAdmin(@ModelAttribute("updateadmin") Admin admin) {
+		adminService.save(admin);
 		return "admin-updated";
 	}
 
@@ -148,8 +148,8 @@ public class AdminController {
 	}
 
 	@PostMapping("/statuschanged")
-	public String statusUpdated(@ModelAttribute("epassstatus") EpassForm epassForm1) {
-		epassFormService.save(epassForm1);
+	public String statusUpdated(@ModelAttribute("epassstatus") EpassForm epassform) {
+		epassFormService.save(epassform);
 		return "redirect:/epassprocessingstatus";
 	}
 

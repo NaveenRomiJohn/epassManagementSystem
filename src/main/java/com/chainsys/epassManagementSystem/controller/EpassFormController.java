@@ -39,7 +39,7 @@ public class EpassFormController {
 	@GetMapping("/epassformwithindistrict")
 	public String epassFormWithinDistrict(@RequestParam("userId")String userId,Model model) {
 		EpassForm epassForm = new EpassForm();
-		model.addAttribute("userId", userId);
+		model.addAttribute("userId1", userId);
 		model.addAttribute("epasswithindistrict", epassForm);
 		return "epass-form-within-district";
 	}
@@ -56,7 +56,7 @@ public class EpassFormController {
 	@GetMapping("/epassformacrossdistrict")
 	public String epassFormAcrossDistrict(@RequestParam("userId")String userId,Model model) {
 		EpassForm epassForm = new EpassForm();
-		model.addAttribute("userId", userId);
+		model.addAttribute("userId2", userId);
 		model.addAttribute("epassacrossdistrict", epassForm);
 		return "epass-form-across-district";
 	}
@@ -73,7 +73,7 @@ public class EpassFormController {
 	public String epassFormOutsideState(@RequestParam("userId")String userId,
 			Model model) {
 		EpassForm epassForm = new EpassForm();
-		model.addAttribute("userId", userId);
+		model.addAttribute("userId3", userId);
 		model.addAttribute("epassoutsidestate", epassForm);
 		return "epass-form-outside-state";
 	}

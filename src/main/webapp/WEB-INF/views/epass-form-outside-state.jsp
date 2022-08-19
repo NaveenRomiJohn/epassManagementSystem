@@ -15,8 +15,8 @@
 <body>
 	<ul class="topnav">
 		<li><a href="/home/index">Home</a></li>
-		<li><a href="/home/userloggedin?userId=${userId}">User</a></li>
-		<li><a class="active" href="/epass/epassformtype?userId=${userId}">EpassForm</a></li>
+		<li><a href="/home/userloggedin?userId=${userId3}">User</a></li>
+		<li><a class="active" href="/epass/epassformtype?userId=${userId3}">EpassForm</a></li>
 		<li class="right"><a href="/home/index">Epass Management System</a></li>
 	</ul>
 
@@ -29,7 +29,7 @@
 				<table class="center">
 					<caption></caption>
 					<tr>
-						<td><form:hidden path="userId" value="${userId}" /></td>
+						<td><form:hidden path="userId" value="${userId3}" /></td>
 					</tr>
 					<tr>
 						<th scope="col">Travel Reason :</th>

@@ -126,4 +126,10 @@ public class EpassFormController {
 		return "passengers-by-epassid";
 	}
 
+	@GetMapping("/getallpassengers")
+	public String getAllPassengers(Model model) {
+		List<Passengers> passengersList = passengersService.getPassengers();
+		model.addAttribute("allpassengers", passengersList);
+		return "list-all-passengers";
+	}
 }

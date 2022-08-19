@@ -21,13 +21,12 @@
 		</script>
 <body>
 <ul class="topnav">
-		<li><a href="home">Home</a></li>
-		<li><a href="userloginform">User</a></li>
-		<li><a class="active" href="adminloginform">Admin</a></li>
-		<li class="right"><a href="home">Epass Management System</a></li>
+		<li><a href="/home/index">Home</a></li>
+		<li><a class="active" href="/admin/adminloginform">Admin</a></li>
+		<li class="right"><a href="/home/index">Epass Management System</a></li>
 	</ul>
 	<h3>Delete Admin Details</h3>
-	<form action="deleteadmin" name="reg_form" method="get" onsubmit="return validateform()">
+	<form action="/admin/deleteadmin" name="reg_form" method="get" onsubmit="return validateform()">
 		<table class="center"><caption></caption>
 		<tr>
 			<th>AdminId</th>

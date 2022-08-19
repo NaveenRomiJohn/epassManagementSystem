@@ -12,9 +12,9 @@
 </head>
 <body>
 	<ul class="topnav">
-		<li><a href="home">Home</a></li>
-		<li><a class="active" href="userloggedin?userId=${userId}">User</a></li>
-		<li class="right"><a href="home">Epass Management System</a></li>
+		<li><a href="/home/index">Home</a></li>
+		<li><a class="active" href="/home/userloggedin?userId=${userId}">User</a></li>
+		<li class="right"><a href="/home/index">Epass Management System</a></li>
 	</ul>
 
 	<div class="row">
@@ -26,7 +26,7 @@
 					<td>
 						<div class="test_box box-01 col-xs-6 col-md-4">
 							<div class="inner">
-								<a href="epassformwithindistrict?userId=${userId}"
+								<a href="/epass/epassformwithindistrict?userId=${userId}"
 									class="test_click">
 									<div class="flex_this">
 										<h1 class="test_title">Within District</h1>
@@ -38,7 +38,7 @@
 					<td>
 						<div class="test_box box-02 col-xs-6 col-md-4">
 							<div class="inner">
-								<a href="epassformacrossdistrict?userId=${userId}"
+								<a href="/epass/epassformacrossdistrict?userId=${userId}"
 									class="test_click">
 									<div class="flex_this">
 										<h1 class="test_title">Across District</h1>
@@ -50,7 +50,7 @@
 					<td>
 						<div class="test_box box-03 col-xs-6 col-md-4">
 							<div class="inner">
-								<a href="epassformoutsidestate?userId=${userId}"
+								<a href="/epass/epassformoutsidestate?userId=${userId}"
 									class="test_click">
 									<div class="flex_this">
 										<h1 class="test_title">Outside State</h1>

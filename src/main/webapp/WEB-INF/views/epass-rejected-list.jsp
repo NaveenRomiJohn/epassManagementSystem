@@ -15,17 +15,15 @@
 </head>
 <body>
 <ul class="topnav">
-		<li><a href="home">Home</a></li>
-		<li><a href="userloginform">User</a></li>
+		<li><a href="/home/index">Home</a></li>
 		<div class="dropdown">
         <button class="dropbtn">Admin 
      	 <em class="fa fa-caret-down"></em> </button>
     	<div class="dropdown-content">
-    	  	<a href="allusers">Users</a>
-     	 	<a href="epassprocessingstatus">Epass Requests</a>
-      		<a href="epassapprovedlist">Epass Approved</a>
-      		<a href="epassrejectedlist">Epass Rejected</a>
-      		<a href="epassrequests">Epass Details</a>
+    	  	<a href="/admin/allusers">Users</a>
+     	 	<a href="/admin/epassprocessingstatus">Epass Requests</a>
+      		<a href="/admin/epassapprovedlist">Epass Approved</a>
+      		<a href="/admin/epassrequests">Epass Details</a>
     	</div>
     	</div>
 		<li class="right"><a href="home">Epass Management System</a></li>

@@ -18,6 +18,7 @@ import com.chainsys.epassmanagementsystem.service.OutsideStateService;
 import com.chainsys.epassmanagementsystem.service.PassengersService;
 
 @Controller
+@RequestMapping("/epass")
 public class EpassFormController {
 
 	@Autowired
@@ -29,7 +30,7 @@ public class EpassFormController {
 	@Autowired
 	public OutsideStateService outsideStateService;
 
-	@RequestMapping("/epassformtype")
+	@GetMapping("/epassformtype")
 	public String epassFormType(@RequestParam("userId")String userId,Model model) {
 		model.addAttribute("userId", userId);
 		return "epass-form-type";
@@ -48,11 +49,9 @@ public class EpassFormController {
 			Model model) {
 		epassFormService.save(epassForm);
 		int id=epassForm.getEpassId();
-		return "redirect:/noOfpassengers?id="+id;
+		return "redirect:/epass/noOfpassengers?id="+id;
 	}
 	
-
-
 // across district
 	@GetMapping("/epassformacrossdistrict")
 	public String epassFormAcrossDistrict(@RequestParam("userId")String userId,Model model) {
@@ -66,7 +65,7 @@ public class EpassFormController {
 	EpassForm epassForm, Model model) {
 		epassFormService.save(epassForm);
 		int id=epassForm.getEpassId();
-		return "redirect:/noOfpassengers?id="+id;
+		return "redirect:/epass/noOfpassengers?id="+id;
 	}
 
 //	outside state
@@ -92,7 +91,7 @@ public class EpassFormController {
 	public String addEpasssOutSideState(@ModelAttribute("outsidestatedetails")OutsideState outsideState,Model model) {
 		outsideStateService.save(outsideState);
 		int id=outsideState.getEpassId();
-		return "redirect:/noOfpassengers?id="+id;
+		return "redirect:/epass/noOfpassengers?id="+id;
 	}
 //	number of passengers
 	@GetMapping("/noOfpassengers")
@@ -111,7 +110,7 @@ public class EpassFormController {
 		int id=passengers.getEpassId();
 		List<Passengers>passengerList=passengersService.getPassengersByEpassid(id);
 		model.addAttribute("passengersList", passengerList);
-		return "redirect:/noOfpassengers?id="+id;
+		return "redirect:/epass/noOfpassengers?id="+id;
 	}
 	
 	@GetMapping("/getResult")

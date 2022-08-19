@@ -27,18 +27,17 @@
 </script>
 <body>
 <ul class="topnav">
-		<li><a href="home">Home</a></li>
-		<li><a href="userloginform">User</a></li>
-		<li><a href="adminloginform">Admin</a></li>
-		<li><a class="active" href="epassformtype">EpassForm</a></li>
-		<li class="right"><a href="home">Epass Management System</a></li>
+		<li><a href="/home/index">Home</a></li>
+		<li><a href="/home/userloggedin?userId=${userId}">User</a></li>
+		<li><a class="active" href="/epass/epassformtype?userId=${userId}">EpassForm</a></li>
+		<li class="right"><a href="/home/index">Epass Management System</a></li>
 	</ul>
 
 	<div style="padding: 0 16px;">
 	<div id="epassform">
 	<h2>Epass Registration Form</h2>
 	<h3>Across District</h3>
-			<form:form action="epassformacrossregistered" name="reg_form" method="post" 
+			<form:form action="/epass/epassformacrossregistered" name="reg_form" method="post" 
 			modelAttribute="epassacrossdistrict" onsubmit="return validateform()">
 				 <div class="container">
 				<table class="center"><caption></caption>

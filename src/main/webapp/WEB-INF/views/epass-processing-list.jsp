@@ -14,20 +14,19 @@
 </head>
 <body>
 <ul class="topnav">
-		<li><a href="home">Home</a></li>
-		<li><a href="userloginform">User</a></li>
+		<li><a href="/home/index">Home</a></li>
+		<li><a href="/home/userloginform">User</a></li>
 		<div class="dropdown">
         <button class="dropbtn">Admin 
      	 <em class="fa fa-caret-down"></em> </button>
     	<div class="dropdown-content">
-    	  	<a href="allusers">Users</a>
-     	 	<a href="epassprocessingstatus">Epass Requests</a>
-      		<a href="epassapprovedlist">Epass Approved</a>
-      		<a href="epassrejectedlist">Epass Rejected</a>
-      		<a href="epassrequests">Epass Details</a>
+    	  	<a href="/admin/allusers">Users</a>
+      		<a href="/admin/epassapprovedlist">Epass Approved</a>
+      		<a href="/admin/epassrejectedlist">Epass Rejected</a>
+      		<a href="/admin/epassrequests">Epass Details</a>
     	</div>
     	</div>
-		<li class="right"><a href="home">Epass Management System</a></li>
+		<li class="right"><a href="/home/index">Epass Management System</a></li>
 	</ul>
 	<h2>Epass Processing List</h2>
 	<div id="applist">
@@ -63,7 +62,7 @@
 						<td>${epass.numberOfPassengers}</td>
 						<td>${epass.approvalStatus}</td>
 						<td><button
-								onclick="window.location.href='/statuschange?epassId=${epass.epassId}'">Update</button></td>
+								onclick="window.location.href='/admin/statuschange?epassId=${epass.epassId}'">Update</button></td>
 					</tr>
 				</c:forEach>
 			</tbody>

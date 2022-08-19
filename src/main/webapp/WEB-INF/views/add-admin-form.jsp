@@ -34,13 +34,12 @@ function validateadmin() {
 </head>
 <body>
 <ul class="topnav">
-		<li><a href="home">Home</a></li>
-		<li><a href="userloginform">User</a></li>
-		<li><a class="active" href="adminloginform">Admin</a></li>
-		<li class="right"><a href="home">Epass Management System</a></li>
+		<li><a href="/home/index">Home</a></li>
+		<li><a class="active" href="/admin/adminloginform">Admin</a></li>
+		<li class="right"><a href="/home/index">Epass Management System</a></li>
 	</ul>
 		<h2>Admin Registration form</h2>
-		<form:form action="addadmin" method="post" modelAttribute="addAdmin"
+		<form:form action="/admin/addadmin" method="post" modelAttribute="addAdmin"
 			onsubmit="return validateadmin()">
 			<table class="center"><caption></caption>
 				<tr>

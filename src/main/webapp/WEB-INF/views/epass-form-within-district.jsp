@@ -14,16 +14,16 @@
 </head>
 <body>
 	<ul class="topnav">
-		<li><a href="home">Home</a></li>
-		<li><a href="userloggedin?userId=${userId}">User</a></li>
-		<li><a class="active" href="epassformtype?userId=${userId}">EpassForm</a></li>
-		<li class="right"><a href="home">Epass Management System</a></li>
+		<li><a href="/home/index">Home</a></li>
+		<li><a href="/home/userloggedin?userId=${userId}">User</a></li>
+		<li><a class="active" href="/epass/epassformtype?userId=${userId}">EpassForm</a></li>
+		<li class="right"><a href="/home/index">Epass Management System</a></li>
 	</ul>
 
 		<div id="epassform">
 			<h2>Epass Registration Form</h2>
 			<h3>Within District</h3>
-			<form:form action="epassformwithinregistered" method="post"
+			<form:form action="/epass/epassformwithinregistered" method="post"
 				modelAttribute="epasswithindistrict">
 				<table class="center"><caption></caption>
 					<tr>

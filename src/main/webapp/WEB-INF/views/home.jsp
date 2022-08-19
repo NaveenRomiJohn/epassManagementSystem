@@ -18,10 +18,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@700&display=swap" rel="stylesheet">
 <div>
 	<ul class="topnav">
-		<li><a class="active" href="home">Home</a></li>
-		<li><a href="userloginform">User</a></li>
-		<li><a href="adminloginform">Admin</a></li>
-		<li class="right"><a href="home">Epass Management System</a></li>
+		<li><a class="active" href="/home/index">Home</a></li>
+		<li><a href="/home/userloginform">User</a></li>
+		<li><a href="/admin/adminloginform">Admin</a></li>
+		<li class="right"><a href="/home/index">Epass Management System</a></li>
 	</ul>
 </div>
 <br>
@@ -36,7 +36,6 @@
                     <div class="col-12 col-md-6 col-lg-6 text-position" >
                         <h2 class="section__title">COVID-19 Alert</h2>
                         <span class="section__span">Stay at Home quarantine to stop Corona virus</span>
-                        <a href="#" class="section__button seciton__button--center"></a>
                     </div>
                     <div class="col-12 col-md-6 col-lg-6 text-position">
                         <img src="https://raw.githubusercontent.com/alaattinerby/Covid-19-Website/4c233460e18c1a8cfba4f7c4830e8da0e7c5e8e9/Covid-19/img/section-image.svg" class="section__image" alt="Quarantine">

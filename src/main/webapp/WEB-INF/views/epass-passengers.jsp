@@ -16,17 +16,17 @@
 </head>
 <body>
 <ul class="topnav">
-		<li><a href="home">Home</a></li>
-		<li><a href="userloggedin?userId=${userId}">User</a></li>
-		<li><a class="active" href="epassformtype?userId=${userId}">EpassForm</a></li>
-		<li class="right"><a href="home">Epass Management System</a></li>
+		<li><a href="/home/index">Home</a></li>
+		<li><a href="/home/userloggedin?userId=${userId}">User</a></li>
+		<li><a class="active" href="/epass/epassformtype?userId=${userId}">EpassForm</a></li>
+		<li class="right"><a href="/home/index">Epass Management System</a></li>
 	</ul>
 
 	<div style="padding: 0 16px;">
 	<div id="passengerform">
 		<h2>Epass Registration Form</h2>
 		<h3>Epass Passengers</h3>
-		<form:form action="epassregistered" method="post"
+		<form:form action="/epass/epassregistered" method="post"
 			modelAttribute="epasspassengers">
 			<table id="passenger" class="center"><caption></caption>
 				<tr>
@@ -107,7 +107,7 @@
 	</div>
 	<table class="center"><caption></caption>
 	<tr><th></th>
-	<td><a href="/getResult"><button class="signupbtn">Register</button></a></td>
+	<td><a href="/epass/getResult"><button class="signupbtn">Register</button></a></td>
 	</tr>
 	</table>
 <script type="text/javascript">

@@ -13,13 +13,12 @@
 </head>
 <body>
 <ul class="topnav">
-		<li><a href="home">Home</a></li>
-		<li><a href="userloginform">User</a></li>
-		<li><a class="active" href="adminloginform">Admin</a></li>
-		<li class="right"><a href="home">Epass Management System</a></li>
+		<li><a href="/home/index">Home</a></li>
+		<li><a class="active" href="/admin/adminloginform">Admin</a></li>
+		<li class="right"><a href="/home/index">Epass Management System</a></li>
 	</ul>
 		<h3>Admin Details Updation</h3>
-		<form:form action="updateadmin" method="post" modelAttribute="updateadmin">
+		<form:form action="/admin/updateadmin" method="post" modelAttribute="updateadmin">
 			<table class="center"><caption></caption>
 				<tr>
 					<th scope="col"><form:label path="adminId">Admin Id: </form:label></th>

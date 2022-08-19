@@ -22,6 +22,7 @@ import com.chainsys.epassmanagementsystem.service.PassengersService;
 import com.chainsys.epassmanagementsystem.service.UserService;
 
 @Controller
+@RequestMapping("/admin")
 public class AdminController {
 	@Autowired
 	public AdminService adminService;
@@ -51,9 +52,9 @@ public class AdminController {
 	public String adminLogin(@ModelAttribute("adminlogin") Admin admin) {
 		Admin admin1 = adminService.getAdminByIdAndPassword(admin.getAdminId(), admin.getAdminPassword());
 		if (admin1 != null) {
-			return "redirect:/adminloggedin";
+			return "redirect:/admin/adminloggedin";
 		} else {
-			return "redirect:/adminloginform";
+			return "redirect:/admin/adminloginform";
 		}
 	}
 
@@ -86,7 +87,7 @@ public class AdminController {
 	}
 
 //	delete admin
-	@RequestMapping("/deleteadminform")
+	@GetMapping("/deleteadminform")
 	public String deleteAdminForm() {
 		return "delete-admin";
 	}
@@ -94,7 +95,7 @@ public class AdminController {
 	@GetMapping("/deleteadmin")
 	public String deleteAdmin(@RequestParam("adminId") String id) {
 		adminService.deleteById(id);
-		return "redirect:/adminLogin";
+		return "redirect:/admin/adminLogin";
 	}
 
 //	users list
@@ -150,7 +151,7 @@ public class AdminController {
 	@PostMapping("/statuschanged")
 	public String statusUpdated(@ModelAttribute("epassstatus") EpassForm epassform) {
 		epassFormService.save(epassform);
-		return "redirect:/epassprocessingstatus";
+		return "redirect:/admin/epassprocessingstatus";
 	}
 
 }

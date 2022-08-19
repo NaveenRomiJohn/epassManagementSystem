@@ -25,7 +25,7 @@
 <body>
 		<div class="app">
 			<div class="bg"></div>
-			<form action="adminlogin" name="reg_form" method="post"
+			<form action="/admin/adminlogin" name="reg_form" method="post"
 				modelAttribute="adminlogin" onsubmit="return validateform()">
 				<header>
 					<h1>Admin Login</h1>

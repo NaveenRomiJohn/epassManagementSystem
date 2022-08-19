@@ -17,6 +17,7 @@ import com.chainsys.epassmanagementsystem.service.EpassFormService;
 import com.chainsys.epassmanagementsystem.service.UserService;
 
 @Controller
+@RequestMapping("/home")
 public class UserController {
 
 	@Autowired
@@ -25,7 +26,7 @@ public class UserController {
 	public EpassFormService epassFormService;
 
 //	home page
-	@RequestMapping("/home")
+	@GetMapping("/index")
 	public String home() {
 		return "home";
 	}
@@ -56,7 +57,7 @@ public class UserController {
 	@PostMapping("/updateuser")
 	public String updateUser(@RequestParam("userId")String userId,@ModelAttribute("updateuser") User user) {
 		userService.save(user);
-		return "redirect:/userloggedin?userId="+user.getUserId();
+		return "redirect:/home/userloggedin?userId="+user.getUserId();
 	}
 
 //	user login
@@ -77,9 +78,9 @@ public class UserController {
 	public String userLogin(@ModelAttribute("userlogin") User user) {
 		User user1 = userService.getUserByIdAndPassword(user.getUserId(), user.getUserPassword());
 		if (user1 != null) {
-			return "redirect:/userloggedin?userId="+user.getUserId();
+			return "redirect:/home/userloggedin?userId="+user.getUserId();
 		} else {
-			return "redirect:/userloginaccessdenied";
+			return "redirect:/home/userloginaccessdenied";
 		}
 	}
 

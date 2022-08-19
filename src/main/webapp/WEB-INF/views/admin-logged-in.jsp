@@ -12,10 +12,9 @@
 </head>
 <body>
 	<ul class="topnav">
-		<li><a href="home">Home</a></li>
-		<li><a href="userloginform">User</a></li>
-		<li><a class="active" href="adminloggedin">Admin</a></li>
-		<li class="right"><a href="home">Epass Management System</a></li>
+		<li><a href="/home/index">Home</a></li>
+		<li><a class="active" href="/admin/adminloginform">Admin</a></li>
+		<li class="right"><a href="/home/index">Epass Management System</a></li>
 	</ul>
 
 	<div class="row">
@@ -25,7 +24,7 @@
 					<td>
 						<div class="test_box box-01 col-xs-6 col-md-4">
 							<div class="inner">
-								<a href="allusers" class="test_click">
+								<a href="/admin/allusers" class="test_click">
 									<div class="flex_this">
 										<h1 class="test_title">Users List</h1>
 									</div>
@@ -36,7 +35,7 @@
 					<td>
 						<div class="test_box box-02 col-xs-6 col-md-4">
 							<div class="inner">
-								<a href="epassprocessingstatus" class="test_click">
+								<a href="/admin/epassprocessingstatus" class="test_click">
 									<div class="flex_this">
 										<h1 class="test_title">Epass Requests</h1>
 									</div>
@@ -47,7 +46,7 @@
 					<td>
 						<div class="test_box box-03 col-xs-6 col-md-4">
 							<div class="inner">
-								<a href="epassapprovedlist" class="test_click">
+								<a href="/admin/epassapprovedlist" class="test_click">
 									<div class="flex_this">
 										<h1 class="test_title">Epass Approved</h1>
 									</div>
@@ -57,7 +56,7 @@
 					</td>
 					<td><div class="test_box box-04 col-xs-6 col-md-4">
 							<div class="inner">
-								<a href="epassrejectedlist" class="test_click">
+								<a href="/admin/epassrejectedlist" class="test_click">
 									<div class="flex_this">
 										<h1 class="test_title">Epass Rejected</h1>
 									</div>
@@ -69,7 +68,7 @@
 					<td>
 						<div class="test_box box-05 col-xs-6 col-md-4">
 							<div class="inner">
-								<a href="epassrequests" class="test_click">
+								<a href="/admin/epassrequests" class="test_click">
 									<div class="flex_this">
 										<h1 class="test_title">All Epass Details</h1>
 									</div>
@@ -91,7 +90,7 @@
 					<td>
 						<div class="test_box box-07 col-xs-6 col-md-4">
 							<div class="inner">
-								<a href="deleteadminform" class="test_click">
+								<a href="/admin/deleteadminform" class="test_click">
 									<div class="flex_this">
 										<h1 class="test_title">Delete Admin</h1>
 									</div>
@@ -102,7 +101,7 @@
 					<td>
 						<div class="test_box box-08 col-xs-6 col-md-4">
 							<div class="inner">
-								<a href="addadminform" class="test_click">
+								<a href="/admin/addadminform" class="test_click">
 									<div class="flex_this">
 										<h1 class="test_title">Add Admin</h1>
 									</div>

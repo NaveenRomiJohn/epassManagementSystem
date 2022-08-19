@@ -21,8 +21,6 @@ import com.chainsys.epassmanagementsystem.service.PassengersService;
 @RequestMapping("/epass")
 public class EpassFormController {
 
-	private static final String ADD ="redirect:/epass/noOfpassengers?id=";
-	
 	@Autowired
 	public EpassFormService epassFormService;
 
@@ -51,7 +49,7 @@ public class EpassFormController {
 			Model model) {
 		epassFormService.save(epassForm);
 		int id=epassForm.getEpassId();
-		return ADD;
+		return "redirect:/epass/noOfpassengers?id="+id;
 	}
 	
 // across district
@@ -67,7 +65,7 @@ public class EpassFormController {
 	EpassForm epassForm, Model model) {
 		epassFormService.save(epassForm);
 		int id=epassForm.getEpassId();
-		return ADD;
+		return "redirect:/epass/noOfpassengers?id="+id;
 	}
 
 //	outside state
@@ -93,7 +91,7 @@ public class EpassFormController {
 	public String addEpasssOutSideState(@ModelAttribute("outsidestatedetails")OutsideState outsideState,Model model) {
 		outsideStateService.save(outsideState);
 		int id=outsideState.getEpassId();
-		return ADD;
+		return "redirect:/epass/noOfpassengers?id="+id;
 	}
 //	number of passengers
 	@GetMapping("/noOfpassengers")
@@ -112,7 +110,7 @@ public class EpassFormController {
 		int id=passengers.getEpassId();
 		List<Passengers>passengerList=passengersService.getPassengersByEpassid(id);
 		model.addAttribute("passengersList", passengerList);
-		return ADD;
+		return "redirect:/epass/noOfpassengers?id="+id;
 	}
 	
 	@GetMapping("/getResult")

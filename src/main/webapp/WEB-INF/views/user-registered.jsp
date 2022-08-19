@@ -22,11 +22,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap-grid.min.css">
 <link rel="preconnect" href="https://fonts.gstatic.com">
-   <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@700&display=swap" rel="stylesheet">
 
-    <!-- Main -->
     <main>
-        <!--COVİD-19 Alert-->
         <section class="section hero">
             <div class="container">
                 <div class="row direction">
@@ -45,6 +43,7 @@
                 </div>
             </div>
         </section>  
+        </main>
 <script type="text/javascript">
 const openMenu = document.getElementById('open-menu');
 const navLinks = document.getElementById('nav-links');

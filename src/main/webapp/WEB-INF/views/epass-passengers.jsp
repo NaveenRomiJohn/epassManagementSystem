@@ -107,7 +107,7 @@
 	</div>
 	<table class="center"><caption></caption>
 	<tr><th></th>
-	<td><a href="/epass/getResult"><button class="signupbtn">Register</button></a></td>
+	<td><a href="/epass/getResult?userId=${userId}"><button class="signupbtn">Register</button></a></td>
 	</tr>
 	</table>
 <script type="text/javascript">

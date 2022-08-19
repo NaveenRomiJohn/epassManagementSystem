@@ -114,7 +114,8 @@ public class EpassFormController {
 	}
 	
 	@GetMapping("/getResult")
-	public String getResult(Model mdoel) {
+	public String getResult(@RequestParam("userId")int userId,Model model) {
+		model.addAttribute("userId", userId);
 		return "epass-registered";
 	}
 	

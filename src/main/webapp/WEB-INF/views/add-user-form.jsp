@@ -27,14 +27,13 @@
 </script>
 <body>
 <ul class="topnav">
-		<li><a href="home">Home</a></li>
-		<li><a class="active" href="userloginform">User</a></li>
-		<li><a href="adminloginform">Admin</a></li>
-		<li class="right"><a href="home">Epass Management System</a></li>
+		<li><a href="/home/index">Home</a></li>
+		<li><a class="active" href="/home/userloginform">User</a></li>
+		<li class="right"><a href="/home/index">Epass Management System</a></li>
 	</ul>
 	<div style="padding: 0 18px;" id="form">
 		<h2>User Registration Form</h2>
-		<form:form action="adduser" name="reg_form" method="post"
+		<form:form action="/home/adduser" name="reg_form" method="post"
 			modelAttribute="adduser" onsubmit="return validateform()">
 			 <div class="container">
 			<table class="center"><caption></caption>

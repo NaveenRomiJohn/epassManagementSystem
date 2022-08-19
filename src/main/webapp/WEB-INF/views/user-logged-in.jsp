@@ -38,7 +38,7 @@ include file="css/navbar.css"%>
 				<td>
 					<div class="test_box box-02 col-xs-6 col-md-4">
 						<div class="inner">
-							<a href="/epass/updateuserform?userId=${userId}" class="test_click">
+							<a href="/home/updateuserform?userId=${userId}" class="test_click">
 								<div class="flex_this">
 									<h1 class="test_title">User Update</h1>
 								</div>
@@ -49,7 +49,7 @@ include file="css/navbar.css"%>
 				<td>
 					<div class="test_box box-03 col-xs-6 col-md-4">
 						<div class="inner">
-							<a href="/epass/epassapplicationstatus?userId=${userId}" class="test_click">
+							<a href="/home/epassapplicationstatus?userId=${userId}" class="test_click">
 								<div class="flex_this">
 									<h1 class="test_title">Application Status</h1>
 								</div>

@@ -32,7 +32,7 @@
 		<li><a href="adminloginform">Admin</a></li>
 		<li class="right"><a href="home">Epass Management System</a></li>
 	</ul>
-	<div style="padding: 0 18px;" id="form" class='fieldset'>
+	<div style="padding: 0 18px;" id="form">
 		<h2>User Registration Form</h2>
 		<form:form action="adduser" name="reg_form" method="post"
 			modelAttribute="adduser" onsubmit="return validateform()">
@@ -94,12 +94,14 @@
 				<tr>
 					<th scope="col">Confirm Password :</th>
 					<td><input type="password" id="secondpassword" placeholder="Please enter the confirm password"
-						name="secondpassword" required/></td>
+					title="Password must contain atleast one uppercase,lowercase,special symbol & number"	name="secondpassword" required/></td>
 				</tr>
-				<tr>
+				<table  class="center"><caption></caption>
+				<tr><th></th>
 					<td><button type="reset" class="cancelbtn">Reset</button>
-					 <button type="submit" class="signupbtn">Register</button></td>
+					 <button type="submit" class="signupbtn">Submit</button></td>
 				</tr>
+				</table>
 			</table>
 			</div>
 		</form:form>

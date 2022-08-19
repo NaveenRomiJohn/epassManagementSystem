@@ -96,10 +96,12 @@
 					<td><input type="password" id="secondpassword" placeholder="Confirm the password"
 						name="secondpassword" required/></td>
 				</tr>
-				<tr>
+				<table  class="center"><caption></caption>
+				<tr><th></th>
 					<td><button type="reset" class="cancelbtn">Reset</button>
-					 <button type="submit" class="signupbtn">Update</button></td>
+					 <button type="submit" class="signupbtn">Submit</button></td>
 				</tr>
+				</table>
 			</table>
 			</div>
 	</form:form>

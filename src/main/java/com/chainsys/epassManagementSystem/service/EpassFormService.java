@@ -87,10 +87,6 @@ public class EpassFormService {
 //	outside state	
 	@Transactional
 	public void addEpassOutsideState(EpassFormOutsideStateDTO dto) {
-//		EpassForm epassForm = dto.getEpassForm();
-//		save(epassForm);
-//		OutsideState outsideState = dto.getOutsideState();
-//		outsideStateRepository.save(outsideState);
 		List<Passengers> passengersList = dto.getPassengers();
 		int count = passengersList.size();
 		for (int i = 0; i < count; i++) {

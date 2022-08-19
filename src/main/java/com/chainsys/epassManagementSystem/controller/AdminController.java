@@ -66,8 +66,8 @@ public class AdminController {
 	}
 
 	@PostMapping("/addadmin")
-	public String addAdmin(@ModelAttribute("addadmin") Admin admin) {
-		adminService.save(admin);
+	public String addAdmin(@ModelAttribute("addadmin") Admin admin3) {
+		adminService.save(admin3);
 		return "admin-registered";
 	}
 
@@ -80,8 +80,8 @@ public class AdminController {
 	}
 
 	@PostMapping("/updateadmin")
-	public String updateAdmin(@ModelAttribute("updateadmin") Admin admin) {
-		adminService.save(admin);
+	public String updateAdmin(@ModelAttribute("updateadmin") Admin admin4) {
+		adminService.save(admin4);
 		return "admin-updated";
 	}
 
@@ -148,8 +148,8 @@ public class AdminController {
 	}
 
 	@PostMapping("/statuschanged")
-	public String statusUpdated(@ModelAttribute("epassstatus") EpassForm epassForm) {
-		epassFormService.save(epassForm);
+	public String statusUpdated(@ModelAttribute("epassstatus") EpassForm epassForm1) {
+		epassFormService.save(epassForm1);
 		return "redirect:/epassprocessingstatus";
 	}
 

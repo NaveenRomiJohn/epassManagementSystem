@@ -31,7 +31,7 @@
 	</ul>
 	<h3>Epass Requests</h3>
 	<div id="applist">
-		<table>
+		<table><caption></caption>
 			<thead>
 				<tr>
 					<th>Epass Id</th>

@@ -9,7 +9,7 @@ import com.chainsys.epassmanagementsystem.model.Passengers;
 public class EpassFormPassengersDTO {
 
 	private EpassForm epassForm;
-	private List<Passengers> passengersList = new ArrayList<Passengers>();
+	private List<Passengers> passengersList = new ArrayList<>();
 
 	public EpassForm getEpassForm() {
 		return epassForm;

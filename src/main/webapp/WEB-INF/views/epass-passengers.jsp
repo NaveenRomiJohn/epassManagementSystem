@@ -69,8 +69,8 @@
 							required="true" /> Yes <form:radiobutton path="covidSymptoms"
 							value="No" required="true" /> No</td>
 				</tr>
-				<table  class="center">
-				<tr>
+				<table  class="center"><caption></caption>
+				<tr><th></th>
 					<td><button type="reset" class="cancelbtn">Reset</button>
 					 <button type="submit" class="signupbtn">Submit</button></td>
 				</tr>
@@ -106,7 +106,7 @@
 		</table>
 	</div>
 	<table class="center"><caption></caption>
-	<tr>
+	<tr><th></th>
 	<td><a href="/getResult"><button class="signupbtn">Register</button></a></td>
 	</tr>
 	</table>

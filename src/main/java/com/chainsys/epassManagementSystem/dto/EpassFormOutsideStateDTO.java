@@ -27,7 +27,7 @@ public class EpassFormOutsideStateDTO {
 	
 	
 	
-	private List<Passengers> passengersList = new ArrayList<Passengers>();
+	private List<Passengers> passengersList = new ArrayList<>();
 	public void addPassengers(Passengers passengers) {
 		passengersList.add(passengers);
 	}

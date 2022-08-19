@@ -28,7 +28,7 @@ table {
 </style>
 <body>
 	<div id="Table root">
-		<table>
+		<table><caption></caption>
 			<thead>
 				<tr>
 					<th>Passenger Name</th>

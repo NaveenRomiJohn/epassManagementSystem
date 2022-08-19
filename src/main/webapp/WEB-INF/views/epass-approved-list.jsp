@@ -32,7 +32,7 @@
 	</ul>
 	<h2>Epass Approved List</h2>
 	<div id="applist">
-		<table id="alter" class="center">
+		<table id="alter" class="center"><caption></caption>
 			<thead>
 				<tr>
 					<th>Epass Id</th>

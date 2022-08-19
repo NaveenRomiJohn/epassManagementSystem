@@ -31,9 +31,6 @@ public class OutsideState {
 	private String pcrCertificateIssuedBy;
 	@Column(name = "epass_id")
 	private Integer epassId;
-	
-//	@Column(name = "rt_pcr_file")
-//	private byte[] rtPcrFile;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "epass_id", insertable = false, updatable = false, nullable = false)
@@ -118,13 +115,5 @@ public class OutsideState {
 	public void setEpassForm(EpassForm epassForm) {
 		this.epassForm = epassForm;
 	}
-
-//	public byte[] getRtPcrFile() {
-//		return rtPcrFile;
-//	}
-//
-//	public void setRtPcrFile(byte[] rtPcrFile) {
-//		this.rtPcrFile = rtPcrFile;
-//	}
 
 }

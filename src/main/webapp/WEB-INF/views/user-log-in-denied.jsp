@@ -48,13 +48,13 @@
 	<form:form action="userlogin" name="reg_form" method="post"
 		modelAttribute="userlogin" onsubmit="return validateform()">
 		<p style="color: red" style="font-size:30px" >*Login access denied</p>
-		<table class="center">
+		<table class="center"><caption></caption>
 			<tr>
-				<td>User Id :</td>
+				<th scope="col">User Id :</th>
 				<td><form:input path="userId" name="userId" /></td>
 			</tr>
 			<tr>
-				<td>User Password :</td>
+				<th scope="col">User Password :</th>
 				<td><form:password path="userPassword" name="userPassword" /></td>
 			</tr>
 			<tr>

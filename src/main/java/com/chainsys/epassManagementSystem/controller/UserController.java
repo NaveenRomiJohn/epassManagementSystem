@@ -44,18 +44,7 @@ public class UserController {
 		return "user-registered";
 	}
 
-//	@PostMapping("/adduser")
-//	public String addUser(@Valid @ModelAttribute("adduser") User user, BindingResult br) {
-//		if (br.hasErrors()) {
-//			return "add-user-form";
-//		} else {
-//			userService.save(user);
-//			return "user-registered";
-//		}
-//
-//	}
-
-	// user update
+//	 user update
 	@GetMapping("/updateuserform")
 	public String showUpdateForm(@RequestParam("userId")String userId,Model model) {
 		User user = new User();
@@ -107,15 +96,5 @@ public class UserController {
 		model.addAttribute("epassForm", epassForm);
 		return "user-application-status";
 	}
-//	Optional<User> userIdEntry = userRepository.findById(user.getUserId());
-//	Optional<User> emailEntry = userRepository.findByEmail(user.getEmail());
-//	if (userIdEntry.isPresent()) {
-//		throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Username already exists!");
-//	}
-//	if (emailEntry.isPresent()) {
-//		throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Email already exists!");
-//	}
-//	if (validateInputs(user)) {
-//		userRepository.save(user);
-//	}
+
 }

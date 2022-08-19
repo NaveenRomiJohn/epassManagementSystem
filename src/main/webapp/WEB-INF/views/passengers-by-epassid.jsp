@@ -32,7 +32,7 @@ table, th, td {
 	<h3>Within District</h3>
 
 	<div id="Table root">
-		<table>
+		<table><caption></caption>
 			<thead>
 				<tr>
 					<th>Epass Id</th>
@@ -63,7 +63,7 @@ table, th, td {
 	</div>
 
 	<div id="passengers">
-		<table>
+		<table><caption></caption>
 			<thead>
 				<tr>
 					<th>Passenger Name</th>

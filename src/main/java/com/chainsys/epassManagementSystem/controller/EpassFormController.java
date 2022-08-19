@@ -1,12 +1,7 @@
 package com.chainsys.epassmanagementsystem.controller;
 
-import java.io.IOException;
 import java.util.List;
-
-import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,9 +9,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.MultipartFile;
-
 import com.chainsys.epassmanagementsystem.dto.EpassFormPassengersDTO;
 import com.chainsys.epassmanagementsystem.model.EpassForm;
 import com.chainsys.epassmanagementsystem.model.OutsideState;
@@ -97,9 +89,9 @@ public class EpassFormController {
 		return "epass-form-outside-state-details";
 	}
 	@PostMapping("/epassoutsidestate")
-	public String addEpasssOutSideState(@ModelAttribute("outsidestatedetails")OutsideState OutSideState,Model model) {
-		outsideStateService.save(OutSideState);
-		int id=OutSideState.getEpassId();
+	public String addEpasssOutSideState(@ModelAttribute("outsidestatedetails")OutsideState outsideState,Model model) {
+		outsideStateService.save(outsideState);
+		int id=outsideState.getEpassId();
 		return "redirect:/noOfpassengers?id="+id;
 	}
 //	number of passengers
@@ -136,11 +128,3 @@ public class EpassFormController {
 	}
 
 }
-
-//@ResponseBody
-//	@GetMapping("/getfile")
-//	public ResponseEntity<byte[]> getImage(@RequestParam("id") int id)
-//	{
-//		byte[] documentBytes=outsideStateService.getDocumentByteArray(id);
-//		return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(documentBytes);	
-//	}

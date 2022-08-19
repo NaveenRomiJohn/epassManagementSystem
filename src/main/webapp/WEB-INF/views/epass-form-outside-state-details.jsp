@@ -178,8 +178,8 @@
 							title="Name can't be empty or must contain only alphabets"
 							pattern="^[a-zA-Z]+$" required /></td>
 					</tr>
-					<table class="center">
-						<tr>
+					<table class="center"><caption></caption>
+						<tr><th></th>
 							<td><button type="reset" class="cancelbtn">Reset</button>
 								<button type="submit" class="signupbtn">Submit</button></td>
 						</tr>

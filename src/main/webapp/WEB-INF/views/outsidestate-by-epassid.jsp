@@ -32,7 +32,7 @@ table, th, td {
 	<h3>Outside State</h3>
 
 	<div id="Table root">
-		<table>
+		<table><caption></caption>
 			<thead>
 				<tr>
 					<th>Epass Id</th>
@@ -64,7 +64,7 @@ table, th, td {
 	</div>
 	<br>
 	<div id="Across District table">
-		<table>
+		<table><caption></caption>
 			<thead>
 				<tr>
 					<th>From District</th>

@@ -25,14 +25,5 @@ public class OutsideStateService {
 	public OutsideState save(OutsideState outsideState) {
 		return outsideStateRepository.save(outsideState);
 	}
-
-//	public byte[] getDocumentByteArray(int id) {
-//		OutsideState outsideState=outsideStateRepository.findById(id);
-//		byte[] documentBytes=null;
-//		if(outsideState!=null) {
-//			documentBytes=outsideState.getRtPcrFile();
-//		}
-//		return documentBytes;
-//	}
 	
 }

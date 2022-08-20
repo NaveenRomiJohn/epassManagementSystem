@@ -18,7 +18,7 @@ public interface UserRepository extends CrudRepository<User, String>, JpaReposit
 
 	List<User> findAll();
 
-	User findByUserIdAndUserPassword(String userId, String userPassword);
+	User findByEmailAndUserPassword(String email, String userPassword);
 
 	Optional<User> findByEmail(String email);
 

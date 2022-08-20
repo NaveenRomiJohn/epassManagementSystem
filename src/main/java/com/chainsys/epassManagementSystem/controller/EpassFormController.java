@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import com.chainsys.epassmanagementsystem.dto.EpassFormPassengersDTO;
 import com.chainsys.epassmanagementsystem.model.EpassForm;
 import com.chainsys.epassmanagementsystem.model.OutsideState;
 import com.chainsys.epassmanagementsystem.model.Passengers;
@@ -119,14 +118,6 @@ public class EpassFormController {
 		return "redirect:/home/userloggedin?userId="+userId;
 	}
 	
-	@GetMapping("/getpassengersbyepassid")
-	public String getPassengersByEpassId(@RequestParam("id") Integer id, Model model) {
-		EpassFormPassengersDTO dto = epassFormService.getEpassAndPassengers(id);
-		model.addAttribute("epass", dto.getEpassForm());
-		model.addAttribute("getpassengers", dto.getPassengers());
-		return "passengers-by-epassid";
-	}
-
 	@GetMapping("/getallpassengers")
 	public String getAllPassengers(Model model) {
 		List<Passengers> passengersList = passengersService.getPassengers();

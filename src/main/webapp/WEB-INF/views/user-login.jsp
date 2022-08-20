@@ -8,10 +8,10 @@
 <title>User login</title>
 <script>
 function validateform() {
-	var userId = document.reg_form.userId.value;
+	var email = document.reg_form.email.value;
 	var userPassword = document.reg_form.userPassword.value;
-	if (userId == null || userId == "") {
-		alert("User Id is required or can't be blank");
+	if (email == null || email == "") {
+		alert("Email is required (ex.epass@gmail.com)");
 		return false;
 	} else if (userPassword == null || userPassword == "") {
 		alert("User Password is required or can't be blank");
@@ -36,8 +36,8 @@ function validateform() {
                     </div>
 			</header>
 			<div class="inputs">
-				<form:input path="userId" name="userId"
-					placeholder="User ID"/> <form:input type="password"
+				<form:input path="email" name="email"
+					placeholder="Email"/> <form:input type="password"
 					path="userPassword" name="userPassword" placeholder="Password"/>
 			</div><br>
 			 <br><br><br>

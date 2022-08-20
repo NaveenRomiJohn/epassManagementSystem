@@ -27,16 +27,15 @@
 </script>
 <body>
 <ul class="topnav">
-		<li><a href="home">Home</a></li>
-		<li><a class="active" href="userloggedin">User</a></li>
-		<li><a href="adminloginform">Admin</a></li>
-		<li class="right"><a href="home">Epass Management System</a></li>
+		<li><a href="/home/index">Home</a></li>
+		<li><a href="/home/userloggedin?userId=${userId}">User</a></li>
+		<li class="right"><a href="">User : ${userId}</a></li>
 	</ul>
 <div>
 	<div style="padding: 0 18px;">
 	<h3>Update user details</h3>
 
-	<form:form action="updateuser" method="post" name="reg_form"
+	<form:form action="/home/updateuser" method="post" name="reg_form"
 		modelAttribute="updateuser" onsubmit="return validateform()">
 		<div class="container">
 			<table class="center"><caption></caption>
@@ -47,13 +46,13 @@
 					<th scope="col">First Name :</th>
 					<td><input type="text" id="firstName" name="firstName"
 							title="Name can't be empty or must contain only alphabets"
-							placeholder="Enter the first name" pattern="^[a-zA-Z]+$" required /></td>
+							placeholder="Enter the first name" pattern="^[a-zA-Z]+(\s[a-zA-Z]+)?$" required /></td>
 				</tr>
 				<tr>
 					<th scope="col">Last Name :</th>
 					<td><input type="text" id="lastName" name="lastName"
 							title="Name can't be empty or must contain only alphabets"
-						placeholder="Enter the last name"	pattern="^[a-zA-Z]+$" required/></td>
+						placeholder="Enter the last name" pattern="^[a-zA-Z]+(\s[a-zA-Z]+)?$" required/></td>
 				</tr>
 				<tr>
 					<th scope="col">Gender :</th>
@@ -88,7 +87,7 @@
 				<tr>
 					<th scope="col">User Password :</th>
 					<td><input type="password" id="userPassword" name="userPassword" placeholder="Enter the password"
-							pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$"
+							pattern="^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,}$"
 						title="password must contain one uppercase, one lowercase & one special symbol"	required /></td>
 				</tr>
 				<tr>

@@ -22,8 +22,8 @@
 <body>
 <ul class="topnav">
 		<li><a href="/home/index">Home</a></li>
-		<li><a class="active" href="/admin/adminloginform">Admin</a></li>
-		<li class="right"><a href="/home/index">Epass Management System</a></li>
+		<li><a class="active" href="/admin/adminloggedin?adminId=${adminId}">Admin</a></li>
+		<li class="right"><a href="">Admin : ${adminId}</a></li>
 	</ul>
 	<h3>Delete Admin Details</h3>
 	<form action="/admin/deleteadmin" name="reg_form" method="get" onsubmit="return validateform()">

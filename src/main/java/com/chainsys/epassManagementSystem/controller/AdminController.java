@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.chainsys.epassmanagementsystem.commonutil.InvalidInputDataException;
+import com.chainsys.epassmanagementsystem.dto.EpassFormPassengersDTO;
 import com.chainsys.epassmanagementsystem.model.Admin;
 import com.chainsys.epassmanagementsystem.model.EpassForm;
 import com.chainsys.epassmanagementsystem.model.OutsideState;
@@ -26,6 +27,8 @@ import com.chainsys.epassmanagementsystem.service.UserService;
 public class AdminController {
 	
 	public static final String LOGIN="admin-login";
+	public static final String ADMINID="adminId";
+	public static final String ADMINPAGE="redirect:/admin/adminloggedin?adminId=";
 	
 	@Autowired
 	public AdminService adminService;
@@ -58,14 +61,21 @@ public class AdminController {
 			model.addAttribute("message", "Admin Id or Password is incorrect");
 			return LOGIN;
 		} 
-		model.addAttribute("adminId", admin1.getAdminId());
+		String adminId=admin1.getAdminId();
+		return ADMINPAGE+adminId;
+	}
+	
+	@GetMapping("/adminloggedin")
+	public String adminLoggedIn(@RequestParam("adminId")String adminId,Model model) {
+		model.addAttribute(ADMINID, adminId);
 		return "admin-logged-in";
 	}
 
 //	add admin
 	@GetMapping("/addadminform")
-	public String adminRegisterForm(Model model) {
+	public String adminRegisterForm(@RequestParam("adminId")String adminId,Model model) {
 		Admin admin = new Admin();
+		model.addAttribute(ADMINID, adminId);
 		model.addAttribute("addAdmin", admin);
 		return "add-admin-form";
 	}
@@ -73,13 +83,15 @@ public class AdminController {
 	@PostMapping("/addadmin")
 	public String addAdmin(@ModelAttribute("addadmin") Admin admin) {
 		adminService.save(admin);
-		return "admin-registered";
+		String adminId=admin.getAdminId();
+		return ADMINPAGE+adminId;
 	}
 
 //	update admin
 	@GetMapping("/updateadminform")
-	public String showUpdateForm(Model model) {
+	public String showUpdateForm(@RequestParam("adminId")String adminId,Model model) {
 		Admin admin = new Admin();
+		model.addAttribute(ADMINID, adminId);
 		model.addAttribute("updateadmin", admin);
 		return "update-admin-form";
 	}
@@ -87,7 +99,8 @@ public class AdminController {
 	@PostMapping("/updateadmin")
 	public String updateAdmin(@ModelAttribute("updateadmin") Admin admin) {
 		adminService.save(admin);
-		return "admin-updated";
+		String adminId=admin.getAdminId();
+		return ADMINPAGE+adminId;
 	}
 
 //	delete admin
@@ -147,7 +160,9 @@ public class AdminController {
 	@GetMapping("/statuschange")
 	public String statusUpdateForm(@RequestParam("epassId") int id, Model model) {
 		EpassForm epassForm = epassFormService.findById(id);
+		EpassFormPassengersDTO dto = epassFormService.getEpassAndPassengers(id);
 		model.addAttribute("epassstatus", epassForm);
+		model.addAttribute("getpassengers", dto.getPassengers());
 		return "epass-update-form";
 	}
 

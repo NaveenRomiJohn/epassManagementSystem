@@ -17,7 +17,7 @@
 		<li><a href="/home/index">Home</a></li>
 		<li><a href="/home/userloggedin?userId=${userId}">User</a></li>
 		<li><a class="active" href="/epass/epassformtype?userId=${userId}">EpassForm</a></li>
-		<li class="right"><a href="/home/index">Epass Management System</a></li>
+		<li class="right"><a href="">User : ${userId}</a></li>
 	</ul>
 
 		<div id="epassform">

@@ -35,8 +35,8 @@ function validateadmin() {
 <body>
 <ul class="topnav">
 		<li><a href="/home/index">Home</a></li>
-		<li><a class="active" href="/admin/adminloginform">Admin</a></li>
-		<li class="right"><a href="/home/index">Epass Management System</a></li>
+		<li><a class="active" href="/admin/adminloggedin?adminId=${adminId}">Admin</a></li>
+		<li class="right"><a href="">Admin : ${adminId}</a></li>
 	</ul>
 		<h2>Admin Registration form</h2>
 		<form:form action="/admin/addadmin" method="post" modelAttribute="addAdmin"
@@ -50,7 +50,7 @@ function validateadmin() {
 					<th scope="col"><form:label path="adminName">Name: </form:label></th>
 					<td><form:input path="adminName"
 							title="Name can't be empty or must contain only alphabets"
-							pattern="^[a-zA-Z ]+$" required="true" /></td>
+							pattern="^[a-zA-Z]+(\s[a-zA-Z]+)?$" required="true" /></td>
 				</tr>
 				<tr>
 					<th scope="col"><form:label path="adminEmail">Email: </form:label></th>
@@ -61,7 +61,7 @@ function validateadmin() {
 				<tr>
 					<th scope="col"><form:label path="adminPassword">Password: </form:label></th>
 					<td><form:password path="adminPassword"
-							pattern="^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8}$"
+							pattern="^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,}$"
 							title="Password must be minimum 8 characters with alphabets,one special and one number"
 							required="true" /></td>
 				</tr>
@@ -74,7 +74,7 @@ function validateadmin() {
 					<th scope="col"><form:label path="adminDesignation">Designation: </form:label></th>
 					<td><form:input path="adminDesignation"
 							title="Name can't be empty or must contain only alphabets"
-							pattern="^[a-zA-Z]+$" required="true" /></td>
+							pattern="^[a-zA-Z]+(\s[a-zA-Z]+)?$" required="true" /></td>
 				</tr>
 				<table  class="center"><caption></caption>
 					<tr><th></th>

@@ -15,8 +15,8 @@
 <body>
 <ul class="topnav">
 		<li><a href="/home/index">Home</a></li>
-		<li><a class="active" href="/home/userloggedin?userId=${userId1}">User</a></li>
-		<li class="right"><a href="/home/index">Epass Management System</a></li>
+		<li><a class="active" href="/home/userloggedin?userId=${userId}">User</a></li>
+		<li class="right"><a href="">User : ${userId}</a></li>
 	</ul>
 	<h2>Application Status</h2>
 	<div id="applist">

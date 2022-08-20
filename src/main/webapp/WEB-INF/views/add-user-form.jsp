@@ -46,13 +46,13 @@
 					<th scope="col">First Name :</th>
 					<td><input type="text" id="firstName" name="firstName"
 							title="Name can't be empty or must contain only alphabets" placeholder="Please enter the first name"
-							pattern="^[a-zA-Z]+$" required /></td>
+							pattern="^[a-zA-Z]+(\s[a-zA-Z]+)?$" required /></td>
 				</tr>
 				<tr>
 					<th scope="col">Last Name :</th>
 					<td><input type="text" id="lastName" name="lastName" placeholder="Please enter the last name"
 							title="Name can't be empty or must contain only alphabets"
-							pattern="^[a-zA-Z]+$" required/></td>
+							pattern="^[a-zA-Z]+(\s[a-zA-Z]+)?$" required/></td>
 				</tr>
 				<tr>
 					<th scope="col">Gender :</th>
@@ -86,14 +86,15 @@
 				</tr>
 				<tr>
 					<th scope="col">User Password :</th>
-					<td><input type="password" id="userPassword" name="userPassword" placeholder="Please enter the password"
-							pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$"
-							required /></td>
+					<td><form:password path="userPassword" name="userPassword" placeholder="Please enter the password"
+							title="Password must be minimum 8 characters with alphabets,one special and one number"
+							pattern="^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,}$"
+							required="true" /></td>
 				</tr>
 				<tr>
 					<th scope="col">Confirm Password :</th>
-					<td><input type="password" id="secondpassword" placeholder="Please enter the confirm password"
-					title="Password must contain atleast one uppercase,lowercase,special symbol & number"	name="secondpassword" required/></td>
+					<td><input type="password" id="secondpassword" name="secondpassword" placeholder="Please enter the confirm password"
+					title="Password must contain atleast one uppercase,lowercase,special symbol & number" required/></td>
 				</tr>
 				<table  class="center"><caption></caption>
 				<tr><th></th>

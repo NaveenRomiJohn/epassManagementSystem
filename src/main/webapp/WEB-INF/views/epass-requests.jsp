@@ -15,7 +15,8 @@
 <body>
 <ul class="topnav">
 		<li><a href="home">Home</a></li>
-		<li><a href="userloginform">User</a></li>
+		<li><a class="active" href="/admin/adminloggedin?adminId=${adminId}">Admin</a></li>
+		<li class="right"><a href="">Admin : ${adminId}</a></li>
 		<div class="dropdown">
         <button class="dropbtn">Admin 
      	 <em class="fa fa-caret-down"></em> </button>

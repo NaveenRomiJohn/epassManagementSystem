@@ -103,21 +103,21 @@ body {
 
 .box-01 .inner {
 	background-image: url('https://www.asbmb.org/getattachment/91aab118-8ca9-4033-9adb-2964192920ee/one-year-later-thumb.png?lang=en-US&width=480&height=270&ext=.png');
-	background-position: 50% 50%;
+	background-position: 30% 50%;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
 
 .box-02 .inner {
 	background-image: url('https://www.hopkinsmedicine.org/-/media/images/health/1_-conditions/coronavirus/covid-safety-family-teaser.ashx');
-	background-position: 50% 50%;
+	background-position: 40% 50%;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
 
 .box-03 .inner {
 	background-image: url('https://keralty.com.ph/sites/default/files/inline-images/What-COVID-19-tests-are-available-and-which-one-should-I-take-%28square%29.jpg');
-	background-position: 50% 50%;
+	background-position: 70% 50%;
 	background-repeat: no-repeat;
 	background-size: cover;
 }

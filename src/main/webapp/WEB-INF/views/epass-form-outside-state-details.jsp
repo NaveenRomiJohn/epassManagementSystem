@@ -31,7 +31,7 @@
 		<li><a href="/home/index">Home</a></li>
 		<li><a href="/home/userloggedin?userId=${userId}">User</a></li>
 		<li><a class="active" href="/epass/epassformtype?userId=${userId}">EpassForm</a></li>
-		<li class="right"><a href="/home/index">Epass Management System</a></li>
+		<li class="right"><a href="">User : ${userId}</a></li>
 	</ul>
 
 	<div style="padding: 0 16px;">
@@ -175,7 +175,7 @@
 							name="pcrCertificateIssuedBy"
 							placeholder="Please enter the details of certificate issued"
 							title="Name can't be empty or must contain only alphabets"
-							pattern="^[a-zA-Z]+$" required /></td>
+							pattern="^[a-zA-Z]+(\s[a-zA-Z]+)?$" required /></td>
 					</tr>
 					<table class="center"><caption></caption>
 						<tr><th></th>

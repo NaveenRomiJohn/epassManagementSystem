@@ -2,6 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ page import="com.chainsys.epassmanagementsystem.businesslogic.Logic"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +12,7 @@
   <%@include file="css/form.css" %>
   <%@include file="css/navbar.css"%>
   <%@include file="css/dropdown.css"%>
+  <%@include file="css/passenger.css" %> 
 </style>
 </head>
 <body>
@@ -29,11 +31,12 @@
     	</div>
 		<li class="right"><a href="home">Epass Management System</a></li>
 	</ul>
-	<h2>Epass Update</h2>
+	<div style="padding: 0 16px;">
 	<div id="form">
+	<h2>Epass Update</h2>
 		<form:form action="statuschanged" method="post"
 			modelAttribute="epassstatus">
-			<table id="alter" class="center"><caption></caption>
+			<table id="passenger" class="center"><caption></caption>
 				<tr>
 					<td><form:hidden path="epassId" value="${epassId}"
 							readonly="true" /></td>
@@ -96,11 +99,38 @@
 				</tr>
 				<table class="center"><caption></caption>
 				<tr><th></th>
-					<td><form:button type="submit">Update</form:button></td>
+					<td><form:button type="submit" class="signupbtn">Update</form:button></td>
 					</tr>
 				</table>
 			</table>
 		</form:form>
+	</div>
+	</div>
+	<br>
+	<div id="alter" class="center">
+		<table><caption></caption>
+			<thead>
+				<tr>
+					<th>Passenger Name</th>
+					<th>Gender</th>
+					<th>Covid Symptoms</th>
+					<th>Id Proof Type</th>
+					<th>Id proof Number</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach var="passengers" items="${getpassengers}">
+					<!-- var-variables,items-collection -->
+					<tr>
+						<td>${passengers.passengerName}</td>
+						<td>${passengers.passengerGender}</td>
+						<td>${passengers.covidSymptoms}</td>
+						<td>${passengers.idProofType}</td>
+						<td>${passengers.idProofNumber}</td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
 	</div>
 <script type="text/javascript">
 <%@include file="js/select.js" %>

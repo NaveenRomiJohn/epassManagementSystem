@@ -13,8 +13,8 @@
 <body>
 	<ul class="topnav">
 		<li><a href="/home/index">Home</a></li>
-		<li><a class="active" href="/admin/adminloginform">Admin</a></li>
-		<li class="right"><a href="/home/index">Epass Management System</a></li>
+		<li><a class="active" href="/admin/adminloggedin?adminId=${adminId}">Admin</a></li>
+		<li class="right"><a href="">Welcome: ${adminId}</a></li>
 	</ul>
 
 	<div class="row">
@@ -54,6 +54,8 @@
 							</div>
 						</div>
 					</td>
+					</tr>
+					<tr>
 					<td><div class="test_box box-04 col-xs-6 col-md-4">
 							<div class="inner">
 								<a href="/admin/epassrejectedlist" class="test_click">
@@ -63,8 +65,6 @@
 								</a>
 							</div>
 						</div></td>
-				</tr>
-				<tr>
 					<td>
 						<div class="test_box box-05 col-xs-6 col-md-4">
 							<div class="inner">
@@ -79,31 +79,9 @@
 					<td>
 						<div class="test_box box-06 col-xs-6 col-md-4">
 							<div class="inner">
-								<a href="updateadminform" class="test_click">
+								<a href="/admin/updateadminform?adminId=${adminId}" class="test_click">
 									<div class="flex_this">
 										<h1 class="test_title">Update Admin</h1>
-									</div>
-								</a>
-							</div>
-						</div>
-					</td>
-					<td>
-						<div class="test_box box-07 col-xs-6 col-md-4">
-							<div class="inner">
-								<a href="/admin/deleteadminform" class="test_click">
-									<div class="flex_this">
-										<h1 class="test_title">Delete Admin</h1>
-									</div>
-								</a>
-							</div>
-						</div>
-					</td>
-					<td>
-						<div class="test_box box-08 col-xs-6 col-md-4">
-							<div class="inner">
-								<a href="/admin/addadminform" class="test_click">
-									<div class="flex_this">
-										<h1 class="test_title">Add Admin</h1>
 									</div>
 								</a>
 							</div>

@@ -14,21 +14,20 @@
 <body>
 <ul class="topnav">
 		<li><a href="/home/index">Home</a></li>
-		<li><a class="active" href="/admin/adminloginform">Admin</a></li>
-		<li class="right"><a href="/home/index">Epass Management System</a></li>
+		<li><a class="active" href="/admin/adminloggedin?adminId=${adminId}">Admin</a></li>
+		<li class="right"><a href="">Admin : ${adminId}</a></li>
 	</ul>
 		<h3>Admin Details Updation</h3>
 		<form:form action="/admin/updateadmin" method="post" modelAttribute="updateadmin">
 			<table class="center"><caption></caption>
 				<tr>
-					<th scope="col"><form:label path="adminId">Admin Id: </form:label></th>
-					<td><form:input path="adminId" required="true" /></td>
+					<td><form:hidden path="adminId" value="${adminId}"/></td>
 				</tr>
 				<tr>
 					<th scope="col"><form:label path="adminName">Name: </form:label></th>
 					<td><form:input path="adminName"
 							title="Name can't be empty or must contain only alphabets"
-							pattern="^[a-zA-Z]+$" required="true" /></td>
+							pattern="^[a-zA-Z]+(\s[a-zA-Z]+)?$" required="true" /></td>
 				</tr>
 				<tr>
 					<th scope="col"><form:label path="adminEmail">Email: </form:label></th>
@@ -39,7 +38,7 @@
 				<tr>
 					<th scope="col"><form:label path="adminPassword">Password: </form:label></th>
 					<td><form:password path="adminPassword"
-							pattern="^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8}$"
+							pattern="^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,}$"
 							required="true" /></td>
 				</tr>
 				<tr>
@@ -50,12 +49,14 @@
 					<th scope="col"><form:label path="adminDesignation">Designation: </form:label></th>
 					<td><form:input path="adminDesignation"
 							title="Name can't be empty or must contain only alphabets"
-							pattern="^[a-zA-Z]+$" required="true" /></td>
+							pattern="^[a-zA-Z]+(\s[a-zA-Z]+)?$" required="true" /></td>
 				</tr>
-				<tr>
+				<table class="center"><caption></caption>
+				<tr><th></th>
 					<td><button type="reset" class="cancelbtn">Reset</button>
 					 <button type="submit" class="signupbtn">Update</button></td>
 				</tr>
+				</table>
 			</table>
 		</form:form>
 </body>

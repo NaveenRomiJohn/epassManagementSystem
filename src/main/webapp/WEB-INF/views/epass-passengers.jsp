@@ -38,7 +38,7 @@
 					<th scope="col">Passenger Name :</th>
 					<td><form:input path="passengerName" title="Name can't be empty or must contain only alphabets" 
 					placeholder="Please enter the name"
-							pattern="^[a-zA-Z]+$" required="true" /></td>
+							pattern="^[a-zA-Z]+(\s[a-zA-Z]+)?$" required="true" /></td>
 				</tr>
 				<tr>
 					<th scope="col">Gender :</th>
@@ -52,13 +52,12 @@
 				</tr>
 				<tr>
 					<th scope="col">Id Proof Type :</th>
-					<td><div class="custom-select" style="width:108%;"><form:select path="idProofType">
-							<form:option value="Aadhar Card" label="Aadhar Card"
-								required="true" />
-						</form:select></div></td>
+					<td>
+					<form:input path="idProofType" value="Aadhar Card" readonly="true" />
+						</td>
 				</tr>
 				<tr>
-					<th scope="col">Id Proof Number :</th>
+					<th scope="col">Aadhar Number :</th>
 					<td><form:input path="idProofNumber"
 							pattern="^[1-9]{4}[-]{1}[0-9]{4}[-]{1}[0-9]{4}$" placeholder="Please enter your aadhar number" title="Adhaar must be 12 digit number"
 							required="true" /></td>

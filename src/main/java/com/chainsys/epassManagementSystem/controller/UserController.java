@@ -80,7 +80,7 @@ public class UserController {
 	
 	@PostMapping("/userlogin")
 	public String userLogin(@ModelAttribute("userlogin") User user,Model model) {
-		User user1 = userService.getUserByIdAndPassword(user.getUserId(), user.getUserPassword());
+		User user1 = userService.getUserByIdAndPassword(user.getEmail(), user.getUserPassword());
 		try {
 		if (user1 == null) {
 			throw new InvalidInputDataException("No matching data found");
@@ -88,18 +88,11 @@ public class UserController {
 		}
 		catch (InvalidInputDataException exception) {
 			model.addAttribute("error", exception.getMessage());
-			model.addAttribute("message", "User Id or Password is incorrect");
+			model.addAttribute("message", "Email or Password is incorrect");
 			return LOGIN;
 		} 
 		String userId=user1.getUserId();
 		return "redirect:/home/userloggedin?userId="+userId;
-	}
-
-	@GetMapping("/userloginaccessdenied")
-	public String userLoginDenied(Model model) {
-		User user = new User();
-		model.addAttribute("userlogin", user);
-		return "user-log-in-denied";
 	}
 
 	@GetMapping("/epassapplicationstatus")

@@ -1,21 +1,4 @@
 @charset "ISO-8859-1";
-table#alter tr:nth-child(even) {
-	background-color: #eee;
-}
-
-table#alter tr:nth-child(odd) {
-	background-color: #fff;
-}
-
-table#alter th {
-	color: white;
-	background-color: gray;
-}
-table.center {
-	margin-left: auto;
-	margin-right: auto;
-}
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,700);
 
 body {
 	background: white;
@@ -24,7 +7,7 @@ body {
 	font-family: 'Raleway', Helvetica, Arial, sans-serif;
 	font-size: 18px;
 	font-weight: 300;
-	line-height: 140%;
+	line-height: 100%;
 	margin: 0;
 	height: 100%;
 	padding: 0;
@@ -52,7 +35,7 @@ body {
 .test_box .inner {
 	background: #333;
 	display: block;
-	margin: 10px;
+	margin: 2px;
 	overflow: hidden;
 }
 
@@ -69,7 +52,7 @@ body {
 	display: -ms-flexbox;
 	display: flex;
 	flex-wrap: wrap;
-	height: 545px;
+	height: 600px;
 	mix-blend-mode: normal;
 	text-align: center;
 	text-decoration: none;

@@ -91,10 +91,10 @@
 						<form:hidden path="adminId" value="admin01" />
 					</tr>
 					<table  class="center"><caption></caption>
-				<tr><th></th>
+					<tr><th></th>
 					<td><button type="reset" class="cancelbtn">Reset</button>
 					 <button type="submit" class="signupbtn">Submit</button></td>
-				</tr>
+					</tr>
 				</table>
 				</table>
 			</form:form>

@@ -11,11 +11,6 @@
 </style>
 </head>
 <body>
-<link rel="preconnect" href="https://fonts.gstatic.com" alt="">
-<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap-grid.min.css">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@700&display=swap" rel="stylesheet">
 <div>
 	<ul class="topnav">
 		<li><a class="active" href="/home/index">Home</a></li>
@@ -36,6 +31,7 @@
                     <div class="col-12 col-md-6 col-lg-6 text-position" >
                         <h2 class="section__title">COVID-19 Alert</h2>
                         <span class="section__span">Stay at Home quarantine to stop Corona virus</span>
+                        <a href="/home/userloginform" class="section__button seciton__button--center">Apply Epass</a>
                     </div>
                     <div class="col-12 col-md-6 col-lg-6 text-position">
                         <img src="https://raw.githubusercontent.com/alaattinerby/Covid-19-Website/4c233460e18c1a8cfba4f7c4830e8da0e7c5e8e9/Covid-19/img/section-image.svg" class="section__image" alt="Quarantine">
@@ -239,13 +235,11 @@
             </div>
         </section>
         </main>
-<script type="text/javascript">
-const openMenu = document.getElementById('open-menu');
-const navLinks = document.getElementById('nav-links');
-
-openMenu.addEventListener('click', () => {
-    navLinks.classList.toggle('nav-open');
-});
-</script>
+<link rel="preconnect" href="https://fonts.gstatic.com" >
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap-grid.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@700&display=swap" rel="stylesheet">
+        
 </body>
 </html>

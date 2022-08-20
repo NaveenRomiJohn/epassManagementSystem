@@ -15,7 +15,6 @@
 <body>
 <ul class="topnav">
 		<li><a href="/home/index">Home</a></li>
-		<li><a href="/home/userloginform">User</a></li>
 		<div class="dropdown">
         <button class="dropbtn">Admin 
      	 <em class="fa fa-caret-down"></em> </button>

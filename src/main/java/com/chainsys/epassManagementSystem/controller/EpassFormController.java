@@ -21,7 +21,8 @@ import com.chainsys.epassmanagementsystem.service.PassengersService;
 @RequestMapping("/epass")
 public class EpassFormController {
 
-	private static final String ADD = "redirect:/epass/noOfpassengers?id="; 
+	private static final String ADD = "redirect:/epass/noOfpassengers?id=";
+	
 	@Autowired
 	public EpassFormService epassFormService;
 
@@ -62,8 +63,7 @@ public class EpassFormController {
 		return "epass-form-across-district";
 	}
 	@PostMapping("/epassformacrossregistered")
-	public String epassFormAcrossDistrict( @ModelAttribute("epassacrossdistrict") 
-	EpassForm epassForm, Model model) {
+	public String epassFormAcrossDistrict( @ModelAttribute("epassacrossdistrict") EpassForm epassForm, Model model) {
 		epassFormService.save(epassForm);
 		int id=epassForm.getEpassId();
 		return  ADD+id;
@@ -115,9 +115,9 @@ public class EpassFormController {
 	}
 	
 	@GetMapping("/getResult")
-	public String getResult(@RequestParam("userId")int userId,Model model) {
-		model.addAttribute("userId", userId);
-		return "epass-registered";
+	public String getResult(@RequestParam("userId")String userId,Model model) {
+//		model.addAttribute("userId", userId);
+		return "redirect:/home/userloggedin?userId="+userId;
 	}
 	
 	@GetMapping("/getpassengersbyepassid")

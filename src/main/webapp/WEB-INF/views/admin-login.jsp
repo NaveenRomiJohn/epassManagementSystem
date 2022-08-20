@@ -13,7 +13,7 @@
 		if (adminId == null || adminId == "") {
 			alert("Admin Id is required or can't be blank");
 			return false;
-		} else if (adminPassword.length < 6) {
+		} else if (adminPassword == null || adminPassword == "") {
 			alert("Admin Password is required or can't be blank");
 			return false;
 		}
@@ -41,9 +41,14 @@
 						placeholder="Admin ID"> <input type="password"
 						id="adminPassword" name="adminPassword" placeholder="Password">
 				</div>
-				<br> <br> <br> <br> <br>
+				<br> <br> <br> <br>
 				<button type="submit" value="Login">Login</button>
 			</form:form>
+			<footer>
+			<div>
+				<div style="color: red;">${message}</div>
+			</div>
+		</footer>
 		</div>
 
 </body>

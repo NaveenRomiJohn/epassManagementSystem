@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
+import com.chainsys.epassmanagementsystem.commonutil.InvalidInputDataException;
 import com.chainsys.epassmanagementsystem.model.Admin;
 import com.chainsys.epassmanagementsystem.model.EpassForm;
 import com.chainsys.epassmanagementsystem.model.OutsideState;
@@ -24,6 +24,9 @@ import com.chainsys.epassmanagementsystem.service.UserService;
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
+	
+	public static final String LOGIN="admin-login";
+	
 	@Autowired
 	public AdminService adminService;
 	@Autowired
@@ -40,22 +43,23 @@ public class AdminController {
 	public String adminLoginForm(Model model) {
 		Admin admin = new Admin();
 		model.addAttribute("adminlogin", admin);
-		return "admin-login";
-	}
-
-	@GetMapping("/adminloggedin")
-	public String getIndex(Model model) {
-		return "admin-logged-in";
+		return LOGIN;
 	}
 
 	@PostMapping("/adminlogin")
-	public String adminLogin(@ModelAttribute("adminlogin") Admin admin) {
+	public String adminLogin(@ModelAttribute("adminlogin") Admin admin,Model model) {
 		Admin admin1 = adminService.getAdminByIdAndPassword(admin.getAdminId(), admin.getAdminPassword());
-		if (admin1 != null) {
-			return "redirect:/admin/adminloggedin";
-		} else {
-			return "redirect:/admin/adminloginform";
-		}
+		try {
+		if (admin1 == null) {
+			throw new InvalidInputDataException("No matching data found");
+			}
+		}catch (InvalidInputDataException exception) {
+			model.addAttribute("error", exception.getMessage());
+			model.addAttribute("message", "Admin Id or Password is incorrect");
+			return LOGIN;
+		} 
+		model.addAttribute("adminId", admin1.getAdminId());
+		return "admin-logged-in";
 	}
 
 //	add admin
@@ -140,7 +144,6 @@ public class AdminController {
 	}
 
 //	Epass status change
-
 	@GetMapping("/statuschange")
 	public String statusUpdateForm(@RequestParam("epassId") int id, Model model) {
 		EpassForm epassForm = epassFormService.findById(id);

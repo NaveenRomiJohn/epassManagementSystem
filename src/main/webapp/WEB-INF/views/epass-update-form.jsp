@@ -15,17 +15,16 @@
 </head>
 <body>
 <ul class="topnav">
-		<li><a href="home">Home</a></li>
-		<li><a href="userloginform">User</a></li>
+		<li><a href="/home/index">Home</a></li>
 		<div class="dropdown">
         <button class="dropbtn">Admin 
      	 <em class="fa fa-caret-down"></em> </button>
     	<div class="dropdown-content">
-    	  	<a href="allusers">Users</a>
-     	 	<a href="epassprocessingstatus">Epass Requests</a>
-      		<a href="epassapprovedlist">Epass Approved</a>
-      		<a href="epassrejectedlist">Epass Rejected</a>
-      		<a href="epassrequests">Epass Details</a>
+    	  	<a href="/admin/allusers">Users</a>
+     	 	<a href="/admin/epassprocessingstatus">Epass Requests</a>
+      		<a href="/admin/epassapprovedlist">Epass Approved</a>
+      		<a href="/admin/epassrejectedlist">Epass Rejected</a>
+      		<a href="/admin/epassrequests">Epass Details</a>
     	</div>
     	</div>
 		<li class="right"><a href="home">Epass Management System</a></li>
@@ -41,14 +40,7 @@
 				</tr>
 				<tr>
 					<th scope="col">Travel Reason :</th>
-					<td><div class="custom-select" style="width:108%;" >
-					<form:select path="travelReason" readonly="true">
-							<form:option value="Medical Emergency" label="Medical Emergency"/>
-							<form:option value="Marriage" label="Marriage"/>
-							<form:option value="Death" label="Death"/>
-							<form:option value="On Going Government Work"
-								label="On Going Government Work"/>
-						</form:select></div></td>
+					<td><form:input path="travelReason" readonly="true"/></td>
 				</tr>
 				<tr>
 					<th scope="col">From Date :</th>
@@ -102,9 +94,10 @@
 					<td><form:input path="reason" name="reason" 
 					placeholder="Please enter the reason" required="true"/></td>
 				</tr>
-				<tr>
+				<table class="center"><tr>
 					<td><form:button type="submit">Update</form:button></td>
-				</tr>
+					</tr>
+				</table>
 			</table>
 		</form:form>
 	</div>

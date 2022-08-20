@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.chainsys.epassmanagementsystem.commonutil.InvalidInputDataException;
 import com.chainsys.epassmanagementsystem.model.EpassForm;
 import com.chainsys.epassmanagementsystem.model.User;
 import com.chainsys.epassmanagementsystem.service.EpassFormService;
@@ -20,6 +21,9 @@ import com.chainsys.epassmanagementsystem.service.UserService;
 @RequestMapping("/home")
 public class UserController {
 
+	public static final String LOGIN="user-login";
+	public static final String USERID="userId";
+	
 	@Autowired
 	public UserService userService;
 	@Autowired
@@ -49,7 +53,7 @@ public class UserController {
 	@GetMapping("/updateuserform")
 	public String showUpdateForm(@RequestParam("userId")String userId,Model model) {
 		User user = new User();
-		model.addAttribute("userId", userId);
+		model.addAttribute(USERID, userId);
 		model.addAttribute("updateuser", user);
 		return "update-user-form";
 	}
@@ -65,23 +69,30 @@ public class UserController {
 	public String userLoginForm(Model model) {
 		User user = new User();
 		model.addAttribute("userlogin", user);
-		return "user-login";
+		return LOGIN;
 	}
 
 	@GetMapping("/userloggedin")
 	public String userLoggedIn(@RequestParam("userId")String userId,Model model) {
-		model.addAttribute("userId", userId);
+		model.addAttribute(USERID, userId);
 		return "user-logged-in";
 	}
-
+	
 	@PostMapping("/userlogin")
-	public String userLogin(@ModelAttribute("userlogin") User user) {
+	public String userLogin(@ModelAttribute("userlogin") User user,Model model) {
 		User user1 = userService.getUserByIdAndPassword(user.getUserId(), user.getUserPassword());
-		if (user1 != null) {
-			return "redirect:/home/userloggedin?userId="+user.getUserId();
-		} else {
-			return "redirect:/home/userloginaccessdenied";
+		try {
+		if (user1 == null) {
+			throw new InvalidInputDataException("No matching data found");
+			} 
 		}
+		catch (InvalidInputDataException exception) {
+			model.addAttribute("error", exception.getMessage());
+			model.addAttribute("message", "User Id or Password is incorrect");
+			return LOGIN;
+		} 
+		String userId=user1.getUserId();
+		return "redirect:/home/userloggedin?userId="+userId;
 	}
 
 	@GetMapping("/userloginaccessdenied")

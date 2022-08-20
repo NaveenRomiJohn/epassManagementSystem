@@ -4,6 +4,7 @@
 
 h1 {
 	color: white;
+	font-family:sans-serif";
 }
 
 * {
@@ -68,7 +69,6 @@ p {
 	left: 0;
 	right: 0;
 	margin: auto;
-	background-image: url("background.jpg");
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -105,7 +105,7 @@ form input {
 
 input::placeholder {
 	color: #fff;
-	font-size: 13px;
+	font-size: 18px;
 }
 
 .inputs {
@@ -130,27 +130,5 @@ button {
 	font-family: 'Poppins', sans-serif;
 	outline: none;
 	color: #fff;
-}
-
-@media screen and (max-width: 640px) {
-	.app {
-		width: 100%;
-		height: 100vh;
-		border-radius: 0;
-	}
-	.bg {
-		top: -7em;
-		width: 450px;
-		height: 95vh;
-	}
-	header {
-		width: 90%;
-		height: 250px;
-	}
-	.inputs {
-		margin: 0;
-	}
-	input, button {
-		padding: 18px 15px;
-	}
+	font-size: 14px;
 }

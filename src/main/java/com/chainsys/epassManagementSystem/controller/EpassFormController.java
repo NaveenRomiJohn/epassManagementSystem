@@ -22,7 +22,7 @@ import com.chainsys.epassmanagementsystem.service.PassengersService;
 public class EpassFormController {
 
 	private static final String ADD = "redirect:/epass/noOfpassengers?id=";
-	
+	private static final String USERID = "userId";
 	@Autowired
 	public EpassFormService epassFormService;
 
@@ -34,14 +34,14 @@ public class EpassFormController {
 
 	@GetMapping("/epassformtype")
 	public String epassFormType(@RequestParam("userId")String userId,Model model) {
-		model.addAttribute("userId", userId);
+		model.addAttribute(USERID, userId);
 		return "epass-form-type";
 	}
 //  within district
 	@GetMapping("/epassformwithindistrict")
 	public String epassFormWithinDistrict(@RequestParam("userId")String userId,Model model) {
 		EpassForm epassForm = new EpassForm();
-		model.addAttribute("userId1", userId);
+		model.addAttribute(USERID, userId);
 		model.addAttribute("epasswithindistrict", epassForm);
 		return "epass-form-within-district";
 	}
@@ -58,7 +58,7 @@ public class EpassFormController {
 	@GetMapping("/epassformacrossdistrict")
 	public String epassFormAcrossDistrict(@RequestParam("userId")String userId,Model model) {
 		EpassForm epassForm = new EpassForm();
-		model.addAttribute("userId2", userId);
+		model.addAttribute(USERID, userId);
 		model.addAttribute("epassacrossdistrict", epassForm);
 		return "epass-form-across-district";
 	}
@@ -74,7 +74,7 @@ public class EpassFormController {
 	public String epassFormOutsideState(@RequestParam("userId")String userId,
 			Model model) {
 		EpassForm epassForm = new EpassForm();
-		model.addAttribute("userId3", userId);
+		model.addAttribute(USERID, userId);
 		model.addAttribute("epassoutsidestate", epassForm);
 		return "epass-form-outside-state";
 	}
@@ -116,7 +116,6 @@ public class EpassFormController {
 	
 	@GetMapping("/getResult")
 	public String getResult(@RequestParam("userId")String userId,Model model) {
-//		model.addAttribute("userId", userId);
 		return "redirect:/home/userloggedin?userId="+userId;
 	}
 	

@@ -39,15 +39,15 @@ function validateform() {
 				<form:input path="userId" name="userId"
 					placeholder="User ID"/> <form:input type="password"
 					path="userPassword" name="userPassword" placeholder="Password"/>
-			</div>
-			<br> <br> <br> <br>
+			</div><br>
+			 <br><br><br>
 			<button type="submit" value="Login">Login</button>
 		</form:form>
-
 		<footer>
-			<p>
+			<div>
 				Don't have an account? <a href="/home/adduserform">Sign Up</a>
-			</p>
+				<div style="color: red;">${message}</div>
+			</div>
 		</footer>
 	</div>
 </body>

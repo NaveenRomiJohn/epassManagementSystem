@@ -94,7 +94,8 @@
 					<td><form:input path="reason" name="reason" 
 					placeholder="Please enter the reason" required="true"/></td>
 				</tr>
-				<table class="center"><tr>
+				<table class="center"><caption></caption>
+				<tr><th></th>
 					<td><form:button type="submit">Update</form:button></td>
 					</tr>
 				</table>

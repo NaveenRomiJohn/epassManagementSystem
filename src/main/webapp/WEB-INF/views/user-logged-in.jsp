@@ -17,6 +17,7 @@ include file="css/navbar.css"%>
 	<ul class="topnav">
 		<li><a href="/home/index">Home</a></li>
 		<li><a class="active" href="/home/userloggedin?userId=${userId}">User</a></li>
+		<li class="logout"><a href="/home/logout" >Logout</a></li>
 		<li class="right"><a href="">Welcome: ${userId}</a></li>
 	</ul>
 	<div class="row">
@@ -60,6 +61,7 @@ include file="css/navbar.css"%>
 				<td>
 				<div class="col-12 col-md-6 col-lg-6 text-position">
                         <img src="https://raw.githubusercontent.com/alaattinerby/Covid-19-Website/4c233460e18c1a8cfba4f7c4830e8da0e7c5e8e9/Covid-19/img/section-image.svg" class="section__image" alt="Quarantine">
+                  
                     </div>
 				</td>
 			</table>

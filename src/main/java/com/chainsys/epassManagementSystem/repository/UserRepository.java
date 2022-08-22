@@ -2,17 +2,15 @@ package com.chainsys.epassmanagementsystem.repository;
 
 import java.util.List;
 import java.util.Optional;
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-
 import com.chainsys.epassmanagementsystem.model.User;
 
 @Repository
-public interface UserRepository extends CrudRepository<User, String>, JpaRepository<User, String> {
+public interface UserRepository extends CrudRepository<User, String> {
 	User save(User user);
 
-	Optional<User> findById(String userId);
+	Optional<User> findById(String userid);
 
 	void deleteById(String userId);
 
@@ -20,6 +18,10 @@ public interface UserRepository extends CrudRepository<User, String>, JpaReposit
 
 	User findByEmailAndUserPassword(String email, String userPassword);
 
-	Optional<User> findByEmail(String email);
+	User findByUserIdAndEmail(String userId, String email);
 
+	User findByEmail(String email);
+
+	User findByUserId(String userId);
+	
 }

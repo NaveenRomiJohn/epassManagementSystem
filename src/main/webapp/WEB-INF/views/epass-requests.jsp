@@ -28,7 +28,7 @@
       		<a href="epassrequests">Epass Details</a>
     	</div>
     	</div>
-		<li class="right"><a href="home">Epass Management System</a></li>
+    	<li class="logout"><a href="/home/logout" >Logout</a></li>
 	</ul>
 	<h3>Epass Requests</h3>
 	<div id="applist">

@@ -26,7 +26,7 @@
       		<a href="/admin/epassrejectedlist">Epass Rejected</a>
     	</div>
     	</div>
-		<li class="right"><a href="/home/index">Epass Management System</a></li>
+    	<li class="logout"><a href="/home/logout" >Logout</a></li>
 	</ul>
 	<h2>All Epass List</h2>
 	<div id="Epass table">

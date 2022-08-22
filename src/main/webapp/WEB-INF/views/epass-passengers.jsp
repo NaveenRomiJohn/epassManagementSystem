@@ -37,8 +37,7 @@
 				<tr>
 					<th scope="col">Passenger Name :</th>
 					<td><form:input path="passengerName" title="Name can't be empty or must contain only alphabets" 
-					placeholder="Please enter the name"
-							pattern="^[a-zA-Z]+(\s[a-zA-Z]+)?$" required="true" /></td>
+					placeholder="Please enter the name" pattern="^[a-zA-Z]+(\s[a-zA-Z]+)?$" required="true" /></td>
 				</tr>
 				<tr>
 					<th scope="col">Gender :</th>

@@ -26,7 +26,7 @@
       		<a href="/admin/epassrequests">Epass Details</a>
     	</div>
     	</div>
-		<li class="right"><a href="">Epass Management System</a></li>
+    	<li class="logout"><a href="/home/logout" >Logout</a></li>
 	</ul>
 	<h2>Epass Approved List</h2>
 	<div id="applist">

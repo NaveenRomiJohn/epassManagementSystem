@@ -14,6 +14,7 @@
 	<ul class="topnav">
 		<li><a href="/home/index">Home</a></li>
 		<li><a class="active" href="/admin/adminloggedin?adminId=${adminId}">Admin</a></li>
+		<li class="logout"><a href="/home/logout" >Logout</a></li>
 		<li class="right"><a href="">Welcome: ${adminId}</a></li>
 	</ul>
 

@@ -33,7 +33,11 @@
 	</ul>
 	<div style="padding: 0 18px;" id="form">
 		<h2>User Registration Form</h2>
-		<form:form action="/home/adduser" name="reg_form" method="post"
+		<div>
+				<div style="color: red;">${error}</div>
+				<div style="color: red;">${message}</div>
+			</div>
+		<form:form action="adduser" name="reg_form" method="post"
 			modelAttribute="adduser" onsubmit="return validateform()">
 			 <div class="container">
 			<table class="center"><caption></caption>

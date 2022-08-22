@@ -86,9 +86,10 @@
 				</tr>
 				<tr>
 					<th scope="col">User Password :</th>
-					<td><input type="password" id="userPassword" name="userPassword" placeholder="Enter the password"
+					<td><form:password path="userPassword" name="userPassword" placeholder="Please enter the password"
+							title="Password must be minimum 8 characters with alphabets,one special and one number"
 							pattern="^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,}$"
-						title="password must contain one uppercase, one lowercase & one special symbol"	required /></td>
+							required="true" /></td>
 				</tr>
 				<tr>
 					<th scope="col">Confirm Password :</th>

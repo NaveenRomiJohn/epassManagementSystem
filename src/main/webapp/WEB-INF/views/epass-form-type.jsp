@@ -15,6 +15,7 @@
 	<ul class="topnav">
 		<li><a href="/home/index">Home</a></li>
 		<li><a class="active" href="/home/userloggedin?userId=${userId}">User</a></li>
+		<li class="logout"><a href="/home/logout" >Logout</a></li>
 		<li class="right"><a href="">User : ${userId}</a></li>
 	</ul>
 

@@ -115,7 +115,7 @@ public class EpassFormController {
 	
 	@GetMapping("/getResult")
 	public String getResult(@RequestParam("userId")String userId,Model model) {
-		return "redirect:/home/userloggedin?userId="+userId;
+		return "epass-registered";
 	}
 	
 	@GetMapping("/getallpassengers")

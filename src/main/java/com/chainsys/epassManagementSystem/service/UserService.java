@@ -2,6 +2,7 @@ package com.chainsys.epassmanagementsystem.service;
 
 import java.util.List;
 import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,8 +19,8 @@ public class UserService {
 		return userRepository.save(user);
 	}
 
-	public Optional<User> findById(String userid) {
-		return userRepository.findById(userid);
+	public User getByUserIdAndEmail(String userId,String email) {
+		return userRepository.findByUserIdAndEmail(userId,email);
 	}
 
 	public List<User> getUsers() {
@@ -28,5 +29,13 @@ public class UserService {
 
 	public User getUserByIdAndPassword(String userId, String userPassword) {
 		return userRepository.findByEmailAndUserPassword(userId, userPassword);
+	}
+	
+	public User getByEmail(String email) {
+		return userRepository.findByEmail(email);
+	}
+	
+	public User getByUserId(String userId) {
+		return userRepository.findByUserId(userId);
 	}
 }

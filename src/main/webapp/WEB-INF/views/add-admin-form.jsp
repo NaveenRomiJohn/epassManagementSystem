@@ -39,7 +39,7 @@ function validateadmin() {
 		<li class="right"><a href="">Admin : ${adminId}</a></li>
 	</ul>
 		<h2>Admin Registration form</h2>
-		<form:form action="/admin/addadmin" method="post" modelAttribute="addAdmin"
+		<form:form action="addadmin" method="post" modelAttribute="addAdmin"
 			onsubmit="return validateadmin()">
 			<table class="center"><caption></caption>
 				<tr>

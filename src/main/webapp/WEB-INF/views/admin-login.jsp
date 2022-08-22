@@ -27,7 +27,7 @@
 
 		<div class="app">
 			<div class="bg"></div>
-			<form:form action="/admin/adminlogin" name="reg_form" method="post"
+			<form:form action="adminlogin" name="reg_form" method="post"
 				modelAttribute="adminlogin" onsubmit="return validateform()">
 				<header>
 					<h1>Admin Login</h1>
@@ -37,11 +37,11 @@
                     </div>
 				</header>
 				<div class="inputs">
-					<input type="text" id="adminId" name="adminId"
-						placeholder="Admin ID"> <input type="password"
-						id="adminPassword" name="adminPassword" placeholder="Password">
-				</div>
-				<br> <br> <br> <br>
+				<form:input path="adminId" name="adminId"
+					placeholder="Admin Id "/> <form:input type="password"
+					path="adminPassword" name="adminPassword" placeholder="Password"/>
+			</div><br>
+				<br> <br> <br>
 				<button type="submit" value="Login">Login</button>
 			</form:form>
 			<footer>

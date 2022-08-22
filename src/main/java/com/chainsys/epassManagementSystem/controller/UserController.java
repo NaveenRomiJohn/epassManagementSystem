@@ -1,7 +1,8 @@
 package com.chainsys.epassmanagementsystem.controller;
 
 import java.util.List;
-
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,7 +11,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import com.chainsys.epassmanagementsystem.commonutil.InvalidInputDataException;
 import com.chainsys.epassmanagementsystem.model.EpassForm;
 import com.chainsys.epassmanagementsystem.model.User;
@@ -22,6 +22,7 @@ import com.chainsys.epassmanagementsystem.service.UserService;
 public class UserController {
 
 	public static final String LOGIN="user-login";
+	public static final String ADDUSER="add-user-form";
 	public static final String USERID="userId";
 	
 	@Autowired
@@ -40,11 +41,21 @@ public class UserController {
 	public String showRegisterForm(Model model) {
 		User user = new User();
 		model.addAttribute("adduser", user);
-		return "add-user-form";
+		return ADDUSER;
 	}
 
 	@PostMapping("/adduser")
-	public String addUser(@ModelAttribute("adduser") User user) {
+	public String addUserValidation(@ModelAttribute("adduser") User user,Model model) {
+		User user1=userService.getByUserId(user.getUserId());
+		try {
+			if (user1 != null) {
+				throw new InvalidInputDataException("* Username already exists");
+			}
+		}catch (InvalidInputDataException exception) {
+				model.addAttribute("error", exception.getMessage());
+				model.addAttribute("message", "Try different username");
+				return ADDUSER;
+			} 
 		userService.save(user);
 		return "user-registered";
 	}
@@ -102,4 +113,10 @@ public class UserController {
 		return "user-application-status";
 	}
 
+	@GetMapping("/logout")
+	 public String logout(HttpServletRequest request){
+         HttpSession httpSession = request.getSession();
+         httpSession.invalidate();
+         return "redirect:/home/index";
+     }
 }

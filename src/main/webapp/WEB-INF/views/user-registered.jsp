@@ -15,15 +15,9 @@
 <ul class="topnav">
 		<li><a href="/home/index">Home</a></li>
 		<li><a class="active" href="/home/userloginform">User</a></li>
-		<li class="right"><a href="/home/index">Epass Management System</a></li>
-	</ul>
+		<li class="right"><a href="">Epass Management System</a></li>
+</ul>
 <br><br>
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap-grid.min.css">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@700&display=swap" rel="stylesheet">
-
     <main>
         <section class="section hero">
             <div class="container">
@@ -44,13 +38,11 @@
             </div>
         </section>  
         </main>
-<script type="text/javascript">
-const openMenu = document.getElementById('open-menu');
-const navLinks = document.getElementById('nav-links');
-
-openMenu.addEventListener('click', () => {
-    navLinks.classList.toggle('nav-open');
-});
-</script>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap-grid.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@700&display=swap" rel="stylesheet">
+        
 </body>
 </html>

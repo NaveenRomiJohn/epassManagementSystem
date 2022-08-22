@@ -175,7 +175,7 @@
 							name="pcrCertificateIssuedBy"
 							placeholder="Please enter the details of certificate issued"
 							title="Name can't be empty or must contain only alphabets"
-							pattern="^[a-zA-Z]+(\s[a-zA-Z]+)?$" required /></td>
+							pattern="^[a-zA-Z]+(\s[a-zA-Z]+(\s[a-zA-Z]+)?$" required /></td>
 					</tr>
 					<table class="center"><caption></caption>
 						<tr><th></th>
